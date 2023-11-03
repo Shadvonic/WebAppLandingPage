@@ -17,7 +17,6 @@ function toggleView(view) {
         listViewBtn.disabled = false;
         cardViewBtn.disabled = true;
     }
-<<<<<<< HEAD
 
     currentView = view;
 }
@@ -32,26 +31,10 @@ function searchItems() {
         const textValue = item.textContent || item.innerText;
         if (textValue.toUpperCase().indexOf(filter) > -1) {
             item.style.display = 'block';
-=======
-  }
-
-  function searchItems() {
-    const searchInput = document.getElementById('searchInput');
-    const filter = searchInput.value.toUpperCase();
-    const listItems = document.querySelectorAll('.list-group-item');
-    const cardItems = document.querySelectorAll('.card-container .card');
-
-    // For list items
-    listItems.forEach(item => {
-        const textValue = item.textContent || item.innerText;
-        if (textValue.toUpperCase().indexOf(filter) > -1) {
-            item.style.display = '';
->>>>>>> 0859b0509d5b442460eefcc149e2ae46c6fee4f9
         } else {
             item.style.display = 'none';
         }
     });
-<<<<<<< HEAD
 }
 
 // Preventing view switch on search
@@ -60,16 +43,3 @@ function(event) {
     event.preventDefault(); // Prevent form submission
     toggleView(currentView); // Maintain the current view });
 }); 
-=======
-
-    // For card items
-    cardItems.forEach(item => {
-        const textValue = item.textContent || item.innerText;
-        if (textValue.toUpperCase().indexOf(filter) > -1) {
-            item.style.display = '';
-        } else {
-            item.style.display = 'none';
-        }
-    });
-}
->>>>>>> 0859b0509d5b442460eefcc149e2ae46c6fee4f9
