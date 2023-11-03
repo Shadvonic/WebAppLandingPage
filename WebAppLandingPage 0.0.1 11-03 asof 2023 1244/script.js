@@ -16,4 +16,30 @@ function toggleView(view) {
       cardViewBtn.disabled = true;
     }
   }
-  
+
+  function searchItems() {
+    const searchInput = document.getElementById('searchInput');
+    const filter = searchInput.value.toUpperCase();
+    const listItems = document.querySelectorAll('.list-group-item');
+    const cardItems = document.querySelectorAll('.card-container .card');
+
+    // For list items
+    listItems.forEach(item => {
+        const textValue = item.textContent || item.innerText;
+        if (textValue.toUpperCase().indexOf(filter) > -1) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+
+    // For card items
+    cardItems.forEach(item => {
+        const textValue = item.textContent || item.innerText;
+        if (textValue.toUpperCase().indexOf(filter) > -1) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
