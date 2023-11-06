@@ -40,7 +40,6 @@ function searchItems() {
 }
 
 
-
 // Preventing view switch on search
 document.querySelector('form[role="search"]').addEventListener('submit',
 function(event) {

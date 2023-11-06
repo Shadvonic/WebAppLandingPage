@@ -10,8 +10,9 @@
   <body>
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <img src="./img/ItemID65_health_hospitals_logo_onwhite.png" class="rounded float-start" alt="logo">
           <div class="container-fluid">
-            <a class="navbar-brand">Web App Library
+            <a class="navbar-brand fs-1" >Web App Library 
                 <button id="listViewBtn"   type="button" class="btn btn-outline-info" onclick="toggleView('list')">List View</button>
                 <button id="cardViewBtn"   type="button" class="btn btn-outline-info" onclick="toggleView('card')">Card View</button>
             </a>
@@ -25,11 +26,11 @@
       </header>
 
       <div id="listView" class="list-group" style="display: none;">
-        <a href="#" class="list-group-item list-group-item-action" > The current link item </a>
-        <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-        <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-        <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-        <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+        <a href="https://github.com/" target="_blank" class="list-group-item list-group-item-action" > Github </a>
+        <a href="https://stackoverflow.com/" target="_blank" class="list-group-item list-group-item-action">stackoverflow</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank"class="list-group-item list-group-item-action">MDN</a>
+        <a href="https://www.google.com/" target="_blank" class="list-group-item list-group-item-action">Google</a>
+        <a href="https://getbootstrap.com/" target="_blank" class="list-group-item list-group-item-action">bootstrap</a>
         <a href="https://www.w3schools.com/" target="_blank" class="list-group-item list-group-item-action">Visit W3Schools!</a>
        
       </div>
@@ -39,11 +40,21 @@
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                   <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="./img/bootstrapicon.png" class="card-img-top" alt="bootstrap">
                     <div class="card-body">
-                        <h5 class="card-title">puppy</h5>
+                        <h5 class="card-title">bootstrap</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#"  type="button" class="btn btn-info">Go somewhere</a>
+                        <a href="https://getbootstrap.com/" target="_blank"  type="button" class="btn btn-info">bootstrap</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./img/GoogleIcon.jfif" class="card-img-top" alt="Google">
+                    <div class="card-body">
+                        <h5 class="card-title">Google</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="https://www.google.com/"  target="_blank" type="button" class="btn btn-info">Google</a>
                       </div>
                   </div>
                 </div>
@@ -51,29 +62,19 @@
                   <div class="card h-100">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">dog</h5>
+                        <h5 class="card-title">MDN</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#"  type="button" class="btn btn-info">Go somewhere</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn"  target="_blank" type="button" class="btn btn-info">MDN</a>
                       </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="card h-100">
-                    <img src="" class="card-img-top" alt="chs">
+                    <img src="./img/stack-overflow-icon.png" class="card-img-top" alt="stackoverflow">
                     <div class="card-body">
-                        <h5 class="card-title">Cat</h5>
+                        <h5 class="card-title">stackoverflow</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#"  type="button" class="btn btn-info">Go somewhere</a>
-                      </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">kitten</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" type="button" class="btn btn-info">Go somewhere</a>
+                        <a href="https://stackoverflow.com/" target="_blank"type="button" class="btn btn-info">stackoverflow</a>
                       </div>
                   </div>
                 </div>
@@ -81,9 +82,9 @@
                     <div class="card h-100">
                       <img src="..." class="card-img-top" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title">fish</h5>
+                          <h5 class="card-title">Github</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" type="button" class="btn btn-info">Go somewhere</a>
+                          <a href="https://github.com/" target="_blank"  type="button" class="btn btn-info">GitHub</a>
                         </div>
                     </div>
                   </div>
@@ -91,7 +92,7 @@
                     <div class="card h-100">
                       <img src="..." class="card-img-top" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title">brid</h5>
+                          <h5 class="card-title">w3schools</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           <a href="https://www.w3schools.com/" target="_blank" type="button" class="btn btn-info">Visit W3Schools!</a>
                         </div>
@@ -106,7 +107,7 @@
     <footer class="footer">
         
             <div class="sticky-xl-bottom">
-                <div class="text-bg-light p-3">Footer</div>
+                <div  class="text-bg-secondary p-3"><p class="fw-bold text-center" > CHS Web App Library &copy 2023</p> </div>
             </div>
        
     </footer>
