@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppLP", "WebAppLP\WebAppLP.csproj", "{CE25CD48-F5D0-464F-967D-27E0F3544DEA}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WebAppDB", "WebAppDB\WebAppDB.sqlproj", "{3CF85771-026C-4223-9F05-CE132FB0C5C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{CE25CD48-F5D0-464F-967D-27E0F3544DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE25CD48-F5D0-464F-967D-27E0F3544DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE25CD48-F5D0-464F-967D-27E0F3544DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF85771-026C-4223-9F05-CE132FB0C5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF85771-026C-4223-9F05-CE132FB0C5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF85771-026C-4223-9F05-CE132FB0C5C7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3CF85771-026C-4223-9F05-CE132FB0C5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF85771-026C-4223-9F05-CE132FB0C5C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF85771-026C-4223-9F05-CE132FB0C5C7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
