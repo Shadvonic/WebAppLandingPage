@@ -24,9 +24,10 @@ function toggleView(view) {
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
     const filter = searchInput.value.toUpperCase();
-    const cardTitles = document.querySelectorAll('.card-container .card .card-title');
     const listItems = document.querySelectorAll('.list-group .list-group-item');
+    const cardTitles = document.querySelectorAll('.card-container .card .card-title');
 
+    
     listItems.forEach(item => {
         const textValue = item.textContent || item.innerText;
         if (textValue.toUpperCase().indexOf(filter) > -1) {
@@ -35,7 +36,10 @@ function searchItems() {
             item.style.display = 'none';
         }
     });
+
 }
+
+
 
 // Preventing view switch on search
 document.querySelector('form[role="search"]').addEventListener('submit',
