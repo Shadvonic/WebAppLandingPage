@@ -2,7 +2,7 @@ const data = [
 
     {
         AppName:  "Github",
-        AppImagePath: "./img/stack-overflow-icon.png" ,
+        AppImagePath: "./img/GitHubLogo.jpg" ,
         Urls: "https://github.com/"
     }, 
     {
@@ -12,22 +12,22 @@ const data = [
     },
     {
         AppName:  "Google",
-        AppImagePath: "./img/stack-overflow-icon.png" ,
+        AppImagePath: "./img/GoogleLogo.jpg" ,
         Urls: "https://www.google.com/"
     },
     {
         AppName:  "MDN",
-        AppImagePath: "./img/stack-overflow-icon.png" ,
+        AppImagePath: "./img/MDNlogo.jfif" ,
         Urls: "https://developer.mozilla.org/en-US/docs/Learn"
     },
     {
-        AppName:  "Github",
-        AppImagePath: "./img/stack-overflow-icon.png",
+        AppName:  "Bootstrap",
+        AppImagePath: "./img/BootstrapLogo.jfif",
         Urls: "https://getbootstrap.com/"
     },
     {
         AppName:  "W3Schools",
-        AppImagePath: "./img/stack-overflow-icon.png" ,
+        AppImagePath: "./img/w3Logo.jfif" ,
         Urls: "https://www.w3schools.com/"
     },
     
