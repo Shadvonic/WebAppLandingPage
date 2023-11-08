@@ -1,0 +1,10 @@
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\bin\Debug\WebAppDB.dacpac
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\bin\Debug\WebAppDB.dll
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\bin\Debug\WebAppDB.pdb
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\obj\Debug\WebAppDB.sqlproj.AssemblyReference.cache
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\obj\Debug\WebAppDB.dll
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\obj\Debug\WebAppDB.pdb
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\obj\Debug\Model.xml
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\obj\Debug\refactor.xml
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\obj\Debug\postdeploy.sql
+H:\WebAppLandingPage\WebAppLandingPage 0.0.2 11-06 asof 2023 1523\WebAppLPApp\WebAppDB\obj\Debug\predeploy.sql

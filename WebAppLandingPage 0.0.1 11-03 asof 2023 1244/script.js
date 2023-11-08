@@ -1,4 +1,7 @@
+
+
 let currentView = 'card'; // Initially set to 'card'
+
 
 function toggleView(view) {
     const listView = document.getElementById('listView');
@@ -20,6 +23,10 @@ function toggleView(view) {
 
     currentView = view;
 }
+
+
+
+
 
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
