@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ce25cd48-f5d0-464f-967d-27e0f3544dea": {
+      "ProjectGuid": "ce25cd48-f5d0-464f-967d-27e0f3544dea",
+      "DisplayName": "WebAppLP",
+      "ColorIndex": 0
+    },
+    "3cf85771-026c-4223-9f05-ce132fb0c5c7": {
+      "ProjectGuid": "3cf85771-026c-4223-9f05-ce132fb0c5c7",
+      "DisplayName": "WebAppDB",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

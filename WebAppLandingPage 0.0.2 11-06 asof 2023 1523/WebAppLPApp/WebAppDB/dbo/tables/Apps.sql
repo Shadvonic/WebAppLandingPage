@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Apps]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1) , 
+    [Urls] NVARCHAR(MAX) NULL, 
+    [AppName] VARCHAR(MAX) NOT NULL, 
+    [AppImagePath] VARCHAR(MAX) NULL
+)

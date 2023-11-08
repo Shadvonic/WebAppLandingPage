@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppLP", "WebAppLP\WebAppLP.csproj", "{CE25CD48-F5D0-464F-967D-27E0F3544DEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppLP", "WebAppLP\WebAppLP.csproj", "{CE25CD48-F5D0-464F-967D-27E0F3544DEA}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WebAppDB", "WebAppDB\WebAppDB.sqlproj", "{3CF85771-026C-4223-9F05-CE132FB0C5C7}"
 EndProject
