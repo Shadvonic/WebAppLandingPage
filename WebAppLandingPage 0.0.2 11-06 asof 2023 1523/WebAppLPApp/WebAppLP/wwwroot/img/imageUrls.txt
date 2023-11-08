@@ -1,0 +1,7 @@
+﻿"https://github.com/","Github","./img/Github.png"
+"https://stackoverflow.com/","stackoverflow","./img/Stackoverflow.png"
+"https://developer.mozilla.org/en-US/docs/Learn","MDN","./img/Github.png"
+"https://www.google.com/", "Google","./img/google.jfif"
+"https://getbootstrap.com/", "Bootstrap","./img/bootstrap.png"
+"https://www.w3schools.com/", "W3Schools","./img/Github.png"
+
