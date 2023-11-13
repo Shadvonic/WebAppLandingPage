@@ -125,3 +125,4 @@ function(event) {
     event.preventDefault(); // Prevent form submission
     toggleView(currentView); // Maintain the current view });
 }); 
+
