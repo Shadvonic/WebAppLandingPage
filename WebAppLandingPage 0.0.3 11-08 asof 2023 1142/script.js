@@ -37,11 +37,35 @@ const data = [
 
 let currentView = 'card'; // Initially set to 'card'
 
+// Function to dynamically load CSS file
+function loadThemeCSS(theme) {
+    const head = document.head;
+
+    // Remove any existing theme classes
+    document.body.classList.remove('theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
+
+    const link = document.createElement("link");
+    link.type = "text/css";
+    link.rel = "stylesheet";
+
+    if (theme === 'light') {
+        link.href = ''; // Set the href to an empty string for the light theme
+    } else {
+        link.href = `css/${theme}.css`;
+    }
+
+    head.appendChild(link);
+}
+
+
 function toggleView(view) {
     const listView = document.getElementById('listView');
     const cardView = document.getElementById('cardView');
     const listViewBtn = document.getElementById('listViewBtn');
     const cardViewBtn = document.getElementById('cardViewBtn');
+
+    // Remove all existing theme classes when switching view
+    document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
 
     if (view === 'list') {
         listView.style.display = 'block';
@@ -118,25 +142,22 @@ function searchItems() {
 
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Select the stylesheet <link>
-    const theme = document.querySelector("#theme-link");
-  
-    // Select all radio buttons in the dropdown menu
-    const radioButtons = document.querySelectorAll('input[name="theme"]');
-  
-    // Listen for changes in the radio buttons
-    radioButtons.forEach(function (radioButton) {
-      radioButton.addEventListener("change", function () {
-        // Get the selected theme from the radio button's id
-        const selectedTheme = radioButton.id;
-  
-        // Update the theme accordingly
-        theme.href = `${selectedTheme.toLowerCase()}.css`;
-      });
+
+ // Get all radio buttons
+ const themeRadios = document.querySelectorAll('input[name="theme"]');
+
+ // Add event listeners to radio buttons to apply theme classes
+themeRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        if (radio.checked) {
+            // Remove existing theme classes
+            document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
+
+            // Load the appropriate CSS file based on the checked radio button
+            loadThemeCSS(radio.id.toLowerCase());
+        }
     });
-  });
-  
+});
 
 // Preventing view switch on search
 document.querySelector('form[role="search"]').addEventListener('submit',

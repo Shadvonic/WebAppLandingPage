@@ -7,12 +7,9 @@ body {
   
 }
 
-
-
 .content {
     flex: 1;
     padding: 20px;
-
 }
 
 #listViewBtn,
@@ -23,10 +20,6 @@ body {
 #card-img-top {
     height: 300px;
     width: 300px;
-}
-
-.btn-group {
-    margin-right: 85px;
 }
 
 li {
