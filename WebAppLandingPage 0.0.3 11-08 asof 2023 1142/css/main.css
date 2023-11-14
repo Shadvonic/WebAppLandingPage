@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  
+    background-color: black;
 }
 
 
@@ -17,11 +17,13 @@ body {
 
 #listViewBtn,
 #cardViewBtn {
-   margin-left: 5px;
+  margin-right: 5px;
 }
 
 #card-img-top {
     height: 300px;
     width: 300px;
 }
+
+
 

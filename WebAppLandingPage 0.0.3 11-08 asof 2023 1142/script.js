@@ -86,7 +86,7 @@ function createCardView() {
         <div class="card-body">
           <h5 class="card-title">${app.AppName}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="${app.Urls}" target="_blank" class="btn btn-info">${app.AppName}</a>
+          <a href="${app.Urls}" target="_blank" class="btn btn-primary">${app.AppName}</a>
         </div>
       `;
   
