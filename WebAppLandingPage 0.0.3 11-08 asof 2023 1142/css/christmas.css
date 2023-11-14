@@ -35,25 +35,25 @@ footer {
 
 .content, .list-group-item.list-group-item-action  
 {
-    background-color:  #996236;
-    color: #F8B12C;
+    background-color:  #C0CFE4;
+    color: #F14E63;
 }
 
 
 
 .card-body {
-    background-color: #9D221E;
+    background-color: #5A6C70;
 }
 
 .card-text, h5.card-title {
-    color: white;
+    color: #E2E7EA;
 }
 
 
 a.btn.btn-primary{
-    background-color: #382615;
-    color: #859D3C;
-    border-color: #ED732E;
+    background-color: #E7A374;
+    color: #E2E7EA;
+    border-color: #F14E63;
 }
 
 #cardViewBtn, #listViewBtn 
@@ -63,7 +63,7 @@ a.btn.btn-primary{
 }
 
 div.card.h-100{
-    border-color: #ED732E;
+    border-color: #F14E63;
 }
 
 
