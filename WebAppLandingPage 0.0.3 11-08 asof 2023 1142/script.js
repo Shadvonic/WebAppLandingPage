@@ -40,19 +40,11 @@ let currentView = 'card'; // Initially set to 'card'
 // Function to dynamically load CSS file
 function loadThemeCSS(theme) {
     const head = document.head;
-
-    // Remove any existing theme classes
-    document.body.classList.remove('theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
-
     const link = document.createElement("link");
+
     link.type = "text/css";
     link.rel = "stylesheet";
-
-    if (theme === 'light') {
-        link.href = ''; // Set the href to an empty string for the light theme
-    } else {
-        link.href = `css/${theme}.css`;
-    }
+    link.href = `css/${theme}.css`; // Assuming your CSS files are in a 'css' folder
 
     head.appendChild(link);
 }
@@ -64,8 +56,6 @@ function toggleView(view) {
     const listViewBtn = document.getElementById('listViewBtn');
     const cardViewBtn = document.getElementById('cardViewBtn');
 
-    // Remove all existing theme classes when switching view
-    document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
 
     if (view === 'list') {
         listView.style.display = 'block';
@@ -143,10 +133,9 @@ function searchItems() {
 }
 
 
- // Get all radio buttons
- const themeRadios = document.querySelectorAll('input[name="theme"]');
+const themeRadios = document.querySelectorAll('input[name="theme"]');
 
- // Add event listeners to radio buttons to apply theme classes
+// Add event listeners to radio buttons to apply theme classes
 themeRadios.forEach(radio => {
     radio.addEventListener('change', () => {
         if (radio.checked) {
@@ -158,7 +147,6 @@ themeRadios.forEach(radio => {
         }
     });
 });
-
 // Preventing view switch on search
 document.querySelector('form[role="search"]').addEventListener('submit',
 function(event) {
