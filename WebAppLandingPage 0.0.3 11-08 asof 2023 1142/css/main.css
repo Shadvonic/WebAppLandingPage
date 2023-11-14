@@ -25,5 +25,16 @@ body {
     width: 300px;
 }
 
+.btn-group {
+    margin-right: 85px;
+}
+
+li {
+    padding: 5px;
+}
 
 
+footer {
+    background-color: #F8F9FA;
+    padding: 8px;
+}

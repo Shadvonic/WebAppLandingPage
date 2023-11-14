@@ -119,6 +119,38 @@ function searchItems() {
 }
 
 
+// Select the button
+const btn = document.querySelector(".btn-toggle");
+
+// Select the stylesheet <link>
+const theme = document.querySelector("#theme-link");
+
+// Select all radio buttons in the dropdown menu
+const radioButtons = document.querySelectorAll('input[name="theme"]');
+
+// Listen for a click on the button
+btn.addEventListener("click", function () {
+  // If the current URL contains "light-theme.css"
+  if (theme.getAttribute("href") == "main.css") {
+    theme.href = "main.css";
+  } else {
+    // Switch it to "light-theme.css"
+    theme.href = "dark.css";
+  }
+});
+
+// Listen for changes in the radio buttons
+radioButtons.forEach(function (radioButton) {
+  radioButton.addEventListener("change", function () {
+    // Get the selected theme from the radio button's id
+    const selectedTheme = radioButton.id;
+
+    // Update the theme accordingly
+    theme.href = `${selectedTheme.toLowerCase()}.css`;
+  });
+});
+
+
 // Preventing view switch on search
 document.querySelector('form[role="search"]').addEventListener('submit',
 function(event) {
