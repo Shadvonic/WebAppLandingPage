@@ -8,28 +8,28 @@ const data = [
         LongName: "",
         ShortName: "ACL [CORP]",
         ImagePath: "" ,
-        URL: ["https://crpvms2chsws01.corp.nychhc.org/ACL/", "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL", "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f"],
-        Environment: "",
+        URL: "https://crpvms2chsws01.corp.nychhc.org/ACL/",
+        Environment: environment[0],
         Description: "",
         Tags: ""
     }, 
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "ACL [CORP]",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL",
+        Environment: environment[2],
         Description: "",
         Tags: ""
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "ACL [CORP]",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f",
+        Environment: environment[3],
         Description: "",
         Tags: ""
     },
@@ -294,7 +294,7 @@ function createListView() {
       listItem.href = app.Urls;
       listItem.target = "_blank";
       listItem.classList.add("list-group-item", "list-group-item-action");
-      listItem.textContent = app.AppName;
+      listItem.textContent = app.ShortName;
       listView.appendChild(listItem);
     });
   }
@@ -310,11 +310,11 @@ function createCardView() {
       card.classList.add("card", "h-100");
   
       card.innerHTML = `
-        <img src="${app.AppImagePath}" class="card-img-top" alt="${app.AppName}">
+        <img src="${app.ImagePath}" class="card-img-top" alt="${app.ShortName}">
         <div class="card-body">
-          <h5 class="card-title">${app.AppName}</h5>
+          <h5 class="card-title">${app.ShortName}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="${app.Urls}" target="_blank" class="btn btn-primary">${app.AppName}</a>
+          <a href="${app.URL}" target="_blank" class="btn btn-primary">${app.Environment} - ${app.ShortName}</a>
         </div>
       `;
   
