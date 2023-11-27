@@ -1,35 +1,249 @@
+const resourceType = ["Application", "Document", "Report", "Video", "Course", "Bookmark"]
+const environment = ["Production", "Pre-Production", "Staging", "Test", "Development"]
+
 const data = [
 
     {
-        AppName:  "Github",
-        AppImagePath: "./img/GitHubLogo.jpg" ,
-        Urls: "https://github.com/"
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "ACL [CORP]",
+        ImagePath: "" ,
+        URL: ["https://crpvms2chsws01.corp.nychhc.org/ACL/", "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL", "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f"],
+        Environment: "",
+        Description: "",
+        Tags: ""
     }, 
     {
-        AppName:  "Stackoverflow",
-        AppImagePath: "./img/stack-overflow-icon.png" ,
-        Urls: "https://stackoverflow.com/"
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
     },
     {
-        AppName:  "Google",
-        AppImagePath: "./img/GoogleLogo.jpg" ,
-        Urls: "https://www.google.com/"
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
     },
     {
-        AppName:  "MDN",
-        AppImagePath: "./img/MDNlogo.jfif" ,
-        Urls: "https://developer.mozilla.org/en-US/docs/Learn"
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
     },
     {
-        AppName:  "Bootstrap",
-        AppImagePath: "./img/BootstrapLogo.jfif",
-        Urls: "https://getbootstrap.com/"
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
     },
     {
-        AppName:  "W3Schools",
-        AppImagePath: "./img/w3Logo.jfif" ,
-        Urls: "https://www.w3schools.com/"
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
     },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    }, 
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+     {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: [],
+        Environment: "",
+        Description: "",
+        Tags: ""
+    },
+
     
 
 ]
