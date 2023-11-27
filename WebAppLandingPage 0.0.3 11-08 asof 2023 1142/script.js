@@ -36,10 +36,10 @@ const data = [
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "AIEHRD",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
+        Environment: environment[1],
         Description: "",
         Tags: ""
     },
@@ -51,7 +51,7 @@ const data = [
         URL: [],
         Environment: "",
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
@@ -291,10 +291,10 @@ function createListView() {
     listView.innerHTML = '';
     data.forEach(app => {
       const listItem = document.createElement('a');
-      listItem.href = app.Urls;
+      listItem.href = app.URL;
       listItem.target = "_blank";
       listItem.classList.add("list-group-item", "list-group-item-action");
-      listItem.textContent = app.ShortName;
+      listItem.textContent =  app.Environment + " - " + app.ShortName;
       listView.appendChild(listItem);
     });
   }
@@ -310,11 +310,12 @@ function createCardView() {
       card.classList.add("card", "h-100");
   
       card.innerHTML = `
-        <img src="${app.ImagePath}" class="card-img-top" alt="${app.ShortName}">
+        <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
         <div class="card-body">
-          <h5 class="card-title">${app.ShortName}</h5>
+          <h5 class="card-title"> (${app.ResourceType}) ${app.ShortName}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="${app.URL}" target="_blank" class="btn btn-primary">${app.Environment} - ${app.ShortName}</a>
+          <span class="badge badge-light">${app.Tags}</span>
         </div>
       `;
   
