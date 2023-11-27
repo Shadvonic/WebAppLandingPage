@@ -26,8 +26,12 @@ li {
     padding: 5px;
 }
 
+#badge-light {
+    color: black;
+}
 
 footer {
     background-color: #F8F9FA;
     padding: 8px;
 }
+

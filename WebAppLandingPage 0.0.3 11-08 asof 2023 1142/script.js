@@ -1,5 +1,5 @@
-const resourceType = ["Application", "Document", "Report", "Video", "Course", "Bookmark"]
-const environment = ["Production", "Pre-Production", "Staging", "Test", "Development"]
+const resourceType = ["Application", "Document", "Report", "Video", "Course", "Bookmark", 'N/A']
+const environment = ["Production", "Pre-Production", "Staging", "Test", "Development", "N/A"] 
 
 const data = [
 
@@ -11,7 +11,7 @@ const data = [
         URL: "https://crpvms2chsws01.corp.nychhc.org/ACL/",
         Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: ["random", "abc", "tags"]
     }, 
     {
         ResourceType: resourceType[0],
@@ -39,97 +39,97 @@ const data = [
         ShortName: "AIEHRD",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
-        Environment: environment[1],
+        Environment: environment[0],
         Description: "",
         Tags: ""
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "BradH [CORP]",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
-        ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chsws01.corp.nychhc.org/BradH/",
+        Environment: environment[0],
         Description: "",
         Tags: ""
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "BradH [CORP]",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_BradH",
+        Environment: environment[3],
         Description: "",
         Tags: ""
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "Team Tasks Tracker",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_BugNet/",
+        Environment: environment[0],
         Description: "",
         Tags: ""
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "Team Tasks Tracker",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "http://ifdefined.com/doc_bug_tracker_install.html",
+        Environment: environment[3],
+        Description: "",
+        Tags: ""
+    },
+    {
+        ResourceType: resourceType[6],
+        LongName: "",
+        ShortName: "CBT",
+        ImagePath: "" ,
+        URL: "",
+        Environment: environment[5],
         Description: "",
         Tags: ""
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "WELS",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chsws01.corp.nychhc.org/WELS_INDEX/",
+        Environment: environment[0],
         Description: "",
         Tags: ""
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: " WELS Course List",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/index.html",
+        Environment: environment[3],
         Description: "",
         Tags: ""
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
-        ShortName: "",
+        ShortName: "WELS Course Listing",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/",
+        Environment: environment[3],
         Description: "",
         Tags: ""
     },
     {
-        ResourceType: resourceType[0],
+        ResourceType: resourceType[5],
         LongName: "",
-        ShortName: "",
-        ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        ShortName: "PREA - NIC LearnCenter",
+        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAU0lEQVQ4jWP8z0AaYCJRPekaWFB4/3E4kJERwfyPXymGNsb/yKqRTMJuMyMjkh9wqUaVYsIUwq+H7GAl6GmYAiZMITyqGcgNVoKWYIk4ogHtEx8A02caF5dkymYAAAAASUVORK5CYII=" ,
+        URL: "https://nic.learn.com/custom/CustomLoginPage.asp?lcid=178409&secure=true",
+        Environment: environment[0],
         Description: "",
         Tags: ""
     },
@@ -309,13 +309,16 @@ function createCardView() {
       const card = document.createElement("div");
       card.classList.add("card", "h-100");
   
+       // Convert the array of tags to a comma-separated string
+       const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : ''; 
+
       card.innerHTML = `
-        <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
+        <img src="${app.ImagePath} class="card-img-top" alt="${app.ShortName}">
         <div class="card-body">
           <h5 class="card-title"> (${app.ResourceType}) ${app.ShortName}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="${app.URL}" target="_blank" class="btn btn-primary">${app.Environment} - ${app.ShortName}</a>
-          <span class="badge badge-light">${app.Tags}</span>
+          <a href="${app.URL}" target="_blank" class="btn btn-primary">(${app.Environment}) ${app.ShortName}</a>
+          <div><span class="badge badge-light">${tags}</span></div>
         </div>
       `;
   
