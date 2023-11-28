@@ -545,51 +545,51 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "(Prod) TNFT",
+        ShortName: "TNFT",
         ImagePath: "" ,
-        URL: "",
+        URL: "https://crpvms2chsws01.corp.nychhc.org/TNFT/",
         Environment: environment[0],
         Description: "",
         Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "(Test) TNFT",
+        ShortName: "TNFT",
         ImagePath: "" ,
-        URL: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_TNFT",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) VAN [CORP]",
+        ShortName: "VAN",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/VAN/",
         Environment: environment[0],
         Description: "",
         Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
-        ImagePath: "" ,
-        URL: "",
-        Environment: environment[0],
+        LongName: "(Test) VAN [CORP]",
+        ShortName: "VAN",
+        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAe0lEQVQ4jWPUKXnAQApgIkn1MNHAAqFEVHgjuH/sZuDUev+dU4NbgIfl46UP75X4bNj/cwgyti169wbNhjd3vompcNtKMu188V9NiIXhF4O0OAsDw79Fm9/vefFPBJuT/h5/xyTz8/c3NkYOBgZhNsYfOJzEOBpxtNAAAFT/JFsnrSgIAAAAAElFTkSuQmCC" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_VAN/",
+        Environment: environment[3],
         Description: "",
         Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "Staging) VAN [CORP]",
+        ShortName: "VAN",
         ImagePath: "" ,
-        URL: "",
-        Environment: environment[0],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
-        ImagePath: "" ,
-        URL: "",
-        Environment: environment[0],
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_VAN/",
+        Environment: environment[2],
         Description: "",
         Tags: []
     },
@@ -708,8 +708,8 @@ function searchItems() {
         }
     });
 
-     // Display or hide the "not found" message based on whether items were found
-  notFoundMessage.style.display = found ? 'none' : 'block';
+   // Display or hide the "not found" message based on whether items were found and if any items are displayed
+  notFoundMessage.style.display = found || document.querySelector('.list-group .list-group-item[style="display: block;"]') ? 'none' : 'block';
 
   // Clear the search bar if the input is empty
   if (!filter.trim()) {
