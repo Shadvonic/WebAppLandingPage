@@ -435,6 +435,116 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
+        LongName: "(Staging) OHSA [CORP]",
+        ShortName: "OSHA",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_OHSA/",
+        Environment: environment[2],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) PEDTS",
+        ShortName: "PEDTS",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_PEDTS/",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) PRATA [CORP]",
+        ShortName: "PRATA",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/PRATA/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) PRATA [CORP]",
+        ShortName: "PRATA",
+        ImagePath: "https://crpvms2chspdws1.corp.nychhc.org/Test_PRATA/Account/Login" ,
+        URL: "",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) Report Request Life Cycle Management",
+        ShortName: " RRLM",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_RRLM/Login.aspx",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(PRD) Report Request Life Cycle Management (RRLM)",
+        ShortName: " RRLM",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/RRLM/Login.aspx",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) SCOL [CORP]",
+        ShortName: "SCOL",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/SCOL/Login.aspx?ReturnUrl=%2fSCOL%2fdefault.aspx",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) SCOL [CORP]",
+        ShortName: "SCOL",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_SIE",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) Sharp Index Enterprise [CORP]",
+        ShortName: "Sharp Index Enterprise",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/SIE/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) Sharp Index Enterprise [CORP]",
+        ShortName: "Sharp Index Enterprise",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_SIE",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Staging) Sharp Index Enterprise [CORP]",
+        ShortName: " Sharp Index Enterprise",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_SIE",
+        Environment: environment[2],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
         LongName: "",
         ShortName: "",
         ImagePath: "" ,
@@ -507,6 +617,8 @@ function loadThemeCSS(theme) {
 
 
 function toggleView(view) {
+  
+
     const listView = document.getElementById('listView');
     const cardView = document.getElementById('cardView');
     const listViewBtn = document.getElementById('listViewBtn');
@@ -526,6 +638,8 @@ function toggleView(view) {
     }
 
     currentView = view;
+    clearSearchBar();
+ 
 }
 
 function createListView() {
@@ -542,6 +656,7 @@ function createListView() {
   }
 
 function createCardView() {
+
     const cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
     data.forEach(app => {
@@ -557,7 +672,7 @@ function createCardView() {
       card.innerHTML = `
         <img src="${app.ImagePath} class="card-img-top" alt="${app.ShortName}">
         <div class="card-body">
-          <h5 class="card-title"> (${app.ResourceType}) ${app.ShortName}</h5>
+          <h5 class="card-title"> (${app.Environment}) ${app.ShortName}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="${app.URL}" target="_blank" class="btn btn-primary">(${app.Environment}) ${app.ShortName}</a>
           <div><span class="badge badge-light">${tags}</span></div>
@@ -579,19 +694,36 @@ function searchItems() {
     const filter = searchInput.value.toUpperCase();
     const listItems = document.querySelectorAll('.list-group .list-group-item');
     const cardTitles = document.querySelectorAll('.card-container .card .card-title');
-
+    const notFoundMessage = document.getElementById('notFoundMessage');
     
+    let found = false;
+
     listItems.forEach(item => {
         const textValue = item.textContent || item.innerText;
         if (textValue.toUpperCase().indexOf(filter) > -1) {
             item.style.display = 'block';
         } else {
             item.style.display = 'none';
+           
         }
     });
 
+     // Display or hide the "not found" message based on whether items were found
+  notFoundMessage.style.display = found ? 'none' : 'block';
+
+  // Clear the search bar if the input is empty
+  if (!filter.trim()) {
+    notFoundMessage.style.display = 'none';
+    searchInput.value = '';
+  }
 }
 
+// Function to clear the search bar when the user switches views
+function clearSearchBar() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = '';
+    searchItems(); // Optionally call searchItems to update the view based on the cleared search bar
+  }
 
 const themeRadios = document.querySelectorAll('input[name="theme"]');
 
