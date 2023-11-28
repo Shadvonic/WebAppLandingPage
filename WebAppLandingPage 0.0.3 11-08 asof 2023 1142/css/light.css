@@ -10,6 +10,7 @@ body {
 .content {
     flex: 1;
     padding: 20px;
+
 }
 
 #listViewBtn,
@@ -26,12 +27,38 @@ li {
     padding: 5px;
 }
 
-#badge-light {
-    color: black;
-}
 
 footer {
     background-color: #F8F9FA;
     padding: 8px;
+}
+
+.content, .list-group-item.list-group-item-action {
+    background-color: white;
+    color: black;
+}
+
+.card-body {
+    background-color: white;
+}
+
+.card-text, h5.card-title {
+    color: black;
+}
+
+a.btn.btn-primary{
+    background-color: #0d6efd;
+    color: white;
+   
+}
+
+#cardViewBtn, #listViewBtn 
+{
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
+div.card.h-100{
+    border-color: lightslategray;
 }
 

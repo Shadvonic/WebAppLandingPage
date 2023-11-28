@@ -1,4 +1,4 @@
-const resourceType = ["Application", "Document", "Report", "Video", "Course", "Bookmark", 'N/A', "ETC"]
+const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark", 'N/A', "ETC"]
 const environment = ["Production", "Pre-Production", "Staging", "Test", "Development", "N/A", "ETC"] 
 
 const data = [
@@ -365,6 +365,76 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
+        LongName: "(Prod) METNII [CORP]",
+        ShortName: "METNII",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/METNII",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) METNII [CORP]",
+        ShortName: "METNII",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_METNII/",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) METNII [CHS.DOHMH.NYCNET]",
+        ShortName: "METNII [CHS.DOHMH.NYCNET]",
+        ImagePath: "" ,
+        URL: "https://chsricbws01.chs.dohmh.nycnet/METNII/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "[Prod] Medical Record Requests (MRR)",
+        ShortName: "MRR",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/MRR/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "[Test] Medical Record Requests (MRR)",
+        ShortName: "MRR",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_MRR/Login.aspx",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) OHSA [CORP]",
+        ShortName: "OSHA",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/OHSA/Account/Login?ReturnUrl=%2fOHSA",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) OHSA [CORP]",
+        ShortName: "OSHA",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_OHSA/Account/Login?ReturnUrl=%2FTest_OHSA%2F",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
         LongName: "",
         ShortName: "",
         ImagePath: "" ,
@@ -373,6 +443,47 @@ const data = [
         Description: "",
         Tags: []
     },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: "",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: "",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: "",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "",
+        ShortName: "",
+        ImagePath: "" ,
+        URL: "",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+
 
 
     
