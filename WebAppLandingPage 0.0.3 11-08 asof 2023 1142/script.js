@@ -1,87 +1,87 @@
-const resourceType = ["Application", "Document", "Report", "Video", "Course", "Bookmark", 'N/A']
-const environment = ["Production", "Pre-Production", "Staging", "Test", "Development", "N/A"] 
+const resourceType = ["Application", "Document", "Report", "Video", "Course", "Bookmark", 'N/A', "ETC"]
+const environment = ["Production", "Pre-Production", "Staging", "Test", "Development", "N/A", "ETC"] 
 
 const data = [
 
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "ACL [CORP]",
+        LongName: "(Prod) ACL [CORP",
+        ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ACL/",
         Environment: environment[0],
         Description: "",
-        Tags: ["random", "abc", "tags"]
+        Tags: []
     }, 
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "ACL [CORP]",
+        LongName: "(Staging) ACL [CORP]",
+        ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL",
         Environment: environment[2],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "ACL [CORP]",
+        LongName: "(Test) ACL [CORP]",
+        ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f",
         Environment: environment[3],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
+        LongName: "[PROD] AIEHRD",
         ShortName: "AIEHRD",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
         Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "BradH [CORP]",
+        LongName: "(Prod) BradH [CORP]",
+        ShortName: "BradH",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/BradH/",
         Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "BradH [CORP]",
+        LongName: "(Test) BradH [CORP]",
+        ShortName: "BradH",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_BradH",
         Environment: environment[3],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "Team Tasks Tracker",
-        ImagePath: "" ,
+        LongName: "(App) Team Tasks Tracker",
+        ShortName: " BugTracker.NET",
+        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAChElEQVQ4jW3BQYscVRAA4KpX1a9f9/buzmSzmqzJyqKCeooRAupBRCGCQsRbiBdvkoOXxZt3ySFXL/4A8WAMaDwYERQUFQzRGFCILCbGrMRsZqdnprvfe1XlH/D7cPnzN7faXY/zlgOSBzfvGYtcES5cHoly7/d6HkxXq1hWkngl9mZ5FvwEG2itij6TiTjyVbSByliq+q42bRJJG2bcSCes+64sys03jr50RHqxISo70kh2vb36658/kAsZ6zZMB+pZSJQ4Jd5c2tg+9spBAIAeIACAAdyzk58e+uSDby/EunOmdfTcOyB0LEXoHS2i0HBreu3SHz87/8CpJ14+TKPXHnvxi98vfx//EVqqZZXNnBmxOXGWCV1JV+7fPPfLhQmtqt84++QznFxTYp+nWC7HrmIEcCZgEkmzQwFqePXRciutjDcPPpic/bZ3Y2dy19XLaI4wMYIgqgNBsBKQBF/YOHH89AlEPFCM22Hv428+2+2ia0aUoBo6B//Posym2tU83j65/erR54quVc4JlpwBmTkFMsABTMi+uv3jmY/ePXXxvbe/+3BX8/rSoTOPPx8MBtTkmQ1AkRTJi2M1ApnJ5MZ8p/Wjxd2diXaHhdao9OTRzEAYURElo5Iii+kgx8cPv3Ps9WzV1iNPbfqS0K7du9X2ffDLzjIHBUSdU+qDSu0J/Nb602+tPwuQAGABw+U7P71//UskBtHBA5MQ5VyUdDv/ff7qpSPSq8UOsMd2rHRz/87Xf13ZqzsfQgSbseBDF08f6P9Nld3HFWitiotMhhqQFTSV5vKIEVJyVmgRAXnqw9rAzTA3nmHjwcWugGoIPvF+INU8K/PKQhcFrEVrEv4Hbb1dSfkdB2IAAAAASUVORK5CYII=",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_BugNet/",
-        Environment: environment[0],
-        Description: "",
-        Tags: ""
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "Team Tasks Tracker",
-        ImagePath: "" ,
-        URL: "http://ifdefined.com/doc_bug_tracker_install.html",
         Environment: environment[3],
         Description: "",
-        Tags: ""
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[1],
+        LongName: "(Doc) Team Tasks Tracker",
+        ShortName: "BugTracker.NET Docs",
+        ImagePath: "" ,
+        URL: "http://ifdefined.com/doc_bug_tracker_install.html",
+        Environment: environment[6],
+        Description: "",
+        Tags: []
     },
     {
         ResourceType: resourceType[6],
@@ -91,158 +91,289 @@ const data = [
         URL: "",
         Environment: environment[5],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
+        LongName: "(PROD) WELS",
         ShortName: "WELS",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/WELS_INDEX/",
         Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
+        LongName: "(TEST) WELS Course List",
         ShortName: " WELS Course List",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/index.html",
         Environment: environment[3],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
+        LongName: "(TEST) WELS Course Listing",
         ShortName: "WELS Course Listing",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/",
         Environment: environment[3],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[5],
-        LongName: "",
-        ShortName: "PREA - NIC LearnCenter",
+        LongName: "PREA - NIC LearnCenter",
+        ShortName: "PREA",
         ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAU0lEQVQ4jWP8z0AaYCJRPekaWFB4/3E4kJERwfyPXymGNsb/yKqRTMJuMyMjkh9wqUaVYsIUwq+H7GAl6GmYAiZMITyqGcgNVoKWYIk4ogHtEx8A02caF5dkymYAAAAASUVORK5CYII=" ,
         URL: "https://nic.learn.com/custom/CustomLoginPage.asp?lcid=178409&secure=true",
         Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
-        ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        ResourceType: resourceType[5],
+        LongName: "NIC LearnCenter (for PREA) [New Employees]",
+        ShortName: "NIC LearnCenter",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://nic.learn.com/learncenter.asp?id=178409&sessionid=3-1EA67C36-1007-49CF-970A-36EBBD1A0F77&page=1",
+        Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
-        ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
-        ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        ResourceType: resourceType[5],
+        LongName: "PREA - NIC (For New Employees)",
+        ShortName: "PREA - (For New Employees)",
+        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAU0lEQVQ4jWP8z0AaYCJRPekaWFB4/3E4kJERwfyPXymGNsb/yKqRTMJuMyMjkh9wqUaVYsIUwq+H7GAl6GmYAiZMITyqGcgNVoKWYIk4ogHtEx8A02caF5dkymYAAAAASUVORK5CYII=" ,
+        URL: "https://nic.learn.com/learncenter.asp?sessionid=3-1EA67C36-1007-49CF-970A-36EBBD1A0F77&DCT=1&id=178409&page=85",
+        Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     }, 
     {
-        ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
-        ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        ResourceType: resourceType[3],
+        LongName: "PowerShell For Beginners Full Course | PowerShell Beginner tutorial Full Course - YouTube",
+        ShortName: "PowerShell For Beginners Full Course",
+        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABx0lEQVQ4jZ2TQWtTQRDHfzO7yUsNKSG0heJJ0YKnCvVSkHrV7+BBeu7Vk9+lH8CLN6EXk4Lo1V48lGClFBELGmmSmr73djy8fS8vll4c+LO7s7OzM///LhQmBmrg+uDtZrgIBQQAKyf/YQbiBexFt9t9niSP7ji3umrW7og0UfWL0ZaOzGYjmBxn2c/BdPpJxuNz+vDwFxxnqmaqZs4V8L5AuS6haqmqXcDpO3jCEN4YmEFmkMcxrSCSGqSh8GcGIY52Am91Ce5HJ5EYBRwbG45222HmUHVS+DX2DhASuKu3oAeolGSqCiDs7gqHh8L2thCCxOQSbxFAO9BToClzNQSJokwmsLUFgwHs78P6eklnlQho6c0axUKbTVhZgUYjHpeqCwE8kMWFxYNF9uVlGA5hbw8ODuqJzajqnPENPtfYDxU2N4OtrRVzkVDfC0V8/h2G/g98AR7ESkJF8tFRcYdzkOf15iRW6y/hlD48voCz+BbmELFrvhrG8OMjPBOAV3D7qXM791R73Var00qSJRoNTyifB5Dn+eVsNv19dTX+mmWj93n+4SWciM1LKkmqy7RoImFBqPqPfH39K7t/4A18f74nAH8Bjm35s3ZkOjEAAAAASUVORK5CYII=" ,
+        URL: "https://www.youtube.com/watch?v=UVUd9_k9C6A",
+        Environment: environment[6],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "(PROD) CCAPIC",
+        ShortName: "CCAPIC",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chsws01.corp.nychhc.org/CCAPIC/",
+        Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "Test) CCAPIC",
+        ShortName: "CCAPIC",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_CCAPIC/",
+        Environment: environment[3],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "[PROD] CESA",
+        ShortName: "CESA",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chsws01.corp.nychhc.org/EPASS_CESA/",
+        Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "[TEST] EPASS-CESA",
+        ShortName: "CESA",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_EPASS-CESA/",
+        Environment: environment[3],
         Description: "",
-        Tags: ""
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "(Prod) CIRTS [CORP]",
+        ShortName: "CIRTS",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chsws01.corp.nychhc.org/CIRTS/",
+        Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
      {
         ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
+        LongName: "(Test) CIRTS",
+        ShortName: "CIRTS",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_CIRTS/Login.aspx?ReturnUrl=%2fTest_CIRTS",
+        Environment: environment[3],
         Description: "",
-        Tags: ""
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) Close Call [CORP]",
+        ShortName: "Close Call",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/CloseCall/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) Close Call Admin [CORP]",
+        ShortName: "Close Call Admin",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/CloseCallAdmin/Login.aspx?ReturnUrl=%2fCloseCallAdmin%2fdefault.aspx",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) Discharge Services Dashboard  [CORP]",
+        ShortName: "DSD",
+        ImagePath: "" ,
+        URL: "",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) Discharge Services Dashboard [CORP]",
+        ShortName: "DSD",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_DSD/",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "[PROD]  Employee COVID-19 Tracking",
+        ShortName: "ECT",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/ECT/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "[Test] ECT - Employee COVID-19 Tracking",
+        ShortName: "ECT",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ECT/",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(PROD) Employee COVID-19 Vaccination Consent (ECVC)",
+        ShortName: "ECVC",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/ECVC/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test-CORP) eCW Templates",
+        ShortName: "CORP eCW Templates",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_eCWTemplater/Login.aspx",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test-CHS) eCW Templates",
+        ShortName: "CHS eCW Templates",
+        ImagePath: "" ,
+        URL: "https://hhcridcws20.riepf.com/Test_eCWTemplater/Login.aspx",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(PRD) EPASS",
+        ShortName: "EPASS",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/EPASS/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) PASUT [CORP]",
+        ShortName: "PASUT",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/PASUT/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) EPASS [CORP]",
+        ShortName: "EPASS",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_EPASS/",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Prod) Locker",
+        ShortName: "Locker",
+        ImagePath: "" ,
+        URL: "https://crpvms2chsws01.corp.nychhc.org/Locker/",
+        Environment: environment[0],
+        Description: "",
+        Tags: []
+    },
+    {
+        ResourceType: resourceType[0],
+        LongName: "(Test) CHS-LOCKER",
+        ShortName: "CHS-LOCKER",
+        ImagePath: "" ,
+        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_LOCKER/Account/Login?ReturnUrl=%2fTest_LOCKER%2fLOCKER",
+        Environment: environment[3],
+        Description: "",
+        Tags: []
     },
     {
         ResourceType: resourceType[0],
         LongName: "",
         ShortName: "",
         ImagePath: "" ,
-        URL: [],
-        Environment: "",
+        URL: "",
+        Environment: environment[0],
         Description: "",
-        Tags: ""
+        Tags: []
     },
-    {
-        ResourceType: resourceType[0],
-        LongName: "",
-        ShortName: "",
-        ImagePath: "" ,
-        URL: [],
-        Environment: "",
-        Description: "",
-        Tags: ""
-    },
+
 
     
 
