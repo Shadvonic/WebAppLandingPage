@@ -1,6 +1,5 @@
 const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark", 'N/A', "ETC"]
 const environment = ["Production", "Pre-Production", "Staging", "Test", "Development", "N/A", "ETC"] 
-
 const data = [
 
     {
@@ -687,8 +686,6 @@ function createCardView() {
 createListView();
 createCardView();
 
-
-
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
     const filter = searchInput.value.toUpperCase();
@@ -717,6 +714,7 @@ function searchItems() {
     searchInput.value = '';
   }
 }
+
 
 // Function to clear the search bar when the user switches views
 function clearSearchBar() {
