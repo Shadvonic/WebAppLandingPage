@@ -546,7 +546,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "(Prod) TNFT",
         ShortName: "TNFT",
-        ImagePath: "" ,
+        ImagePath: "",
         URL: "https://crpvms2chsws01.corp.nychhc.org/TNFT/",
         Environment: environment[0],
         Description: "",
@@ -591,7 +591,7 @@ const data = [
         Environment: environment[2],
         Description: "",
         Tags: []
-    },
+    }
 
 
 
@@ -669,7 +669,7 @@ function createCardView() {
        const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : ''; 
 
       card.innerHTML = `
-        <img src="${app.ImagePath} class="card-img-top" alt="${app.ShortName}">
+        <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
         <div class="card-body">
           <h5 class="card-title"> (${app.Environment}) ${app.ShortName}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
