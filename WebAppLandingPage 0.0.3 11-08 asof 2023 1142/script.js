@@ -53,16 +53,6 @@ const data = [
         Tags: []
     },
     {
-        ResourceType: resourceType[1],
-        LongName: "(Doc) Team Tasks Tracker",
-        ShortName: "BugTracker.NET Docs",
-        ImagePath: "" ,
-        URL: "http://ifdefined.com/doc_bug_tracker_install.html",
-        Environment: environment[6],
-        Description: "",
-        Tags: []
-    },
-    {
         ResourceType: resourceType[0],
         LongName: "(PROD) Web-based Empowerment and Learning System",
         ShortName: "WELS",
@@ -86,10 +76,10 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "(TEST) Web-based Empowerment and Learning System Course Listing",
         ShortName: "WELS Course Listing",
-        ImagePath:"CHS centralized learning environment for facilitating training initiatives be they web based and-or in-person.",
+        ImagePath: "",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/",
         Environment: environment[3],
-        Description: "",
+        Description: "CHS centralized learning environment for facilitating training initiatives be they web based and-or in-person.",
         Tags: ["CBT", "WELS", "Web-based", "Training", "Learning", "Learn", "PREA", "ADA", "Nunez"]
     },
     {
@@ -529,7 +519,7 @@ function createListView() {
       listItem.href = app.URL;
       listItem.target = "_blank";
       listItem.classList.add("list-group-item", "list-group-item-action");
-      listItem.textContent =  app.Environment + " - " + app.ShortName;
+      listItem.textContent =  app.LongName;
       listView.appendChild(listItem);
     });
   }
