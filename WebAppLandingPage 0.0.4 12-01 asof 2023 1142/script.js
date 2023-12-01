@@ -6,7 +6,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " [Prod] Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "https://via.placeholder.com/50x50.png?text=Spotify" ,
+        ImagePath: "https://via.placeholder.com/150" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ACL/",
         Environment: environment[0],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -16,7 +16,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " [Staging] Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "https://via.placeholder.com/50x50.png?text=Amazon" ,
+        ImagePath: "https://via.placeholder.com/150" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL",
         Environment: environment[2],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -26,7 +26,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "[Test] Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "https://via.placeholder.com/50x50.png?text=HBO+Max" ,
+        ImagePath: "https://via.placeholder.com/150" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f",
         Environment: environment[3],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -36,12 +36,13 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "[Prod] Automated Import of Employee HR Data",
         ShortName: "AIEHRD",
-        ImagePath: "ttps://via.placeholder.com/50x50.png?text=Netflix" ,
+        ImagePath: "https://via.placeholder.com/150" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
         Environment: environment[0],
         Description: "An interface that allows the user to upload spreadsheets containing HR data for the purpose of importing the data into ECT or CBT/WELS. Provides a fast, efficient alternative to laborious manual importing.",
         Tags: []
     },
+    /*
     {
         ResourceType: resourceType[0],
         LongName: "[App] Team Tasks Tracker",
@@ -52,7 +53,7 @@ const data = [
         Description: "",
         Tags: []
     },
-    /*
+    
     {
         ResourceType: resourceType[0],
         LongName: "[Prod] Web-based Empowerment and Learning System",
@@ -442,8 +443,8 @@ const data = [
         Environment: environment[2],
         Description: "CHS Electronic Survey for document and tracking demographics of individuals trained to administer Naloxone.",
         Tags: ["Prevention", "Training", "Naloxone", "Narcan", "Survey", "Visitor"]
-    } */
-
+    } 
+    */
 
 
     
@@ -504,7 +505,8 @@ function createListView() {
       listView.appendChild(listItem);
     });
   }
-/*
+
+  /*
 function createCardView() {
 
     const cardContainer = document.getElementById('cardContainer');
@@ -535,48 +537,31 @@ function createCardView() {
   }
   */
 
-  function createCardView() {
-    const iconContainer = document.getElementById('iconContainer');
-    iconContainer.innerHTML = '';
 
-    let rowCounter = 0;
-    let colCounter = 0;
+ // Function to create app cards dynamically
+ function createCardView() {
+    const appRow = document.getElementById("app-row");
 
-    data.forEach((app, index) => {
-      if (colCounter === 0) {
-        rowCounter++;
-        const row = document.createElement("div");
-        row.classList.add(`app_${rowCounter}_row`, "icons", "row");
-        iconContainer.appendChild(row);
-      }
+    apps.forEach(app => {
+      const appCard = document.createElement("div");
+      appCard.classList.add("col-md-3", "app-card");
+      appCard.dataset.toggle = "popover";
+      appCard.dataset.title = app.ShortName;
+      appCard.dataset.content = `Description: ${app.description}<br>Tags: <div><span class="badge badge-light"> ${app.tags.join(", ")}</span></div>`;
 
-      const icon = document.createElement("div");
-      icon.classList.add("app", "col");
-      icon.style.background = `url(${app.ImagePath})`;
-      icon.style.backgroundSize = 'cover';
-      icon.style.backgroundPosition = 'center';
+      appCard.innerHTML = `
+        <img src="${app.ImagePath}" class="card-img-top" alt="${app.ShortName}">
+        <h5 class="card-title">${app.ShortName}</h5>
+        <a href="${app.URL}" class="btn btn-primary"></a>
+      `;
 
-      const appName = document.createElement("div");
-      appName.classList.add("app-name");
-      appName.innerText = `${app.ShortName}`;
+      appRow.appendChild(appCard);
+    });
 
-      icon.appendChild(appName);
-      iconContainer.lastChild.appendChild(icon);
-
-      // Add Bootstrap popover to show the app information on hover
-      $(icon).popover({
-        title: `${app.ShortName}`,
-        content: `${app.Description}<br><strong>Tags:</strong><div><span class="badge badge-light">${app.Tags.join(', ')}</span></div>`,
-        html: true,
-        placement: 'top',
-        trigger: 'hover',
-      });
-
-      colCounter++;
-
-      if (colCounter === 4 || index === data.length - 1) {
-        colCounter = 0;
-      }
+    // Activate Bootstrap popovers
+    $('[data-toggle="popover"]').popover({
+      html: true,
+      trigger: 'hover',
     });
   }
 
