@@ -34,7 +34,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[Prod] AIEHRD",
+        LongName: "[Prod] Automated Import of Employee HR Data",
         ShortName: "AIEHRD",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
@@ -124,7 +124,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[Prod] Close Call [CORP]",
+        LongName: "[Prod] Close Call and Near Miss Reporting  [CORP]",
         ShortName: "Close Call",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/CloseCall/",
@@ -134,7 +134,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[Prod] Close Call Admin [CORP]",
+        LongName: "[Prod] Close Call and Near Miss Reporting Admin [CORP]",
         ShortName: "Close Call Admin",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/CloseCallAdmin/Login.aspx?ReturnUrl=%2fCloseCallAdmin%2fdefault.aspx",
@@ -174,7 +174,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[Test] ECT - Employee COVID-19 Tracking",
+        LongName: "[Test] Employee COVID-19 Tracking",
         ShortName: "ECT",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ECT/",
