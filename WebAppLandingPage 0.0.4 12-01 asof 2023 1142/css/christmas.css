@@ -1,0 +1,75 @@
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+
+}
+
+#listViewBtn,
+#cardViewBtn {
+  margin-right: 5px;
+}
+
+#card-img-top {
+    height: 300px;
+    width: 300px;
+}
+
+li {
+    padding: 5px;
+}
+
+
+footer {
+    background-color: #F8F9FA;
+    padding: 8px;
+}
+
+.content, .list-group-item.list-group-item-action  
+{
+    background-color:  #C0CFE4;
+    color: #F14E63;
+}
+
+
+
+.card-body {
+    background-color: #5A6C70;
+}
+
+.card-text, h5.card-title {
+    color: #E2E7EA;
+}
+
+
+a.btn.btn-primary{
+    background-color: #E7A374;
+    color: #E2E7EA;
+    border-color: #F14E63;
+}
+
+#cardViewBtn, #listViewBtn 
+{
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
+div.card.h-100{
+    border-color: #F14E63;
+}
+
+span.badge.badge-light{
+    margin-top: 5px;
+    text-wrap: wrap;
+    text-align: left;
+    color: white;
+}
+

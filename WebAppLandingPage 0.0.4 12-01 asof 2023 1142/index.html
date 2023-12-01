@@ -70,8 +70,8 @@
                 </li>
               </ul>
             </li>
-            <button id="listViewBtn" type="button" class="btn btn-link" onclick="toggleView('list')">List View </button>
-            <button id="cardViewBtn" type="button" class="btn btn-link" onclick="toggleView('card')">Cards View </button>
+            <button id="listViewBtn" type="button" class="btn btn-outline-secondary" onclick="toggleView('list')">List </button>
+            <button id="cardViewBtn" type="button" class="btn btn-outline-secondary" onclick="toggleView('card')">Cards </button>
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput" oninput="searchItems()">
@@ -88,9 +88,7 @@
 
 
   <div class="content">
-    <div id="cardView" class="container" style="display: block;">
-      <div class="row row-cols-1 row-cols-md-3 g-4" id="cardContainer"></div>
-    </div>
+    <div class="icons" style="display: block;"></div>
   </div>
 
 
