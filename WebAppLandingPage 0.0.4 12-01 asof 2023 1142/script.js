@@ -6,7 +6,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " [Prod] Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "" ,
+        ImagePath: "https://via.placeholder.com/50x50.png?text=Spotify" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ACL/",
         Environment: environment[0],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -16,7 +16,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " [Staging] Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "" ,
+        ImagePath: "https://via.placeholder.com/50x50.png?text=Amazon" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL",
         Environment: environment[2],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -26,7 +26,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "[Test] Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "" ,
+        ImagePath: "https://via.placeholder.com/50x50.png?text=HBO+Max" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f",
         Environment: environment[3],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -36,7 +36,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "[Prod] Automated Import of Employee HR Data",
         ShortName: "AIEHRD",
-        ImagePath: "" ,
+        ImagePath: "ttps://via.placeholder.com/50x50.png?text=Netflix" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
         Environment: environment[0],
         Description: "An interface that allows the user to upload spreadsheets containing HR data for the purpose of importing the data into ECT or CBT/WELS. Provides a fast, efficient alternative to laborious manual importing.",
@@ -52,6 +52,7 @@ const data = [
         Description: "",
         Tags: []
     },
+    /*
     {
         ResourceType: resourceType[0],
         LongName: "[Prod] Web-based Empowerment and Learning System",
@@ -441,7 +442,7 @@ const data = [
         Environment: environment[2],
         Description: "CHS Electronic Survey for document and tracking demographics of individuals trained to administer Naloxone.",
         Tags: ["Prevention", "Training", "Naloxone", "Narcan", "Survey", "Visitor"]
-    }
+    } */
 
 
 
@@ -551,13 +552,13 @@ function createCardView() {
 
       const icon = document.createElement("div");
       icon.classList.add("app", "col");
-      icon.style.background = `url(${app.IconURL})`;
+      icon.style.background = `url(${app.ImagePath})`;
       icon.style.backgroundSize = 'cover';
       icon.style.backgroundPosition = 'center';
 
       const appName = document.createElement("div");
       appName.classList.add("app-name");
-      appName.innerText = `[${app.Environment}] ${app.ShortName}`;
+      appName.innerText = `${app.ShortName}`;
 
       icon.appendChild(appName);
       iconContainer.lastChild.appendChild(icon);
