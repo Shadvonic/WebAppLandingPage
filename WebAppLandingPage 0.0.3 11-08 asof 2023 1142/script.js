@@ -204,16 +204,6 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[Test-CHS] eCW Templates",
-        ShortName: "CHS eCW Templates",
-        ImagePath: "" ,
-        URL: "https://hhcridcws20.riepf.com/Test_eCWTemplater/Login.aspx",
-        Environment: environment[3],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
         LongName: "[Prod] Enhanced Pre-Arraignment Screening Service",
         ShortName: "EPASS",
         ImagePath: "" ,
