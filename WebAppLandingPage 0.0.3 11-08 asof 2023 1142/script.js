@@ -4,7 +4,7 @@ const data = [
 
     {
         ResourceType: resourceType[0],
-        LongName: " (PROD) Assistance Center Log",
+        LongName: " [Prod] Assistance Center Log",
         ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ACL/",
@@ -14,7 +14,7 @@ const data = [
     }, 
     {
         ResourceType: resourceType[0],
-        LongName: " (Staging) Assistance Center Log",
+        LongName: " [Staging] Assistance Center Log",
         ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL",
@@ -24,7 +24,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Assistance Center Log",
+        LongName: "[Test] Assistance Center Log",
         ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f",
@@ -34,7 +34,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[PROD] AIEHRD",
+        LongName: "[Prod] AIEHRD",
         ShortName: "AIEHRD",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
@@ -44,7 +44,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(App) Team Tasks Tracker",
+        LongName: "[App] Team Tasks Tracker",
         ShortName: " BugTracker.NET",
         ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAChElEQVQ4jW3BQYscVRAA4KpX1a9f9/buzmSzmqzJyqKCeooRAupBRCGCQsRbiBdvkoOXxZt3ySFXL/4A8WAMaDwYERQUFQzRGFCILCbGrMRsZqdnprvfe1XlH/D7cPnzN7faXY/zlgOSBzfvGYtcES5cHoly7/d6HkxXq1hWkngl9mZ5FvwEG2itij6TiTjyVbSByliq+q42bRJJG2bcSCes+64sys03jr50RHqxISo70kh2vb36658/kAsZ6zZMB+pZSJQ4Jd5c2tg+9spBAIAeIACAAdyzk58e+uSDby/EunOmdfTcOyB0LEXoHS2i0HBreu3SHz87/8CpJ14+TKPXHnvxi98vfx//EVqqZZXNnBmxOXGWCV1JV+7fPPfLhQmtqt84++QznFxTYp+nWC7HrmIEcCZgEkmzQwFqePXRciutjDcPPpic/bZ3Y2dy19XLaI4wMYIgqgNBsBKQBF/YOHH89AlEPFCM22Hv428+2+2ia0aUoBo6B//Posym2tU83j65/erR54quVc4JlpwBmTkFMsABTMi+uv3jmY/ePXXxvbe/+3BX8/rSoTOPPx8MBtTkmQ1AkRTJi2M1ApnJ5MZ8p/Wjxd2diXaHhdao9OTRzEAYURElo5Iii+kgx8cPv3Ps9WzV1iNPbfqS0K7du9X2ffDLzjIHBUSdU+qDSu0J/Nb602+tPwuQAGABw+U7P71//UskBtHBA5MQ5VyUdDv/ff7qpSPSq8UOsMd2rHRz/87Xf13ZqzsfQgSbseBDF08f6P9Nld3HFWitiotMhhqQFTSV5vKIEVJyVmgRAXnqw9rAzTA3nmHjwcWugGoIPvF+INU8K/PKQhcFrEVrEv4Hbb1dSfkdB2IAAAAASUVORK5CYII=",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_BugNet/",
@@ -54,7 +54,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(PROD) Web-based Empowerment and Learning System",
+        LongName: "[Prod] Web-based Empowerment and Learning System",
         ShortName: "WELS",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/WELS_INDEX/",
@@ -64,7 +64,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(TEST) Web-based Empowerment and Learning System Course List",
+        LongName: "[Test] Web-based Empowerment and Learning System Course List",
         ShortName: " WELS Course List",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/index.html",
@@ -74,7 +74,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(TEST) Web-based Empowerment and Learning System Course Listing",
+        LongName: "[Test] Web-based Empowerment and Learning System Course Listing",
         ShortName: "WELS Course Listing",
         ImagePath: "",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/",
@@ -84,7 +84,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(PROD) Clinical Court Advocacy for Persons In Custody",
+        LongName: "[Prod] Clinical Court Advocacy for Persons In Custody",
         ShortName: "CCAPIC",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/CCAPIC/",
@@ -94,7 +94,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Clinical Court Advocacy for Persons In Custody",
+        LongName: "[Test] Clinical Court Advocacy for Persons In Custody",
         ShortName: "CCAPIC",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_CCAPIC/",
@@ -104,7 +104,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[PROD] COVID-19 Electronic Survey Application",
+        LongName: "[Prod] COVID-19 Electronic Survey Application",
         ShortName: "CESA",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/EPASS_CESA/",
@@ -114,7 +114,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[TEST] COVID-19 Electronic Survey Application",
+        LongName: "[Test] COVID-19 Electronic Survey Application",
         ShortName: "CESA",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_EPASS-CESA/",
@@ -124,7 +124,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Close Call [CORP]",
+        LongName: "[Prod] Close Call [CORP]",
         ShortName: "Close Call",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/CloseCall/",
@@ -134,7 +134,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Close Call Admin [CORP]",
+        LongName: "[Prod] Close Call Admin [CORP]",
         ShortName: "Close Call Admin",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/CloseCallAdmin/Login.aspx?ReturnUrl=%2fCloseCallAdmin%2fdefault.aspx",
@@ -144,7 +144,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Discharge Services Dashboard  [CORP]",
+        LongName: "[Prod] Discharge Services Dashboard  [CORP]",
         ShortName: "DSD",
         ImagePath: "" ,
         URL: "",
@@ -154,7 +154,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Discharge Services Dashboard [CORP]",
+        LongName: "[Test] Discharge Services Dashboard [CORP]",
         ShortName: "DSD",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_DSD/",
@@ -164,7 +164,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[PROD]  Employee COVID-19 Tracking",
+        LongName: "[Prod]  Employee COVID-19 Tracking",
         ShortName: "ECT",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ECT/",
@@ -184,7 +184,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(PROD) Employee COVID-19 Vaccination Consent (ECVC)",
+        LongName: "[Prod] Employee COVID-19 Vaccination Consent (ECVC)",
         ShortName: "ECVC",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ECVC/",
@@ -194,7 +194,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test-CORP) eCW Templates",
+        LongName: "[Test-CORP] eCW Templates",
         ShortName: "CORP eCW Templates",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_eCWTemplater/Login.aspx",
@@ -204,7 +204,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test-CHS) eCW Templates",
+        LongName: "[Test-CHS] eCW Templates",
         ShortName: "CHS eCW Templates",
         ImagePath: "" ,
         URL: "https://hhcridcws20.riepf.com/Test_eCWTemplater/Login.aspx",
@@ -214,7 +214,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(PRD) Enhanced Pre-Arraignment Screening Service",
+        LongName: "[Prod] Enhanced Pre-Arraignment Screening Service",
         ShortName: "EPASS",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/EPASS/",
@@ -224,7 +224,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Enhanced Pre-Arraignment Screening Service [CORP]",
+        LongName: "[Test] Enhanced Pre-Arraignment Screening Service [CORP]",
         ShortName: "EPASS",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_EPASS/",
@@ -234,7 +234,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Locker",
+        LongName: "[Prod] Locker",
         ShortName: "Locker",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/Locker/",
@@ -244,7 +244,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) CHS-LOCKER",
+        LongName: "[Test] CHS-LOCKER",
         ShortName: "CHS-LOCKER",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_LOCKER/Account/Login?ReturnUrl=%2fTest_LOCKER%2fLOCKER",
@@ -254,7 +254,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Medical Evaluation & Treatment for Non-Inmate Incidents [CORP]",
+        LongName: "[Prod] Medical Evaluation & Treatment for Non-Inmate Incidents [CORP]",
         ShortName: "METNII",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/METNII",
@@ -264,7 +264,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Medical Evaluation & Treatment for Non-Inmate Incidents [CORP]",
+        LongName: "[Test] Medical Evaluation & Treatment for Non-Inmate Incidents [CORP]",
         ShortName: "METNII",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_METNII/",
@@ -274,7 +274,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Medical Evaluation & Treatment for Non-Inmate Incidents [CHS.DOHMH.NYCNET]",
+        LongName: "[Prod] Medical Evaluation & Treatment for Non-Inmate Incidents [CHS.DOHMH.NYCNET]",
         ShortName: "METNII",
         ImagePath: "" ,
         URL: "https://chsricbws01.chs.dohmh.nycnet/METNII/",
@@ -304,7 +304,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Occupational Health Service Application [CORP]",
+        LongName: "[Prod] Occupational Health Service Application [CORP]",
         ShortName: "OSHA",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/OHSA/Account/Login?ReturnUrl=%2fOHSA",
@@ -314,7 +314,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Occupational Health Service Application [CORP]",
+        LongName: "[Test] Occupational Health Service Application [CORP]",
         ShortName: "OSHA",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_OHSA/Account/Login?ReturnUrl=%2FTest_OHSA%2F",
@@ -324,7 +324,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Staging) Occupational Health Service Application [CORP]",
+        LongName: "[Staging] Occupational Health Service Application [CORP]",
         ShortName: "OSHA",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_OHSA/",
@@ -334,7 +334,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Paperless Employee Document Tracking System",
+        LongName: "[Test] Paperless Employee Document Tracking System",
         ShortName: "PEDTS",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_PEDTS/",
@@ -344,7 +344,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Report Request Life Cycle Management",
+        LongName: "[Test] Report Request Life Cycle Management",
         ShortName: " RRLM",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_RRLM/Login.aspx",
@@ -354,7 +354,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(PRD) Report Request Life Cycle Management (RRLM)",
+        LongName: "[Prod] Report Request Life Cycle Management (RRLM)",
         ShortName: " RRLM",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/RRLM/Login.aspx",
@@ -364,7 +364,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Staff Call-Out Log [CORP]",
+        LongName: "[Prod] Staff Call-Out Log [CORP]",
         ShortName: "SCOL",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/SCOL/Login.aspx?ReturnUrl=%2fSCOL%2fdefault.aspx",
@@ -374,7 +374,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Staff Call-Out Log [CORP]",
+        LongName: "[Test] Staff Call-Out Log [CORP]",
         ShortName: "SCOL",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_SIE",
@@ -384,7 +384,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Sharp Index Enterprise [CORP]",
+        LongName: "[Prod] Sharp Index Enterprise [CORP]",
         ShortName: "SIE",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/SIE/",
@@ -394,7 +394,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Sharp Index Enterprise [CORP]",
+        LongName: "[Test] Sharp Index Enterprise [CORP]",
         ShortName: "SIE",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_SIE",
@@ -404,7 +404,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Staging) Sharp Index Enterprise [CORP]",
+        LongName: "[Staging] Sharp Index Enterprise [CORP]",
         ShortName: " SIE",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_SIE",
@@ -414,7 +414,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Transfer Notification Form Tracking",
+        LongName: "[Prod] Transfer Notification Form Tracking",
         ShortName: "TNFT",
         ImagePath: "",
         URL: "https://crpvms2chsws01.corp.nychhc.org/TNFT/",
@@ -424,7 +424,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Transfer Notification Form Tracking",
+        LongName: "[Test] Transfer Notification Form Tracking",
         ShortName: "TNFT",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_TNFT",
@@ -434,7 +434,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) Visitor Application for Naloxone [CORP]",
+        LongName: "[Prod] Visitor Application for Naloxone [CORP]",
         ShortName: "VAN",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/VAN/",
@@ -444,7 +444,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) Visitor Application for Naloxone [CORP]",
+        LongName: "[Test] Visitor Application for Naloxone [CORP]",
         ShortName: "VAN",
         ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAe0lEQVQ4jWPUKXnAQApgIkn1MNHAAqFEVHgjuH/sZuDUev+dU4NbgIfl46UP75X4bNj/cwgyti169wbNhjd3vompcNtKMu188V9NiIXhF4O0OAsDw79Fm9/vefFPBJuT/h5/xyTz8/c3NkYOBgZhNsYfOJzEOBpxtNAAAFT/JFsnrSgIAAAAAElFTkSuQmCC" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_VAN/",
@@ -454,7 +454,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Staging) Visitor Application for Naloxone [CORP]",
+        LongName: "[Staging] Visitor Application for Naloxone [CORP]",
         ShortName: "VAN",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_VAN/",
@@ -541,9 +541,9 @@ function createCardView() {
       card.innerHTML = `
         <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
         <div class="card-body">
-          <h5 class="card-title"> (${app.Environment}) ${app.ShortName}</h5>
+          <h5 class="card-title"> [${app.Environment}] ${app.ShortName}</h5>
           <p class="card-text">${app.Description}</p>
-          <a href="${app.URL}" target="_blank" class="btn btn-primary">(${app.Environment}) ${app.ShortName}</a>
+          <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
           <div><span class="badge badge-light">${tags}</span></div>
         </div>
       `;
