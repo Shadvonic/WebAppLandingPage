@@ -64,4 +64,9 @@ div.card.h-100{
     border-color: #000;
 }
 
-
+span.badge.badge-light{
+    margin-top: 5px;
+    text-wrap: wrap;
+    text-align: left;
+    color: #85e21f;
+}

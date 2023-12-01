@@ -1,36 +1,36 @@
-const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark", 'N/A', "ETC"]
-const environment = ["Production", "Pre-Production", "Staging", "Test", "Development", "N/A", "ETC"] 
+const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark"] // 0-5
+const environment = ["Production", "Pre-Production", "Staging", "Test", "Development"] // 0-4
 const data = [
 
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) ACL [CORP",
+        LongName: " (PROD) Assistance Center Log",
         ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ACL/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
+        Tags: ["ACL", "Assistance", "Services", "Assistance Center"]
     }, 
     {
         ResourceType: resourceType[0],
-        LongName: "(Staging) ACL [CORP]",
+        LongName: " (Staging) Assistance Center Log",
         ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL",
         Environment: environment[2],
-        Description: "",
-        Tags: []
+        Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
+        Tags: ["ACL", "Assistance", "Services", "Assistance Center"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) ACL [CORP]",
+        LongName: "(Test) Assistance Center Log",
         ShortName: "ACL",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
+        Tags: ["ACL", "Assistance", "Services", "Assistance Center"]
     },
     {
         ResourceType: resourceType[0],
@@ -39,26 +39,6 @@ const data = [
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "(Prod) BradH [CORP]",
-        ShortName: "BradH",
-        ImagePath: "" ,
-        URL: "https://crpvms2chsws01.corp.nychhc.org/BradH/",
-        Environment: environment[0],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "(Test) BradH [CORP]",
-        ShortName: "BradH",
-        ImagePath: "" ,
-        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_BradH",
-        Environment: environment[3],
         Description: "",
         Tags: []
     },
@@ -83,144 +63,74 @@ const data = [
         Tags: []
     },
     {
-        ResourceType: resourceType[6],
-        LongName: "",
-        ShortName: "CBT",
-        ImagePath: "" ,
-        URL: "",
-        Environment: environment[5],
-        Description: "",
-        Tags: []
-    },
-    {
         ResourceType: resourceType[0],
-        LongName: "(PROD) WELS",
+        LongName: "(PROD) Web-based Empowerment and Learning System",
         ShortName: "WELS",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/WELS_INDEX/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "CHS centralized learning environment for facilitating training initiatives be they web based and-or in-person.",
+        Tags: ["CBT", "WELS", "Web-based", "Training", "Learning", "Learn", "PREA", "ADA", "Nunez"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(TEST) WELS Course List",
+        LongName: "(TEST) Web-based Empowerment and Learning System Course List",
         ShortName: " WELS Course List",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/index.html",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "CHS centralized learning environment for facilitating training initiatives be they web based and-or in-person.",
+        Tags: ["CBT", "WELS", "Web-based", "Training", "Learning", "Learn", "PREA", "ADA", "Nunez"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(TEST) WELS Course Listing",
+        LongName: "(TEST) Web-based Empowerment and Learning System Course Listing",
         ShortName: "WELS Course Listing",
-        ImagePath: "" ,
+        ImagePath:"CHS centralized learning environment for facilitating training initiatives be they web based and-or in-person.",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/",
         Environment: environment[3],
         Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[5],
-        LongName: "PREA - NIC LearnCenter",
-        ShortName: "PREA",
-        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAU0lEQVQ4jWP8z0AaYCJRPekaWFB4/3E4kJERwfyPXymGNsb/yKqRTMJuMyMjkh9wqUaVYsIUwq+H7GAl6GmYAiZMITyqGcgNVoKWYIk4ogHtEx8A02caF5dkymYAAAAASUVORK5CYII=" ,
-        URL: "https://nic.learn.com/custom/CustomLoginPage.asp?lcid=178409&secure=true",
-        Environment: environment[0],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[5],
-        LongName: "NIC LearnCenter (for PREA) [New Employees]",
-        ShortName: "NIC LearnCenter",
-        ImagePath: "" ,
-        URL: "https://nic.learn.com/learncenter.asp?id=178409&sessionid=3-1EA67C36-1007-49CF-970A-36EBBD1A0F77&page=1",
-        Environment: environment[0],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[5],
-        LongName: "PREA - NIC (For New Employees)",
-        ShortName: "PREA - (For New Employees)",
-        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAU0lEQVQ4jWP8z0AaYCJRPekaWFB4/3E4kJERwfyPXymGNsb/yKqRTMJuMyMjkh9wqUaVYsIUwq+H7GAl6GmYAiZMITyqGcgNVoKWYIk4ogHtEx8A02caF5dkymYAAAAASUVORK5CYII=" ,
-        URL: "https://nic.learn.com/learncenter.asp?sessionid=3-1EA67C36-1007-49CF-970A-36EBBD1A0F77&DCT=1&id=178409&page=85",
-        Environment: environment[0],
-        Description: "",
-        Tags: []
-    }, 
-    {
-        ResourceType: resourceType[3],
-        LongName: "PowerShell For Beginners Full Course | PowerShell Beginner tutorial Full Course - YouTube",
-        ShortName: "PowerShell For Beginners Full Course",
-        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABx0lEQVQ4jZ2TQWtTQRDHfzO7yUsNKSG0heJJ0YKnCvVSkHrV7+BBeu7Vk9+lH8CLN6EXk4Lo1V48lGClFBELGmmSmr73djy8fS8vll4c+LO7s7OzM///LhQmBmrg+uDtZrgIBQQAKyf/YQbiBexFt9t9niSP7ji3umrW7og0UfWL0ZaOzGYjmBxn2c/BdPpJxuNz+vDwFxxnqmaqZs4V8L5AuS6haqmqXcDpO3jCEN4YmEFmkMcxrSCSGqSh8GcGIY52Am91Ce5HJ5EYBRwbG45222HmUHVS+DX2DhASuKu3oAeolGSqCiDs7gqHh8L2thCCxOQSbxFAO9BToClzNQSJokwmsLUFgwHs78P6eklnlQho6c0axUKbTVhZgUYjHpeqCwE8kMWFxYNF9uVlGA5hbw8ODuqJzajqnPENPtfYDxU2N4OtrRVzkVDfC0V8/h2G/g98AR7ESkJF8tFRcYdzkOf15iRW6y/hlD48voCz+BbmELFrvhrG8OMjPBOAV3D7qXM791R73Var00qSJRoNTyifB5Dn+eVsNv19dTX+mmWj93n+4SWciM1LKkmqy7RoImFBqPqPfH39K7t/4A18f74nAH8Bjm35s3ZkOjEAAAAASUVORK5CYII=" ,
-        URL: "https://www.youtube.com/watch?v=UVUd9_k9C6A",
-        Environment: environment[6],
-        Description: "",
-        Tags: []
+        Tags: ["CBT", "WELS", "Web-based", "Training", "Learning", "Learn", "PREA", "ADA", "Nunez"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(PROD) CCAPIC",
+        LongName: "(PROD) Clinical Court Advocacy for Persons In Custody",
         ShortName: "CCAPIC",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/CCAPIC/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Central notes for CCA team to assist with tracking cases for advocacy for persons in custody.",
+        Tags: ["CCA", "Court", "Advocacy", "Patients", "Advocacy Case", "CCA Intake"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "Test) CCAPIC",
+        LongName: "(Test) Clinical Court Advocacy for Persons In Custody",
         ShortName: "CCAPIC",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_CCAPIC/",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Central notes for CCA team to assist with tracking cases for advocacy for persons in custody.",
+        Tags:["CCA", "Court", "Advocacy", "Patients", "Advocacy Case", "CCA Intake"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[PROD] CESA",
+        LongName: "[PROD] COVID-19 Electronic Survey Application",
         ShortName: "CESA",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/EPASS_CESA/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "An EPASS module historically used for capturing COVID-19 screenings survey data from arrested individuals. It is now only used to view historical records as the screening survey has been integrated into EPASS Level 1 form.",
+        Tags:  ["CESA", "COVID", "Screening", "EPASS", "Nursing Department", "Survey"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "[TEST] EPASS-CESA",
+        LongName: "[TEST] COVID-19 Electronic Survey Application",
         ShortName: "CESA",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_EPASS-CESA/",
         Environment: environment[3],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "(Prod) CIRTS [CORP]",
-        ShortName: "CIRTS",
-        ImagePath: "" ,
-        URL: "https://crpvms2chsws01.corp.nychhc.org/CIRTS/",
-        Environment: environment[0],
-        Description: "",
-        Tags: []
-    },
-     {
-        ResourceType: resourceType[0],
-        LongName: "(Test) CIRTS",
-        ShortName: "CIRTS",
-        ImagePath: "" ,
-        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_CIRTS/Login.aspx?ReturnUrl=%2fTest_CIRTS",
-        Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "An EPASS module historically used for capturing COVID-19 screenings survey data from arrested individuals. It is now only used to view historical records as the screening survey has been integrated into EPASS Level 1 form.",
+        Tags: ["CESA", "COVID", "Screening", "EPASS", "Nursing Department", "Survey"]
     },
     {
         ResourceType: resourceType[0],
@@ -314,33 +224,23 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(PRD) EPASS",
+        LongName: "(PRD) Enhanced Pre-Arraignment Screening Service",
         ShortName: "EPASS",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/EPASS/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Application for Pre-Arraignment screening for medical, mental health, and social work diversion in NYPD arrest facilities.",
+        Tags: ["Pre-Screening", "Pre-Arraignment", "Arrest", "Screening", "Level 1", "Level 2", "Diversion", "Nursing Department", "PASU", "PASUT", "EPASS"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) PASUT [CORP]",
-        ShortName: "PASUT",
-        ImagePath: "" ,
-        URL: "https://crpvms2chsws01.corp.nychhc.org/PASUT/",
-        Environment: environment[0],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "(Test) EPASS [CORP]",
+        LongName: "(Test) Enhanced Pre-Arraignment Screening Service [CORP]",
         ShortName: "EPASS",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_EPASS/",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Application for Pre-Arraignment screening for medical, mental health, and social work diversion in NYPD arrest facilities.",
+        Tags: ["Pre-Screening", "Pre-Arraignment", "Arrest", "Screening", "Level 1", "Level 2", "Diversion", "Nursing Department", "PASU", "PASUT", "EPASS"]
     },
     {
         ResourceType: resourceType[0],
@@ -364,33 +264,33 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) METNII [CORP]",
+        LongName: "(Prod) Medical Evaluation & Treatment for Non-Inmate Incidents [CORP]",
         ShortName: "METNII",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/METNII",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Facilities an environment for CHS medical professional staff to record or document activities, encounters, and incidents that require medical intervention for persons other than persons in custody at all CHS facilities.",
+        Tags: ["METNII", "Employee", "Medical", "Incident", "Treatment", "DOC"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) METNII [CORP]",
+        LongName: "(Test) Medical Evaluation & Treatment for Non-Inmate Incidents [CORP]",
         ShortName: "METNII",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_METNII/",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Facilities an environment for CHS medical professional staff to record or document activities, encounters, and incidents that require medical intervention for persons other than persons in custody at all CHS facilities.",
+        Tags: ["METNII", "Employee", "Medical", "Incident", "Treatment", "DOC"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) METNII [CHS.DOHMH.NYCNET]",
-        ShortName: "METNII [CHS.DOHMH.NYCNET]",
+        LongName: "(Prod) Medical Evaluation & Treatment for Non-Inmate Incidents [CHS.DOHMH.NYCNET]",
+        ShortName: "METNII",
         ImagePath: "" ,
         URL: "https://chsricbws01.chs.dohmh.nycnet/METNII/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Facilities an environment for CHS medical professional staff to record or document activities, encounters, and incidents that require medical intervention for persons other than persons in custody at all CHS facilities.",
+        Tags: ["METNII", "Employee", "Medical", "Incident", "Treatment", "DOC"]
     },
     {
         ResourceType: resourceType[0],
@@ -414,63 +314,43 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) OHSA [CORP]",
+        LongName: "(Prod) Occupational Health Service Application [CORP]",
         ShortName: "OSHA",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/OHSA/Account/Login?ReturnUrl=%2fOHSA",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Application where OHS records and tracks employee Operational Health documents in regard to OHS business practices.",
+        Tags: ["OHS", "Annual", "Health Assessment", "Employee Health", "HR"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) OHSA [CORP]",
+        LongName: "(Test) Occupational Health Service Application [CORP]",
         ShortName: "OSHA",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_OHSA/Account/Login?ReturnUrl=%2FTest_OHSA%2F",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Application where OHS records and tracks employee Operational Health documents in regard to OHS business practices.",
+        Tags: ["OHS", "Annual", "Health Assessment", "Employee Health", "HR"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Staging) OHSA [CORP]",
+        LongName: "(Staging) Occupational Health Service Application [CORP]",
         ShortName: "OSHA",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_OHSA/",
         Environment: environment[2],
-        Description: "",
-        Tags: []
+        Description: "Application where OHS records and tracks employee Operational Health documents in regard to OHS business practices.",
+        Tags: ["OHS", "Annual", "Health Assessment", "Employee Health", "HR"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) PEDTS",
+        LongName: "(Test) Paperless Employee Document Tracking System",
         ShortName: "PEDTS",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_PEDTS/",
         Environment: environment[3],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "(Prod) PRATA [CORP]",
-        ShortName: "PRATA",
-        ImagePath: "" ,
-        URL: "https://crpvms2chsws01.corp.nychhc.org/PRATA/",
-        Environment: environment[0],
-        Description: "",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "(Test) PRATA [CORP]",
-        ShortName: "PRATA",
-        ImagePath: "https://crpvms2chspdws1.corp.nychhc.org/Test_PRATA/Account/Login" ,
-        URL: "",
-        Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "This application acts as a broker between Administrative entries to collect electronic documents from Employees across various business processes.",
+        Tags: ["PEDTS", "Paperless", "Documents", "Tracking", "Upload", "Employee", "HR", "OHS"]
     },
     {
         ResourceType: resourceType[0],
@@ -494,103 +374,103 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) SCOL [CORP]",
+        LongName: "(Prod) Staff Call-Out Log [CORP]",
         ShortName: "SCOL",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/SCOL/Login.aspx?ReturnUrl=%2fSCOL%2fdefault.aspx",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Tracking system that logs Employee callouts for professionals that are generally under specific scheduling restrictions.",
+        Tags: ["Operations", "Tracking", "Callout", "Employee", "Staff", "Log"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) SCOL [CORP]",
+        LongName: "(Test) Staff Call-Out Log [CORP]",
         ShortName: "SCOL",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_SIE",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Tracking system that logs Employee callouts for professionals that are generally under specific scheduling restrictions.",
+        Tags: ["Operations", "Tracking", "Callout", "Employee", "Staff", "Log"]
     },
     {
         ResourceType: resourceType[0],
         LongName: "(Prod) Sharp Index Enterprise [CORP]",
-        ShortName: "Sharp Index Enterprise",
+        ShortName: "SIE",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/SIE/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Tracking system for Sharps used in facilities.  Also, tracks what patients a specific sharp was used to administer.",
+        Tags: ["SIE", "Sharp", "Sharps", "Needles", "Tracking"]
     },
     {
         ResourceType: resourceType[0],
         LongName: "(Test) Sharp Index Enterprise [CORP]",
-        ShortName: "Sharp Index Enterprise",
+        ShortName: "SIE",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_SIE",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Tracking system for Sharps used in facilities.  Also, tracks what patients a specific sharp was used to administer.",
+        Tags: ["SIE", "Sharp", "Sharps", "Needles", "Tracking"]
     },
     {
         ResourceType: resourceType[0],
         LongName: "(Staging) Sharp Index Enterprise [CORP]",
-        ShortName: " Sharp Index Enterprise",
+        ShortName: " SIE",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_SIE",
         Environment: environment[2],
-        Description: "",
-        Tags: []
+        Description: "Tracking system for Sharps used in facilities.  Also, tracks what patients a specific sharp was used to administer.",
+        Tags: ["SIE", "Sharp", "Sharps", "Needles", "Tracking"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) TNFT",
+        LongName: "(Prod) Transfer Notification Form Tracking",
         ShortName: "TNFT",
         ImagePath: "",
         URL: "https://crpvms2chsws01.corp.nychhc.org/TNFT/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Assists with organizing, tracking, and addressing patient transfers for Operations.",
+        Tags: ["TNF", "Operations", "Operations", "Patient Transfer", "Track", "Transfer Mental Health"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) TNFT",
+        LongName: "(Test) Transfer Notification Form Tracking",
         ShortName: "TNFT",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_TNFT",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Assists with organizing, tracking, and addressing patient transfers for Operations.",
+        Tags: ["TNF", "Operations", "Operations", "Patient Transfer", "Track", "Transfer Mental Health"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Prod) VAN [CORP]",
+        LongName: "(Prod) Visitor Application for Naloxone [CORP]",
         ShortName: "VAN",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/VAN/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "CHS Electronic Survey for document and tracking demographics of individuals trained to administer Naloxone.",
+        Tags: ["Prevention", "Training", "Naloxone", "Narcan", "Survey", "Visitor"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "(Test) VAN [CORP]",
+        LongName: "(Test) Visitor Application for Naloxone [CORP]",
         ShortName: "VAN",
         ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAe0lEQVQ4jWPUKXnAQApgIkn1MNHAAqFEVHgjuH/sZuDUev+dU4NbgIfl46UP75X4bNj/cwgyti169wbNhjd3vompcNtKMu188V9NiIXhF4O0OAsDw79Fm9/vefFPBJuT/h5/xyTz8/c3NkYOBgZhNsYfOJzEOBpxtNAAAFT/JFsnrSgIAAAAAElFTkSuQmCC" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_VAN/",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "CHS Electronic Survey for document and tracking demographics of individuals trained to administer Naloxone.",
+        Tags: ["Prevention", "Training", "Naloxone", "Narcan", "Survey", "Visitor"]
     },
     {
         ResourceType: resourceType[0],
-        LongName: "Staging) VAN [CORP]",
+        LongName: "(Staging) Visitor Application for Naloxone [CORP]",
         ShortName: "VAN",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_VAN/",
         Environment: environment[2],
-        Description: "",
-        Tags: []
+        Description: "CHS Electronic Survey for document and tracking demographics of individuals trained to administer Naloxone.",
+        Tags: ["Prevention", "Training", "Naloxone", "Narcan", "Survey", "Visitor"]
     }
 
 
@@ -672,7 +552,7 @@ function createCardView() {
         <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
         <div class="card-body">
           <h5 class="card-title"> (${app.Environment}) ${app.ShortName}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">${app.Description}</p>
           <a href="${app.URL}" target="_blank" class="btn btn-primary">(${app.Environment}) ${app.ShortName}</a>
           <div><span class="badge badge-light">${tags}</span></div>
         </div>

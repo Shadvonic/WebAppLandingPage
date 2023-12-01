@@ -64,3 +64,10 @@ div.card.h-100{
 }
 
 
+span.badge.badge-light{
+    margin-top: 5px;
+    text-wrap: wrap;
+    text-align: left;
+    color: white;
+  
+}

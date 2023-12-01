@@ -65,3 +65,9 @@ footer {
     background-color: #F8F9FA;
     padding: 8px;
 }
+span.badge.badge-light{
+    margin-top: 5px;
+    text-wrap: wrap;
+    text-align: left;
+    color: white;
+}

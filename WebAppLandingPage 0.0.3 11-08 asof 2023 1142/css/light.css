@@ -63,3 +63,10 @@ div.card.h-100{
     border-color: lightgray;
 }
 
+span.badge.badge-light{
+    margin-top: 5px;
+    text-wrap: wrap;
+    text-align: left;
+    color: black;
+  
+}
