@@ -39,7 +39,7 @@ const data = [
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
         Environment: environment[0],
-        Description: "",
+        Description: "An interface that allows the user to upload spreadsheets containing HR data for the purpose of importing the data into ECT or CBT/WELS. Provides a fast, efficient alternative to laborious manual importing.",
         Tags: []
     },
     {
@@ -169,7 +169,7 @@ const data = [
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ECT/",
         Environment: environment[0],
-        Description: "",
+        Description:"Provides a mechanism for tracking cases, tests, and vaccines and their associated appointments",
         Tags: []
     },
     {
@@ -179,7 +179,7 @@ const data = [
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ECT/",
         Environment: environment[3],
-        Description: "",
+        Description: "Provides a mechanism for tracking cases, tests, and vaccines and their associated appointments",
         Tags: []
     },
     {
@@ -189,7 +189,7 @@ const data = [
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ECVC/",
         Environment: environment[0],
-        Description: "",
+        Description: "Allows employees to view and submit consent forms for C19 vaccination.",
         Tags: []
     },
     {
@@ -295,7 +295,7 @@ const data = [
     {
         ResourceType: resourceType[0],
         LongName: "[Prod] Occupational Health Service Application [CORP]",
-        ShortName: "OSHA",
+        ShortName: "OHSA",
         ImagePath: "" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/OHSA/Account/Login?ReturnUrl=%2fOHSA",
         Environment: environment[0],
@@ -305,7 +305,7 @@ const data = [
     {
         ResourceType: resourceType[0],
         LongName: "[Test] Occupational Health Service Application [CORP]",
-        ShortName: "OSHA",
+        ShortName: "OHSA",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_OHSA/Account/Login?ReturnUrl=%2FTest_OHSA%2F",
         Environment: environment[3],
@@ -315,7 +315,7 @@ const data = [
     {
         ResourceType: resourceType[0],
         LongName: "[Staging] Occupational Health Service Application [CORP]",
-        ShortName: "OSHA",
+        ShortName: "OHSA",
         ImagePath: "" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_OHSA/",
         Environment: environment[2],
