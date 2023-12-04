@@ -34,27 +34,7 @@ const data = [
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
         Tags: ["ACL", "Assistance", "Services", "Assistance Center"]
     },
-    {
-        ResourceType: resourceType[0],
-        LongName: "[Prod] Automated Import of Employee HR Data",
-        ShortName: "AIEHRD",
-        ImagePath: "https://via.placeholder.com/150",
-        URL: "https://crpvms2chsws01.corp.nychhc.org/AIEHRD/",
-        Environment: environment[0],
-        Description: "An interface that allows the user to upload spreadsheets containing HR data for the purpose of importing the data into ECT or CBT/WELS. Provides a fast, efficient alternative to laborious manual importing.",
-        Tags: []
-    },
-    {
-        ResourceType: resourceType[0],
-        LongName: "[App] Team Tasks Tracker",
-        ShortName: " BugTracker.NET",
-        ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAChElEQVQ4jW3BQYscVRAA4KpX1a9f9/buzmSzmqzJyqKCeooRAupBRCGCQsRbiBdvkoOXxZt3ySFXL/4A8WAMaDwYERQUFQzRGFCILCbGrMRsZqdnprvfe1XlH/D7cPnzN7faXY/zlgOSBzfvGYtcES5cHoly7/d6HkxXq1hWkngl9mZ5FvwEG2itij6TiTjyVbSByliq+q42bRJJG2bcSCes+64sys03jr50RHqxISo70kh2vb36658/kAsZ6zZMB+pZSJQ4Jd5c2tg+9spBAIAeIACAAdyzk58e+uSDby/EunOmdfTcOyB0LEXoHS2i0HBreu3SHz87/8CpJ14+TKPXHnvxi98vfx//EVqqZZXNnBmxOXGWCV1JV+7fPPfLhQmtqt84++QznFxTYp+nWC7HrmIEcCZgEkmzQwFqePXRciutjDcPPpic/bZ3Y2dy19XLaI4wMYIgqgNBsBKQBF/YOHH89AlEPFCM22Hv428+2+2ia0aUoBo6B//Posym2tU83j65/erR54quVc4JlpwBmTkFMsABTMi+uv3jmY/ePXXxvbe/+3BX8/rSoTOPPx8MBtTkmQ1AkRTJi2M1ApnJ5MZ8p/Wjxd2diXaHhdao9OTRzEAYURElo5Iii+kgx8cPv3Ps9WzV1iNPbfqS0K7du9X2ffDLzjIHBUSdU+qDSu0J/Nb602+tPwuQAGABw+U7P71//UskBtHBA5MQ5VyUdDv/ff7qpSPSq8UOsMd2rHRz/87Xf13ZqzsfQgSbseBDF08f6P9Nld3HFWitiotMhhqQFTSV5vKIEVJyVmgRAXnqw9rAzTA3nmHjwcWugGoIPvF+INU8K/PKQhcFrEVrEv4Hbb1dSfkdB2IAAAAASUVORK5CYII=",
-        URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_BugNet/",
-        Environment: environment[3],
-        Description: "",
-        Tags: []
-    },
-    
+
     {
         ResourceType: resourceType[0],
         LongName: "[Prod] Web-based Empowerment and Learning System",
@@ -484,6 +464,8 @@ function createEnvironmentView(environment) {
     }
 }
 
+createEnvironmentView("Production")
+
 
 function toggleView(view) {
     const listView = document.getElementById('listView');
@@ -530,37 +512,53 @@ function createListView(environment) {
     });
 }
 
-
 function createCardView(environment) {
+
     const cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
 
     // Filter data based on the selected environment
     const filteredData = data.filter(app => app.Environment === environment);
 
-    filteredData.forEach(app => {
-        const cardCol = document.createElement("div");
-        cardCol.classList.add("col");
 
-        const card = document.createElement("div");
-        card.classList.add("card", "h-100");
+
+    const row = document.createElement("div");
+    row.classList.add("row", "justify-space-evenly");
+
+    filteredData.forEach(app => {
+
+        const col = document.createElement("div");
+        col.classList.add("col-md-3"); // Use col-md-3 to create 4 columns on medium-sized screens
+
+        const imageContainer = document.createElement("div");
+        imageContainer.classList.add("text-center");
+
+
 
         // Convert the array of tags to a comma-separated string
-        const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : ''; 
+        const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : '';
 
-        card.innerHTML = `
-            <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
-            <div class="card-body">
-                <h5 class="card-title"> [${app.Environment}] ${app.ShortName}</h5>
-                <p class="card-text">${app.Description}</p>
-                <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
-                <div><span class="badge badge-light">${tags}</span></div>
-            </div>
+        imageContainer.innerHTML = `
+
+            <a href="${app.URL}">
+
+                <img src="./img/HnHlogo.png" class="img-fluid" alt="${app.ShortName}" width="150" height="150">
+
+            </a>
+
+            <p class="text-center">${app.ShortName}</p>
+
         `;
 
-        cardCol.appendChild(card);
-        cardContainer.appendChild(cardCol);
+
+
+        col.appendChild(imageContainer);
+        row.appendChild(col);
+
     });
+
+    cardContainer.appendChild(row);
+
 }
 
 
@@ -639,3 +637,4 @@ document.querySelector('form[role="search"]').addEventListener('submit', functio
     event.preventDefault(); // Prevent form submission
     toggleView(currentView); // Maintain the current view
 });
+
