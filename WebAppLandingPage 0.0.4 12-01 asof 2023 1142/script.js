@@ -222,8 +222,8 @@ const data = [
         ImagePath: "https://via.placeholder.com/150",
         URL: "https://crpvms2chsws01.corp.nychhc.org/Locker/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "Locker system is used to keep track of assigning Lockers to patients.",
+        Tags: ["LOCKER", "Request", "Open", "Closed", "Clone", "Assignment"]
     },
     {
         ResourceType: resourceType[0],
@@ -232,8 +232,8 @@ const data = [
         ImagePath: "https://via.placeholder.com/150",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_LOCKER/Account/Login?ReturnUrl=%2fTest_LOCKER%2fLOCKER",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "Locker system is used to keep track of assigning Lockers to patients.",
+        Tags: ["LOCKER", "Request", "Open", "Closed", "Clone", "Assignment"]
     },
     {
         ResourceType: resourceType[0],
@@ -272,8 +272,8 @@ const data = [
         ImagePath: "https://via.placeholder.com/150",
         URL: "https://crpvms2chsws01.corp.nychhc.org/MRR/",
         Environment: environment[0],
-        Description: "",
-        Tags: []
+        Description: "MRR is used by medical records team, to keep track of patient’s medical records requests made by clients, details of submitting those requests and receiving them back from a request source.",
+        Tags:  ["MRR", "Patients", "BC", "Request"]
     },
     {
         ResourceType: resourceType[0],
@@ -282,8 +282,8 @@ const data = [
         ImagePath: "https://via.placeholder.com/150",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_MRR/Login.aspx",
         Environment: environment[3],
-        Description: "",
-        Tags: []
+        Description: "MRR is used by medical records team, to keep track of patient’s medical records requests made by clients, details of submitting those requests and receiving them back from a request source.",
+        Tags: ["MRR", "Patients", "BC", "Request"]
     },
     {
         ResourceType: resourceType[0],
@@ -509,6 +509,7 @@ function createListView() {
     });
   }
 
+  /*
 function createCardView() {
 
     const cardContainer = document.getElementById('cardContainer');
@@ -537,14 +538,14 @@ function createCardView() {
       cardContainer.appendChild(cardCol);
     });
   }
-  
+  */
 
    // Function to create app cards
    function createAppCard(app) {
     return `
       <div class="col-md-3 mb-4">
         <div>
-        <a href="${app.URL}" data-toggle="popover" title="${app.LongName}" data-content="${app.Description}<br><br>${app.Tags}"> <img src="${app.ImagePath}" style="width:50px; height:50px;" class="card-img-top" alt="${app.ShortName}"></a>
+        <a href="${app.URL}" data-toggle="popover" title="${app.LongName}" data-content="${app.Description}<br><br>${app.Tags}"> <img src="${app.ImagePath}" style="width:75px; height:75px;" class="card-img-top" alt="${app.ShortName}"></a>
        
             <p>${app.ShortName}</p>
          
@@ -558,15 +559,23 @@ function createCardView() {
     const appContainer = document.getElementById('appContainer');
     appContainer.innerHTML = data.map(createAppCard).join('');
 
-    // Initialize Bootstrap popover
-    $('[data-toggle="popover"]').popover({ html: true });
+    // Initialize Bootstrap popover on hover
+    $('[data-toggle="popover"]').popover({
+        trigger: 'hover', // Change trigger to 'hover'
+        html: true,
+        placement: 'auto',
+        content: function () {
+        return $(this).data('content');
+        }
+    });
   }
 
 
-  renderAppCards(data);
-  
+ 
+ 
+renderAppCards(data);
 createListView();
-createCardView();
+//createCardView();
 
 
 
@@ -627,4 +636,6 @@ function(event) {
     event.preventDefault(); // Prevent form submission
     toggleView(currentView); // Maintain the current view });
 }); 
+
+const card = document.getElementById('card');
 
