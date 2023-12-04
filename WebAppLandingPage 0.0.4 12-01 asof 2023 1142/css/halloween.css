@@ -28,6 +28,10 @@ li {
     padding: 5px;
 }
 
+.hidden {
+    display: none;
+}
+
 
 footer {
     background-color: #F8F9FA;

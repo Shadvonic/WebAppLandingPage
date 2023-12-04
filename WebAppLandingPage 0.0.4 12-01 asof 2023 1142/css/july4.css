@@ -23,6 +23,11 @@ body {
     width: 300px;
 }
 
+.hidden {
+    display: none;
+}
+
+
 li {
     padding: 5px;
 }

@@ -39,6 +39,9 @@ footer {
     color: #F14E63;
 }
 
+.hidden {
+    display: none;
+}
 
 
 .card-body {

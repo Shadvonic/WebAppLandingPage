@@ -519,7 +519,8 @@ function createListView(environment) {
         const listItem = document.createElement('a');
         listItem.href = app.URL;
         listItem.target = "_blank";
-        listItem.classList.add("list-group-item", "list-group-item-action");
+        listItem.classList.add("list-group-item", "list-group-item-action", "hidden");
+
         listItem.textContent =  app.LongName;
 
         // Add data attributes for short name and tags and hide them with CSS

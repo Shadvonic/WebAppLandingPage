@@ -29,6 +29,10 @@ li {
     padding: 5px;
 }
 
+.hidden {
+    display: none;
+}
+
 
  .content, .list-group-item.list-group-item-action {
     background-color: black;
