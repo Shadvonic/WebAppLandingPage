@@ -566,6 +566,7 @@ function switchEnvironmentView(environment) {
 }
 
 
+
 // Update the event listeners for tab switching
 document.getElementById('production-tab').addEventListener('click', () => switchEnvironmentView('Production'));
 document.getElementById('staging-tab').addEventListener('click', () => switchEnvironmentView('Staging'));
