@@ -1,5 +1,5 @@
 const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark"] // 0-5
-const environment = ["Production", "Pre-Production", "Staging", "Test", "Development"] // 0-4
+const environment = ["Production", "Pre-Production", "Staging", "Testing", "Development"] // 0-4
 
 
 const data = [
@@ -153,7 +153,7 @@ const data = [
         URL: "",
         Environment: environment[0],
         Description: "",
-        Tags: []
+        Tags: ["CCS", "IIS", "GCCS", "RCS", "YAS", "SUT", "Discharge", "KEEP", "Court Collateral", "Young Adult", "ARNT", "JISH" ]
     },
     {
         ResourceType: resourceType[0],
@@ -163,7 +163,7 @@ const data = [
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_DSD/",
         Environment: environment[3],
         Description: "",
-        Tags: []
+        Tags: ["CCS", "IIS", "GCCS", "RCS", "YAS", "SUT", "Discharge", "KEEP", "Court Collateral", "Young Adult", "ARNT", "JISH" ]
     },
     {
         ResourceType: resourceType[0],
@@ -454,7 +454,7 @@ const data = [
 
 
 
-let currentView = 'list'; // Initially set to 'card'
+let currentView = 'card'; // Initially set to 'card'
 
 // Function to dynamically load CSS file
 function loadThemeCSS(theme) {
@@ -468,103 +468,148 @@ function loadThemeCSS(theme) {
     head.appendChild(link);
 }
 
+function createEnvironmentView(environment) {
+    const container = document.getElementById(`${environment.toLowerCase()}Content`);
+    
+    // Check if the container is not null before proceeding
+    if (container) {
+        container.innerHTML = '';
+    
+        data.forEach(app => {
+            if (app.Environment === environment) {
+                const element = currentView === 'card' ? createCardView(app) : createListView(app);
+                container.appendChild(element);
+            }
+        });
+    }
+}
+
 
 function toggleView(view) {
     const listView = document.getElementById('listView');
-    const iconsContainer = document.getElementById('iconsContainer');
+    const cardView = document.getElementById('cardView');
     const listViewBtn = document.getElementById('listViewBtn');
-    const iconsViewBtn = document.getElementById('iconsViewBtn'); // Assuming you have a button for the icons view
+    const cardViewBtn = document.getElementById('cardViewBtn');
 
     if (view === 'list') {
         listView.style.display = 'block';
-        iconsContainer.style.display = 'none'; // Hide icons view
+        cardView.style.display = 'none';
         listViewBtn.disabled = true;
-        iconsViewBtn.disabled = false; // Enable button for icons view
-    } else if (view === 'icons') {
+        cardViewBtn.disabled = false;
+    } else if (view === 'card') {
         listView.style.display = 'none';
-        iconsContainer.style.display = 'block'; // Show icons view
+        cardView.style.display = 'block';
         listViewBtn.disabled = false;
-        iconsViewBtn.disabled = true; // Disable button for icons view
+        cardViewBtn.disabled = true;
     }
 
     currentView = view;
     clearSearchBar();
 }
 
-function createListView() {
+
+
+function createListView(environment) {
     const listView = document.getElementById('listView');
     listView.innerHTML = '';
-    data.forEach(app => {
-      const listItem = document.createElement('a');
-      listItem.href = app.URL;
-      listItem.target = "_blank";
-      listItem.classList.add("list-group-item", "list-group-item-action");
-      listItem.textContent =  app.LongName;
-      listView.appendChild(listItem);
-    });
-  }
 
+    // Filter data based on the selected environment
+    const filteredData = data.filter(app => app.Environment === environment);
 
-  // Modify createIconView function to generate icons based on the data
-function createIconView(data) {
-    const iconsContainer = document.getElementById('iconsContainer');
-    iconsContainer.innerHTML = '';
-
-    data.forEach((app, index) => {
-        const icon = document.createElement("div");
-        icon.classList.add("app");
-        icon.style.background = `url("${app.ImagePath}")`;
-        icon.style.backgroundSize = "cover";
-        icon.style.backgroundPosition = "center";
-        icon.title = `${app.ShortName}\n${app.Description}, <br> ${app.Tags.join(', ')}`;
-        icon.onclick = () => window.open(app.URL, '_blank');
-
-        iconsContainer.appendChild(icon);
-
-        // Create a new row after every 4 icons
-        if ((index + 1) % 4 === 0) {
-            iconsContainer.appendChild(document.createElement("br"));
-        }
+    filteredData.forEach(app => {
+        const listItem = document.createElement('a');
+        listItem.href = app.URL;
+        listItem.target = "_blank";
+        listItem.classList.add("list-group-item", "list-group-item-action");
+        listItem.textContent =  app.LongName;
+        listView.appendChild(listItem);
     });
 }
 
-// Initially load all items
-createIconView(data);
-createListView();
+function createCardView(environment) {
+    const cardContainer = document.getElementById('cardContainer');
+    cardContainer.innerHTML = '';
 
+    // Filter data based on the selected environment
+    const filteredData = data.filter(app => app.Environment === environment);
+
+    filteredData.forEach(app => {
+        const cardCol = document.createElement("div");
+        cardCol.classList.add("col");
+
+        const card = document.createElement("div");
+        card.classList.add("card", "h-100");
+
+        // Convert the array of tags to a comma-separated string
+        const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : ''; 
+
+        card.innerHTML = `
+            <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
+            <div class="card-body">
+                <h5 class="card-title"> [${app.Environment}] ${app.ShortName}</h5>
+                <p class="card-text">${app.Description}</p>
+                <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
+                <div><span class="badge badge-light">${tags}</span></div>
+            </div>
+        `;
+
+        cardCol.appendChild(card);
+        cardContainer.appendChild(cardCol);
+    });
+}
+
+
+function switchEnvironmentView(environment) {
+    createEnvironmentView(environment);
+    createListView(environment);
+    createCardView(environment);
+}
+
+
+// Update the event listeners for tab switching
+document.getElementById('production-tab').addEventListener('click', () => switchEnvironmentView('Production'));
+document.getElementById('staging-tab').addEventListener('click', () => switchEnvironmentView('Staging'));
+document.getElementById('testing-tab').addEventListener('click', () => switchEnvironmentView('Testing'));
+
+
+// Initial setup to display content for the default environment (e.g., Production)
+createEnvironmentView('Production');
 
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
-    const filter = searchInput.value.trim().toUpperCase();
+    const filter = searchInput.value.toUpperCase();
     const listItems = document.querySelectorAll('.list-group .list-group-item');
+    const cardTitles = document.querySelectorAll('.card-container .card .card-title');
     const notFoundMessage = document.getElementById('notFoundMessage');
-
+    
     let found = false;
 
     listItems.forEach(item => {
-        const textValue = item.textContent.trim().toUpperCase();
-        const itemDisplay = textValue.includes(filter) ? 'block' : 'none';
-        item.style.display = itemDisplay;
-        found = found || itemDisplay === 'block';
+        const textValue = item.textContent || item.innerText;
+        if (textValue.toUpperCase().indexOf(filter) > -1) {
+            item.style.display = 'block';
+            found = true; // Set found to true if at least one item is displayed
+        } else {
+            item.style.display = 'none';
+        }
     });
 
-     // Display or hide the "not found" message based on whether items were found and if any items are displayed
-    notFoundMessage.style.display = found ? 'none' : 'block';
-    
+    // Display or hide the "not found" message based on whether items were found and if any items are displayed
+    notFoundMessage.style.display = found || document.querySelector('.list-group .list-group-item[style="display: block;"]') ? 'none' : 'block';
+
     // Clear the search bar if the input is empty
-    if (!filter) {
+    if (!filter.trim()) {
         notFoundMessage.style.display = 'none';
         searchInput.value = '';
     }
 }
-
 
 // Function to clear the search bar when the user switches views
 function clearSearchBar() {
     const searchInput = document.getElementById('searchInput');
     searchInput.value = '';
     searchItems(); // Optionally call searchItems to update the view based on the cleared search bar
-  }
+}
 
 const themeRadios = document.querySelectorAll('input[name="theme"]');
 
@@ -580,10 +625,9 @@ themeRadios.forEach(radio => {
         }
     });
 });
-// Preventing view switch on search
-document.querySelector('form[role="search"]').addEventListener('submit',
-function(event) {
-    event.preventDefault(); // Prevent form submission
-    toggleView(currentView); // Maintain the current view });
-}); 
 
+// Preventing view switch on search
+document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    toggleView(currentView); // Maintain the current view
+});

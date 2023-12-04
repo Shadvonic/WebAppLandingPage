@@ -153,7 +153,7 @@ const data = [
         URL: "",
         Environment: environment[0],
         Description: "",
-        Tags: []
+        Tags: ["CCS", "IIS", "GCCS", "RCS", "YAS", "SUT", "Discharge", "KEEP", "Court Collateral", "Young Adult", "ARNT", "JISH" ]
     },
     {
         ResourceType: resourceType[0],
@@ -163,7 +163,7 @@ const data = [
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_DSD/",
         Environment: environment[3],
         Description: "",
-        Tags: []
+        Tags: ["CCS", "IIS", "GCCS", "RCS", "YAS", "SUT", "Discharge", "KEEP", "Court Collateral", "Young Adult", "ARNT", "JISH" ]
     },
     {
         ResourceType: resourceType[0],
@@ -537,8 +537,14 @@ function createCardView() {
     });
   }
 
-createListView();
-createCardView();
+
+
+  function switchEnvironmentView(environment) {
+    createEnvironmentView(environment);
+    createListView(environment);
+    createCardView(environment);
+}
+
 
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
