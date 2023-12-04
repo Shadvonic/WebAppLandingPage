@@ -508,7 +508,6 @@ function toggleView(view) {
 }
 
 
-
 function createListView(environment) {
     const listView = document.getElementById('listView');
     listView.innerHTML = '';
@@ -522,9 +521,16 @@ function createListView(environment) {
         listItem.target = "_blank";
         listItem.classList.add("list-group-item", "list-group-item-action");
         listItem.textContent =  app.LongName;
+
+        // Add data attributes for short name and tags and hide them with CSS
+        listItem.setAttribute('data-shortname', app.ShortName);
+        listItem.setAttribute('data-tags', Array.isArray(app.Tags) ? app.Tags.join(',') : '');
+        listItem.style.display = 'none';
+
         listView.appendChild(listItem);
     });
 }
+
 
 function createCardView(environment) {
     const cardContainer = document.getElementById('cardContainer');
@@ -580,14 +586,16 @@ function searchItems() {
     const searchInput = document.getElementById('searchInput');
     const filter = searchInput.value.toUpperCase();
     const listItems = document.querySelectorAll('.list-group .list-group-item');
-    const cardTitles = document.querySelectorAll('.card-container .card .card-title');
     const notFoundMessage = document.getElementById('notFoundMessage');
     
     let found = false;
 
     listItems.forEach(item => {
         const textValue = item.textContent || item.innerText;
-        if (textValue.toUpperCase().indexOf(filter) > -1) {
+        const shortName = item.getAttribute('data-shortname').toUpperCase();
+        const tags = item.getAttribute('data-tags').toUpperCase();
+
+        if (textValue.toUpperCase().indexOf(filter) > -1 || shortName.indexOf(filter) > -1 || tags.indexOf(filter) > -1) {
             item.style.display = 'block';
             found = true; // Set found to true if at least one item is displayed
         } else {
@@ -601,9 +609,9 @@ function searchItems() {
     // Clear the search bar if the input is empty
     if (!filter.trim()) {
         notFoundMessage.style.display = 'none';
-        searchInput.value = '';
     }
 }
+
 
 // Function to clear the search bar when the user switches views
 function clearSearchBar() {
