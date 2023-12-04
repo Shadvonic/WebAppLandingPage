@@ -540,7 +540,7 @@ function createCardView(environment) {
 
         imageContainer.innerHTML = `
 
-            <a href="${app.URL}">
+        <a href="${app.URL}" data-bs-toggle="popover" data-bs-trigger="hover" title="${app.LongName}" data-bs-content="Description: ${app.Description}<br>Tags: ${tags}">
 
                 <img src="./img/HnHlogo.png" class="img-fluid" alt="${app.ShortName}" width="150" height="150">
 
@@ -559,6 +559,13 @@ function createCardView(environment) {
 
     cardContainer.appendChild(row);
 
+     // Enable Bootstrap popovers
+     $(function () {
+        $('[data-bs-toggle="popover"]').popover({
+            html: true,
+            placement: 'bottom',
+        });
+    });
 }
 
 
