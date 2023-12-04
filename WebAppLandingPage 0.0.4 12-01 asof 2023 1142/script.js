@@ -507,7 +507,6 @@ function toggleView(view) {
     clearSearchBar();
 }
 
-
 function createListView(environment) {
     const listView = document.getElementById('listView');
     listView.innerHTML = '';
@@ -519,14 +518,13 @@ function createListView(environment) {
         const listItem = document.createElement('a');
         listItem.href = app.URL;
         listItem.target = "_blank";
-        listItem.classList.add("list-group-item", "list-group-item-action", "hidden");
-
-        listItem.textContent =  app.LongName;
-
+        listItem.classList.add("list-group-item", "list-group-item-action");
+        listItem.textContent = app.LongName;
+        
         // Add data attributes for short name and tags and hide them with CSS
         listItem.setAttribute('data-shortname', app.ShortName);
         listItem.setAttribute('data-tags', Array.isArray(app.Tags) ? app.Tags.join(',') : '');
-        listItem.style.display = 'none';
+        listItem.style.display = 'block';
 
         listView.appendChild(listItem);
     });
@@ -574,14 +572,14 @@ function switchEnvironmentView(environment) {
 
 
 
+
 // Update the event listeners for tab switching
 document.getElementById('production-tab').addEventListener('click', () => switchEnvironmentView('Production'));
 document.getElementById('staging-tab').addEventListener('click', () => switchEnvironmentView('Staging'));
 document.getElementById('testing-tab').addEventListener('click', () => switchEnvironmentView('Testing'));
 
 
-// Initial setup to display content for the default environment (e.g., Production)
-createEnvironmentView('Production');
+
 
 function searchItems() {
     const searchInput = document.getElementById('searchInput');

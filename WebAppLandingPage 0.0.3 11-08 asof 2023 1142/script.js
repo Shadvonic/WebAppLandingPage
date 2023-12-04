@@ -153,7 +153,7 @@ const data = [
         URL: "",
         Environment: environment[0],
         Description: "",
-        Tags: ["CCS", "IIS", "GCCS", "RCS", "YAS", "SUT", "Discharge", "KEEP", "Court Collateral", "Young Adult", "ARNT", "JISH" ]
+       Tags: ["CCS", "IIS", "GCCS", "RCS", "YAS", "SUT", "Discharge", "KEEP", "Court Collateral", "Young Adult", "ARNT", "JISH" ]
     },
     {
         ResourceType: resourceType[0],
@@ -537,14 +537,8 @@ function createCardView() {
     });
   }
 
-
-
-  function switchEnvironmentView(environment) {
-    createEnvironmentView(environment);
-    createListView(environment);
-    createCardView(environment);
-}
-
+createListView();
+createCardView();
 
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
