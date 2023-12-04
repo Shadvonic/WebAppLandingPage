@@ -454,8 +454,7 @@ const data = [
 
 
 
-
-let currentView = 'card'; // Initially set to 'card'
+let currentView = 'list'; // Initially set to 'card'
 
 // Function to dynamically load CSS file
 function loadThemeCSS(theme) {
@@ -471,29 +470,25 @@ function loadThemeCSS(theme) {
 
 
 function toggleView(view) {
-  
-
     const listView = document.getElementById('listView');
-    const cardView = document.getElementById('cardView');
+    const iconsContainer = document.getElementById('iconsContainer');
     const listViewBtn = document.getElementById('listViewBtn');
-    const cardViewBtn = document.getElementById('cardViewBtn');
-
+    const iconsViewBtn = document.getElementById('iconsViewBtn'); // Assuming you have a button for the icons view
 
     if (view === 'list') {
         listView.style.display = 'block';
-        cardView.style.display = 'none';
+        iconsContainer.style.display = 'none'; // Hide icons view
         listViewBtn.disabled = true;
-        cardViewBtn.disabled = false;
-    } else if (view === 'card') {
+        iconsViewBtn.disabled = false; // Enable button for icons view
+    } else if (view === 'icons') {
         listView.style.display = 'none';
-        cardView.style.display = 'block';
+        iconsContainer.style.display = 'block'; // Show icons view
         listViewBtn.disabled = false;
-        cardViewBtn.disabled = true;
+        iconsViewBtn.disabled = true; // Disable button for icons view
     }
 
     currentView = view;
     clearSearchBar();
- 
 }
 
 function createListView() {
@@ -509,103 +504,58 @@ function createListView() {
     });
   }
 
-  /*
-function createCardView() {
 
-    const cardContainer = document.getElementById('cardContainer');
-    cardContainer.innerHTML = '';
-    data.forEach(app => {
-      const cardCol = document.createElement("div");
-      cardCol.classList.add("col");
-  
-      const card = document.createElement("div");
-      card.classList.add("card", "h-100");
-  
-       // Convert the array of tags to a comma-separated string
-       const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : ''; 
+  // Modify createIconView function to generate icons based on the data
+function createIconView(data) {
+    const iconsContainer = document.getElementById('iconsContainer');
+    iconsContainer.innerHTML = '';
 
-      card.innerHTML = `
-        <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
-        <div class="card-body">
-          <h5 class="card-title"> [${app.Environment}] ${app.ShortName}</h5>
-          <p class="card-text">${app.Description}</p>
-          <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
-          <div><span class="badge badge-light">${tags}</span></div>
-        </div>
-      `;
-  
-      cardCol.appendChild(card);
-      cardContainer.appendChild(cardCol);
-    });
-  }
-  */
+    data.forEach((app, index) => {
+        const icon = document.createElement("div");
+        icon.classList.add("app");
+        icon.style.background = `url("${app.ImagePath}")`;
+        icon.style.backgroundSize = "cover";
+        icon.style.backgroundPosition = "center";
+        icon.title = `${app.ShortName}\n${app.Description}, <br> ${app.Tags.join(', ')}`;
+        icon.onclick = () => window.open(app.URL, '_blank');
 
-   // Function to create app cards
-   function createAppCard(app) {
-    return `
-      <div class="col-md-3 mb-4">
-        <div>
-        <a href="${app.URL}" data-toggle="popover" title="${app.LongName}" data-content="${app.Description}<br><br>${app.Tags}"> <img src="${app.ImagePath}" style="width:75px; height:75px;" class="card-img-top" alt="${app.ShortName}"></a>
-       
-            <p>${app.ShortName}</p>
-         
-        </div>
-      </div>
-    `;
-  }
+        iconsContainer.appendChild(icon);
 
-   // Function to render app cards
-   function renderAppCards(data) {
-    const appContainer = document.getElementById('appContainer');
-    appContainer.innerHTML = data.map(createAppCard).join('');
-
-    // Initialize Bootstrap popover on hover
-    $('[data-toggle="popover"]').popover({
-        trigger: 'hover', // Change trigger to 'hover'
-        html: true,
-        placement: 'auto',
-        content: function () {
-        return $(this).data('content');
+        // Create a new row after every 4 icons
+        if ((index + 1) % 4 === 0) {
+            iconsContainer.appendChild(document.createElement("br"));
         }
     });
-  }
+}
 
-
- 
- 
-renderAppCards(data);
+// Initially load all items
+createIconView(data);
 createListView();
-//createCardView();
-
 
 
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
-    const filter = searchInput.value.toUpperCase();
+    const filter = searchInput.value.trim().toUpperCase();
     const listItems = document.querySelectorAll('.list-group .list-group-item');
-    const cardTitles = document.querySelectorAll('.card-container .card .card-title');
     const notFoundMessage = document.getElementById('notFoundMessage');
-    
+
     let found = false;
 
     listItems.forEach(item => {
-        const textValue = item.textContent || item.innerText;
-        if (textValue.toUpperCase().indexOf(filter) > -1) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-           
-        }
+        const textValue = item.textContent.trim().toUpperCase();
+        const itemDisplay = textValue.includes(filter) ? 'block' : 'none';
+        item.style.display = itemDisplay;
+        found = found || itemDisplay === 'block';
     });
 
-   // Display or hide the "not found" message based on whether items were found and if any items are displayed
-  notFoundMessage.style.display = found || document.querySelector('.list-group .list-group-item[style="display: block;"]') ? 'none' : 'block';
-
-  // Clear the search bar if the input is empty
-  if (!filter.trim()) {
-    notFoundMessage.style.display = 'none';
-    searchInput.value = '';
-  }
+     // Display or hide the "not found" message based on whether items were found and if any items are displayed
+    notFoundMessage.style.display = found ? 'none' : 'block';
+    
+    // Clear the search bar if the input is empty
+    if (!filter) {
+        notFoundMessage.style.display = 'none';
+        searchInput.value = '';
+    }
 }
 
 
@@ -636,6 +586,4 @@ function(event) {
     event.preventDefault(); // Prevent form submission
     toggleView(currentView); // Maintain the current view });
 }); 
-
-const card = document.getElementById('card');
 
