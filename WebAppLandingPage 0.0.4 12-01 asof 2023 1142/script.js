@@ -519,10 +519,10 @@ function createListView(environment) {
         listItem.href = app.URL;
         listItem.target = "_blank";
         listItem.classList.add("list-group-item", "list-group-item-action");
-        listItem.textContent = app.LongName;
+        listItem.textContent = app.ShortName;
         
         // Add data attributes for short name and tags and hide them with CSS
-        listItem.setAttribute('data-shortname', app.ShortName);
+        listItem.setAttribute('data-longname', app.LongName);
         listItem.setAttribute('data-tags', Array.isArray(app.Tags) ? app.Tags.join(',') : '');
         listItem.style.display = 'block';
 
@@ -591,7 +591,7 @@ function searchItems() {
 
     listItems.forEach(item => {
         const textValue = item.textContent || item.innerText;
-        const shortName = item.getAttribute('data-shortname').toUpperCase();
+        const longName = item.getAttribute('data-longname').toUpperCase();
         const tags = item.getAttribute('data-tags').toUpperCase();
 
         if (textValue.toUpperCase().indexOf(filter) > -1 || shortName.indexOf(filter) > -1 || tags.indexOf(filter) > -1) {
