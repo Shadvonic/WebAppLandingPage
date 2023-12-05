@@ -559,13 +559,7 @@ function createCardView(environment) {
 
     cardContainer.appendChild(row);
 
-     // Enable Bootstrap popovers
-     $(function () {
-        $('[data-bs-toggle="popover"]').popover({
-            html: true,
-            placement: 'bottom',
-        });
-    });
+    
 }
 
 
@@ -599,7 +593,7 @@ function searchItems() {
         const longName = item.getAttribute('data-longname').toUpperCase();
         const tags = item.getAttribute('data-tags').toUpperCase();
 
-        if (textValue.toUpperCase().indexOf(filter) > -1 || shortName.indexOf(filter) > -1 || tags.indexOf(filter) > -1) {
+        if (textValue.toUpperCase().indexOf(filter) > -1 || longName.indexOf(filter) > -1 || tags.indexOf(filter) > -1) {
             item.style.display = 'block';
             found = true; // Set found to true if at least one item is displayed
         } else {
@@ -608,6 +602,7 @@ function searchItems() {
     });
 
     // Display or hide the "not found" message based on whether items were found and if any items are displayed
+    cardContainer.style.display = found ? 'block' : 'none';
     notFoundMessage.style.display = found || document.querySelector('.list-group .list-group-item[style="display: block;"]') ? 'none' : 'block';
 
     // Clear the search bar if the input is empty
