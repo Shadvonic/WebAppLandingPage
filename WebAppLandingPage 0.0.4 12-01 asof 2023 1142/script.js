@@ -538,19 +538,14 @@ function createCardView(environment) {
         // Convert the array of tags to a comma-separated string
         const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : '';
 
+        const popoverContent = `<strong>${app.LongName}</strong><br><br>${app.Description}<br><br><span>${tags}</span>`;
+
         imageContainer.innerHTML = `
-
-        <a href="${app.URL}" data-bs-toggle="popover" data-bs-trigger="hover"  data-placement="right"  data-content="${app.LongName} <br> ${app.Description} <br> ${tags}" >
-
-                <img src="./img/HnHlogo.png" class="img-fluid" alt="${app.ShortName}">
-
-            </a>
-
-            <p class="text-center">${app.ShortName}</p>
-
-        `;
-
-
+        <a href="${app.URL}" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-content="${popoverContent}">
+            <img src="./img/HnHlogo.png" class="img-fluid" alt="${app.ShortName}">
+        </a>
+        <p class="text-center">${app.ShortName}</p>
+    `;
 
         col.appendChild(imageContainer);
         row.appendChild(col);
@@ -558,17 +553,19 @@ function createCardView(environment) {
     });
 
     cardContainer.appendChild(row);
+    
+       // Enable popovers after adding elements to the DOM
+       const popovers = new bootstrap.Popover(document.body, {
+        container: 'body',
+        html: true,
+        trigger: 'hover',
+        selector: '[data-bs-toggle="popover"]'
+    });
 
     
 }
 
-$(function () {
-    $('[data-toggle="popover"]').popover({
-      container: 'body',
-      html: true,
-      tigger: 'hover'
-    });
-  });
+
 
 function switchEnvironmentView(environment) {
     createEnvironmentView(environment);
