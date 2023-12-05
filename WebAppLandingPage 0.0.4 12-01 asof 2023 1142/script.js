@@ -541,7 +541,7 @@ function createCardView(environment) {
         const popoverContent = `<strong>${app.LongName}</strong><br><br>${app.Description}<br><br><span>${tags}</span>`;
 
         imageContainer.innerHTML = `
-        <a href="${app.URL}" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-content="${popoverContent}">
+        <a href="${app.URL}" target="_blank" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-content="${popoverContent}">
             <img src="./img/HnHlogo.png" class="img-fluid" alt="${app.ShortName}">
         </a>
         <p class="text-center">${app.ShortName}</p>

@@ -13,6 +13,13 @@ body {
 
 }
 
+.container-fluid {
+    background-color: #3e97cb;
+    color: white;
+}
+
+
+
 #listViewBtn,
 #cardViewBtn {
   margin-right: 5px;
