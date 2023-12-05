@@ -540,9 +540,9 @@ function createCardView(environment) {
 
         imageContainer.innerHTML = `
 
-        <a href="${app.URL}" data-bs-toggle="popover" data-bs-trigger="hover" title="${app.LongName}" data-bs-content="Description: ${app.Description}<br>Tags: ${tags}">
+        <a href="${app.URL}" data-bs-toggle="popover" data-bs-trigger="hover"  data-placement="right"  data-content="${app.LongName} <br> ${app.Description} <br> ${tags}" >
 
-                <img src="./img/HnHlogo.png" class="img-fluid" alt="${app.ShortName}" width="150" height="150">
+                <img src="./img/HnHlogo.png" class="img-fluid" alt="${app.ShortName}">
 
             </a>
 
@@ -562,6 +562,13 @@ function createCardView(environment) {
     
 }
 
+$(function () {
+    $('[data-toggle="popover"]').popover({
+      container: 'body',
+      html: true,
+      tigger: 'hover'
+    });
+  });
 
 function switchEnvironmentView(environment) {
     createEnvironmentView(environment);
