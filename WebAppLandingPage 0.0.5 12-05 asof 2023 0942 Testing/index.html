@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Correctional Health Link (CHLE)</title>
+ <link rel="stylesheet" href="./css/light.css"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <img src="./img/MainLogo.png">
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: white;"> <strong>Correctional Health Link (CHLE) </strong> </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                Themes
+              </a>
+              <ul class="dropdown-menu">
+
+                <li>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="theme" id="Light">
+                    <label class="form-check-label" for="theme">Light</label>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="theme" id="Dark">
+                    <label class="form-check-label" for="theme">Dark</label>
+                </div>
+                </li>
+
+                <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="theme" id="Valentine">
+                      <label class="form-check-label" for="theme">Valentine</label>
+                  </div>
+                </li>
+                <li>
+                  
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="theme" id="July4">
+                      <label class="form-check-label" for="theme">July 4th</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="theme" id="Halloween">
+                    <label class="form-check-label" for="theme">Halloween</label>
+                </div>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="theme" id="Thanksgiving">
+                    <label class="form-check-label" for="theme">Thanksgiving</label>
+                </div>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="theme" id="Christmas">
+                    <label class="form-check-label" for="theme">Christmas</label>
+                </div>
+                </li>
+              </ul>
+            </li>
+            <button id="listViewBtn" type="button" class="btn btn-link" style="color: white;" onclick="toggleView('list')">List View </button>
+            <button id="cardViewBtn" type="button" class="btn btn-link" style="color: white;" onclick="toggleView('card')">Cards View </button>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput" oninput="searchItems()">
+            <button class="btn btn-outline-secondary" style="color: white; border-color: white;" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="container mt-5">
+    <ul class="nav nav-tabs" id="environmentTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="production-tab" data-bs-toggle="tab" data-bs-target="production" type="button" role="tab" aria-controls="production" aria-selected="true">Production</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="staging-tab" data-bs-toggle="tab" data-bs-target="staging" type="button" role="tab" aria-controls="staging" aria-selected="false">Staging</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="testing-tab" data-bs-toggle="tab" data-bs-target="testing" type="button" role="tab" aria-controls="testing" aria-selected="false">Testing</button>
+        </li>
+        <!-- Add more tabs as needed -->
+    </ul>
+    <div class="tab-content mt-3">
+        <div class="tab-pane fade show active" id="production" role="tabpanel" aria-labelledby="production-tab">
+            <!-- Content for Production environment -->
+            <!-- Use JavaScript  dynamically populate content based on the Production environment -->
+        </div>
+        <div class="tab-pane fade" id="staging" role="tabpanel" aria-labelledby="staging-tab">
+            <!-- Content for Staging environment -->
+            <!--  JavaScript  dynamically populate content based on the Staging environment -->
+        </div>
+        <div class="tab-pane fade" id="testing" role="tabpanel" aria-labelledby="testing-tab">
+            <!-- Content for Testing environment -->
+            <!--  JavaScript  dynamically populate content based on the Testing environment -->
+        </div>
+           <!-- Add more tabs as needed -->
+    </div>
+</div>
+
+
+
+    <div id="listView" class="list-group" style="display: none;"> </div>
+
+    <div id="notFoundMessage" style="display: none;">Item not found</div>
+
+    <div class="content">
+        <div id="cardView" class="container" style="display: block;">
+            <div id="cardContainer"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+    <footer class="footer">
+        <div class="sticky-xl-bottom">
+            <p class="text-start fw-semibold"> CHS Web App Library &copy; 2023</p>
+        </div>
+    </footer>
+</body>
+</html>
+

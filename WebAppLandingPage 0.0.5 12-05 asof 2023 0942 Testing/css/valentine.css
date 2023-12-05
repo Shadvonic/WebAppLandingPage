@@ -1,0 +1,57 @@
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+
+}
+
+#listViewBtn,
+#cardViewBtn {
+  margin-right: 5px;
+}
+
+li {
+    padding: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: #000000;
+    color: #c4c4b2;
+    padding: 8px;
+}
+
+.content, .list-group-item.list-group-item-action {
+    background-color: #C00645;
+    color: white;
+}
+
+a.btn.btn-primary{
+    background-color: #D05d65;
+    color: white;
+    border-color: #e7cdce;
+}
+
+#cardViewBtn, #listViewBtn 
+{
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
+span.badge.badge-light{
+    margin-top: 5px;
+    text-wrap: wrap;
+    text-align: left;
+    color: white;
+}
