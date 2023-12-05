@@ -462,8 +462,6 @@ function createEnvironmentView(environment) {
     }
 }
 
-createEnvironmentView("Production")
-
 
 function toggleView(view) {
     const listView = document.getElementById('listView');
@@ -565,15 +563,68 @@ function createCardView(environment) {
     
 }
 
-
-
 function switchEnvironmentView(environment) {
     createEnvironmentView(environment);
     createListView(environment);
     createCardView(environment);
 }
 
+function splitDataByEnvironment(data) {
+    const productionData = data.filter(app => app.Environment === 'Production');
+    const stagingData = data.filter(app => app.Environment === 'Staging');
+    const testingData = data.filter(app => app.Environment === 'Testing');
 
+    createEnvironmentTab('Production', productionData);
+    createEnvironmentTab('Staging', stagingData);
+    createEnvironmentTab('Testing', testingData);
+}
+
+function createEnvironmentTab(environment, data) {
+    const cardContainer = document.getElementById('cardContainer');
+
+    const row = document.createElement("div");
+    row.classList.add("row", "justify-space-evenly");
+
+    data.forEach(app => {
+        const col = document.createElement("div");
+        col.classList.add("col-md-3");
+
+        const imageContainer = document.createElement("div");
+        imageContainer.classList.add("text-center");
+
+        const popoverContent = `<strong>${app.LongName}</strong><br>${app.Description}<br>${app.Tags.join(', ')}`;
+
+        imageContainer.innerHTML = `
+            <a href="${app.URL}" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-content="${popoverContent}">
+                <img src="./img/HnHlogo.png" class="img-fluid" alt="${app.ShortName}">
+            </a>
+            <p class="text-center">${app.ShortName}</p>
+        `;
+
+        col.appendChild(imageContainer);
+        row.appendChild(col);
+    });
+
+    const tabContent = document.createElement("div");
+    tabContent.classList.add("tab-pane", "fade", "show");
+    tabContent.appendChild(row);
+
+    cardContainer.appendChild(tabContent);
+}
+
+function fetchData() {
+    return new Promise(resolve => {
+        resolve(data);  
+    });
+}
+
+function loadAndSplitData() {
+    // Assume data is loaded asynchronously
+    fetchData().then(data => {
+        splitDataByEnvironment(data);
+        createCardView('Production'); // Show the default tab
+    });
+}
 
 
 // Update the event listeners for tab switching
@@ -582,7 +633,8 @@ document.getElementById('staging-tab').addEventListener('click', () => switchEnv
 document.getElementById('testing-tab').addEventListener('click', () => switchEnvironmentView('Testing'));
 
 
-
+// Load and split data when the script is loaded
+loadAndSplitData();
 
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
