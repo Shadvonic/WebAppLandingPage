@@ -538,7 +538,7 @@ function createCardView(environment) {
         // Convert the array of tags to a comma-separated string
         const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : '';
 
-        const popoverContent = `<strong>${app.LongName}</strong><br><br>${app.Description}<br><br><span>${tags}</span>`;
+        const popoverContent = `<strong>${app.LongName}</strong><br><br>${app.Description}<br><br><span><b><em>${tags}</b></em></span>`;
 
         imageContainer.innerHTML = `
         <a href="${app.URL}" target="_blank" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-content="${popoverContent}">
