@@ -19,10 +19,6 @@ body {
   margin-right: 5px;
 }
 
-#card-img-top {
-    height: 300px;
-    width: 300px;
-}
 
 li {
     padding: 5px;
@@ -34,21 +30,14 @@ li {
 
 
 footer {
-    background-color: #F8F9FA;
+    background-color: #000000;
+    color: #c4c4b2;
     padding: 8px;
 }
 
 .content, .list-group-item.list-group-item-action {
     background-color: #f75f1c;
     color: #000;
-}
-
-.card-body {
-    background-color: #881ee4;
-}
-
-.card-text, h5.card-title {
-    color: #85e21f;
 }
 
 
@@ -64,9 +53,6 @@ a.btn.btn-primary{
    margin-right: 5px;
 }
 
-div.card.h-100{
-    border-color: #000;
-}
 
 span.badge.badge-light{
     margin-top: 5px;

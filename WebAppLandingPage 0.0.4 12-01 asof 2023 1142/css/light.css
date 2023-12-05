@@ -48,7 +48,8 @@ span.badge.badge-light{
 }
 
 footer {
-    background-color: #F8F9FA;
+    background-color: #000000;
+    color: #c4c4b2;
     padding: 8px;
 }
 
@@ -64,23 +65,3 @@ a.btn.btn-primary{
     color: black;
 }
 
-/*
-.card-body {
-    background-color: white;
-}
-
-.card-text, h5.card-title {
-    color: black;
-}
-
-div.card.h-100{
-
-    border-color: lightgray;
-}
-
-#card-img-top {
-    height: 300px;
-    width: 300px;
-}
-
-*/

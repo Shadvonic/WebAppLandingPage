@@ -18,11 +18,6 @@ body {
   margin-right: 5px;
 }
 
-#card-img-top {
-    height: 300px;
-    width: 300px;
-}
-
 li {
     padding: 5px;
 }
@@ -31,9 +26,9 @@ li {
     display: none;
 }
 
-
 footer {
-    background-color: #F8F9FA;
+    background-color: #000000;
+    color: #c4c4b2;
     padding: 8px;
 }
 
@@ -41,15 +36,6 @@ footer {
     background-color: #C00645;
     color: white;
 }
-
-.card-body {
-    background-color: #E1848C;
-}
-
-.card-text, h5.card-title {
-    color: white;
-}
-
 
 a.btn.btn-primary{
     background-color: #D05d65;
@@ -61,10 +47,6 @@ a.btn.btn-primary{
 {
    margin-left: 5px;
    margin-right: 5px;
-}
-
-div.card.h-100{
-    border-color: #eaa8ac;
 }
 
 span.badge.badge-light{

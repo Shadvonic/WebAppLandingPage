@@ -18,10 +18,7 @@ body {
   margin-right: 5px;
 }
 
-#card-img-top {
-    height: 300px;
-    width: 300px;
-}
+
 
 .hidden {
     display: none;
@@ -34,22 +31,17 @@ li {
 
 
 footer {
-    background-color: #F8F9FA;
+    background-color: #000000;
+    color: #c4c4b2;
     padding: 8px;
 }
+
 
 .content, .list-group-item.list-group-item-action {
     background-color: #1e2d60;
     color: white;
 }
 
-.card-body {
-    background-color: #c41f40;
-}
-
-.card-text, h5.card-title {
-    color: white;
-}
 
 
 a.btn.btn-primary{
@@ -64,9 +56,6 @@ a.btn.btn-primary{
    margin-right: 5px;
 }
 
-div.card.h-100{
-    border-color: #1e2d60;
-}
 
 
 span.badge.badge-light{

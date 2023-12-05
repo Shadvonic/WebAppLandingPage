@@ -16,11 +16,6 @@ body {
   margin-right: 5px;
 }
 
-#card-img-top {
-    height: 300px;
-    width: 300px;
-}
-
 .btn-group {
     margin-right: 85px;
 }
@@ -39,14 +34,12 @@ li {
     color: white;
 }
 
-.card-body {
-    background-color: #3e3636;
-}
 
-.card-text, h5.card-title {
-    color: white;
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px;
 }
-
 
 
 a.btn.btn-primary{
@@ -59,10 +52,6 @@ a.btn.btn-primary{
 {
    margin-left: 5px;
    margin-right: 5px;
-}
-
-div.card.h-100{
-    border-color: black;
 }
 
 footer {
