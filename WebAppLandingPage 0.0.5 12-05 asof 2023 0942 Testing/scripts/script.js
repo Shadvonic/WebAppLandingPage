@@ -432,7 +432,7 @@ const data = [
 
 
 
-let currentView = 'card'; // Initially set to 'card'
+let currentView = 'icon'; // Initially set to 'card'
 
 // Function to dynamically load CSS file
 function loadThemeCSS(theme) {
@@ -465,25 +465,30 @@ function createEnvironmentView(environment) {
 
 function toggleView(view) {
     const listView = document.getElementById('listView');
-    const cardView = document.getElementById('cardView');
+    const iconView = document.getElementById('iconView');
     const listViewBtn = document.getElementById('listViewBtn');
-    const cardViewBtn = document.getElementById('cardViewBtn');
+    const iconViewBtn = document.getElementById('iconViewBtn');
 
     if (view === 'list') {
         listView.style.display = 'block';
-        cardView.style.display = 'none';
+        iconView.style.display = 'none';
         listViewBtn.disabled = true;
-        cardViewBtn.disabled = false;
+        iconViewBtn.disabled = false;
+    } else if (view === 'icon') {
+        listView.style.display = 'none';
+        iconView.style.display = 'block';
+        listViewBtn.disabled = false;
+        iconViewBtn.disabled = true;
     } else if (view === 'card') {
         listView.style.display = 'none';
         cardView.style.display = 'block';
         listViewBtn.disabled = false;
         cardViewBtn.disabled = true;
     }
-
     currentView = view;
     clearSearchBar();
 }
+
 
 function createListView(environment) {
     const listView = document.getElementById('listView');
@@ -492,29 +497,37 @@ function createListView(environment) {
     // Filter data based on the selected environment
     const filteredData = data.filter(app => app.Environment === environment);
 
-    // Sort filttered data aplhabetically By LongName
-    filteredData.sort((a,b) => a.LongName.localeCompare(b.LongName));
-
     filteredData.forEach(app => {
         const listItem = document.createElement('a');
         listItem.href = app.URL;
         listItem.target = "_blank";
         listItem.classList.add("list-group-item", "list-group-item-action");
-        listItem.textContent =  app.LongName + " - " +  app.ShortName;
-        
+
+        // Create an image element for the icon
+        const iconImg = document.createElement('img');
+        iconImg.src = app.ImagePath; // Assuming app.ImagePath contains the path to the icon image
+        iconImg.alt = app.ShortName;
+        iconImg.classList.add("icon-image");
+
+        // Append the icon image to the listItem
+        listItem.appendChild(iconImg);
+
         // Add data attributes for short name and tags and hide them with CSS
         listItem.setAttribute('data-longname', app.LongName);
         listItem.setAttribute('data-tags', Array.isArray(app.Tags) ? app.Tags.join(',') : '');
         listItem.style.display = 'block';
 
+        // Add short name text to the listItem
+        listItem.appendChild(document.createTextNode(app.LongName + " - " + app.ShortName));
+
         listView.appendChild(listItem);
     });
 }
 
-function createCardView(environment) {
+function createIconView(environment) {
 
-    const cardContainer = document.getElementById('cardContainer');
-    cardContainer.innerHTML = '';
+    const iconContainer = document.getElementById('iconContainer');
+    iconContainer.innerHTML = '';
 
     // Filter data based on the selected environment
     const filteredData = data.filter(app => app.Environment === environment);
@@ -554,7 +567,7 @@ function createCardView(environment) {
 
     });
 
-    cardContainer.appendChild(row);
+    iconContainer.appendChild(row);
     
        // Enable popovers after adding elements to the DOM
        const popovers = new bootstrap.Popover(document.body, {
@@ -567,10 +580,45 @@ function createCardView(environment) {
     
 }
 
+function createCardView(environment) {
+    const cardContainer = document.getElementById('cardContainer');
+    cardContainer.innerHTML = '';
+
+    // Filter data based on the selected environment
+    const filteredData = data.filter(app => app.Environment === environment);
+
+       // Sort filttered data aplhabetically By ShortName
+       filteredData.sort((a,b) => a.LongName.localeCompare(b.LongName));
+
+    filteredData.forEach(app => {
+        const cardCol = document.createElement("div");
+        cardCol.classList.add("col");
+
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        // Convert the array of tags to a comma-separated string
+        const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : '';
+
+        card.innerHTML = `
+        <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
+        <div class="card-body">
+          <h5 class="card-title"> [${app.Environment}] ${app.ShortName}</h5>
+          <p class="card-text">${app.Description}</p>
+          <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
+          <div><span class="badge badge-light">${tags}</span></div>
+        </div>
+      `;
+
+        cardCol.appendChild(card);
+        cardContainer.appendChild(cardCol);
+    });
+}
+
 function switchEnvironmentView(environment) {
     createEnvironmentView(environment);
     createListView(environment);
-    createCardView(environment);
+    createIconView(environment);
 }
 
 function splitDataByEnvironment(data) {
@@ -585,7 +633,7 @@ function splitDataByEnvironment(data) {
 
 
 function createEnvironmentTab(environment, data) {
-    const cardContainer = document.getElementById('cardContainer');
+    const iconContainer = document.getElementById('iconContainer');
 
     const row = document.createElement("div");
     row.classList.add("row", "justify-space-evenly");
@@ -618,7 +666,7 @@ function createEnvironmentTab(environment, data) {
     tabContent.classList.add("tab-pane", "fade", "show");
     tabContent.appendChild(row);
 
-    cardContainer.appendChild(tabContent);
+    iconContainer.appendChild(tabContent);
 }
 
 function fetchData() {
@@ -631,7 +679,7 @@ function loadAndSplitData() {
     // Assume data is loaded asynchronously
     fetchData().then(data => {
         splitDataByEnvironment(data);
-        createCardView('Production'); // Show the default tab
+        createIconView('Production'); // Show the default tab
         createListView('Production');
     });
 }
@@ -668,7 +716,7 @@ function searchItems() {
     });
 
     // Display or hide the "not found" message based on whether items were found and if any items are displayed
-    cardContainer.style.display = found ? 'block' : 'none';
+    iconContainer.style.display = found ? 'block' : 'none';
     notFoundMessage.style.display = found || document.querySelector('.list-group .list-group-item[style="display: block;"]') ? 'none' : 'block';
 
     // Clear the search bar if the input is empty

@@ -25,6 +25,12 @@ li {
 }
 
 
+.icon-image 
+{
+    padding-right: 10px;
+}
+
+
 footer {
     background-color: #000000;
     color: #c4c4b2;
@@ -66,3 +72,26 @@ span.badge.badge-light{
     color: white;
 }
 
+.card-body {
+    background-color: #5A6C70;
+}
+
+.card-text, h5.card-title {
+    color: #E2E7EA;
+}
+
+
+a.btn.btn-primary{
+    background-color: #E7A374;
+    color: #E2E7EA;
+    border-color: #F14E63;
+}
+
+div.card.h-100{
+    border-color: #F14E63;
+}
+
+#card-img-top {
+    height: 200px;
+    width: 200px;
+}

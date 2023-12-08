@@ -24,6 +24,13 @@ li {
     padding: 5px;
 }
 
+
+.icon-image 
+{
+    padding-right: 10px;
+}
+
+
 .hidden {
     display: none;
 }
@@ -63,4 +70,29 @@ span.badge.badge-light{
     text-wrap: wrap;
     text-align: left;
     color: white;
+}
+
+#card-img-top {
+    height: 200px;
+    width: 200px;
+}
+
+.card-body {
+    background-color: #3e3636;
+}
+
+.card-text, h5.card-title {
+    color: white;
+}
+
+
+
+a.btn.btn-primary{
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+div.card.h-100{
+    border-color: black;
 }

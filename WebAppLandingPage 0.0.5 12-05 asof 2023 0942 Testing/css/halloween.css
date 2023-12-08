@@ -28,6 +28,11 @@ li {
     display: none;
 }
 
+.icon-image 
+{
+    padding-right: 10px;
+}
+
 
 footer {
     background-color: #000000;
@@ -59,4 +64,29 @@ span.badge.badge-light{
     text-wrap: wrap;
     text-align: left;
     color: #85e21f;
+}
+
+
+.card-body {
+    background-color: #881ee4;
+}
+
+.card-text, h5.card-title {
+    color: #85e21f;
+}
+
+
+a.btn.btn-primary{
+    background-color: #000000;
+    color: #85e21f;
+    border-color: #fff;
+}
+
+div.card.h-100{
+    border-color: #000;
+}
+
+#card-img-top {
+    height: 200px;
+    width: 200px;
 }

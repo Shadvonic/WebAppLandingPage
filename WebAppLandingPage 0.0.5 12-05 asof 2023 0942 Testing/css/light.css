@@ -13,6 +13,8 @@ body {
 
 }
 
+
+
 .container-fluid {
     background-color: #ca00af;
     color: white;
@@ -33,6 +35,12 @@ body {
 
 li {
     padding: 5px;
+}
+
+
+.icon-image 
+{
+    padding-right: 10px;
 }
 
 .hidden {
@@ -65,3 +73,27 @@ a.btn.btn-primary{
     color: black;
 }
 
+#card-img-top {
+    height: 200px;
+    width: 200px;
+}
+
+.card-body {
+    background-color: white;
+}
+
+.card-text, h5.card-title {
+    color: black;
+}
+
+a.btn.btn-primary{
+    background-color: #0d6efd;
+    color: white;
+   
+}
+
+
+div.card.h-100{
+
+    border-color: lightgray;
+}
