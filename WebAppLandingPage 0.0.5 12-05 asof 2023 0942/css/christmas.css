@@ -91,10 +91,7 @@ div.card.h-100{
     border-color: #F14E63;
 }
 
-#card-img-top {
-    height: 200px;
-    width: 200px;
-}
+
 
 .overlay {
     position: fixed;
