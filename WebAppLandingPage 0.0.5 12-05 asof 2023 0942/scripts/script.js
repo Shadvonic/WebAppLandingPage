@@ -432,7 +432,6 @@ const data = [
 ]
 
 
-
 let currentView = 'icon'; // Initially set to 'card'
 
 // Function to dynamically load CSS file
