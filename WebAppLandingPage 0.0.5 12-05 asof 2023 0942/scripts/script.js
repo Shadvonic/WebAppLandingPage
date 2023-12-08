@@ -1,21 +1,6 @@
 const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark"] // 0-5
 const environment = ["Production", "Pre-Production", "Training", "Testing", "Development"] // 0-4
 
-const environments = {
-    DEV_ENV: {
-        name: 'DEV',
-        color: '#CA00AF'
-    },
-    STG_ENV: {
-        name: 'TRN',
-        color: '#2D8A43'
-    },
-    PRD_ENV: {
-        name: 'PRD',
-        color: '#3E97CB'
-    }
-};
-
 const data = [
 
     {
@@ -462,6 +447,24 @@ function loadThemeCSS(theme) {
     head.appendChild(link);
 }
 
+
+function openAppOverlay(shortName) {
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+
+    const message = document.createElement('div');
+    message.textContent = `Opening ${shortName} in a new browser tab`;
+    message.style.color = 'white';
+
+    overlay.appendChild(message);
+
+    document.body.appendChild(overlay);
+
+    setTimeout(() => {
+        document.body.removeChild(overlay);
+    }, 2000);
+}
+
 function createEnvironmentView(environment) {
     const container = document.getElementById(`${environment.toLowerCase()}Content`);
     
@@ -493,7 +496,6 @@ function createEnvironmentView(environment) {
         });
     }
 }
-
 
 
 function toggleView(view) {
@@ -547,6 +549,16 @@ function createListView(environment) {
         // Add short name text to the listItem
         listItem.appendChild(document.createTextNode(app.LongName + " - " + app.ShortName));
 
+        //Add a click event listener to each listItem
+        listItem.addEventListener('click', () => {
+            event.preventDefault(); // Prevent the default behavior of opening the link
+            openAppOverlay(app.ShortName);
+            // Set a delay before opening the actual link
+            setTimeout(() => {
+                window.open(app.URL, '_blank');
+            }, 1000); // 2000 milliseconds (2 seconds) delay
+        });
+
         listView.appendChild(listItem);
     });
 }
@@ -588,6 +600,16 @@ function createIconView(environment) {
         </a>
         <p class="text-center">${app.ShortName}</p>
     `;
+
+        // Add a click event listener to each imageContainer
+        imageContainer.addEventListener('click', () => {
+            openAppOverlay(app.ShortName);
+            event.preventDefault(); // Prevent the default behavior of opening the link
+            // Set a delay before opening the actual link
+            setTimeout(() => {
+                window.open(app.URL, '_blank');
+            }, 1000); // 2000 milliseconds (2 seconds) delay
+        });
 
         col.appendChild(imageContainer);
         row.appendChild(col);
@@ -636,6 +658,17 @@ function createCardView(environment) {
           <div><span class="badge badge-light">${tags}</span></div>
         </div>
       `;
+
+        // Add a click event listener to each card
+        card.addEventListener('click', () => {
+            event.preventDefault(); // Prevent the default behavior of opening the link
+            openAppOverlay(app.ShortName);
+            // Set a delay before opening the actual link
+            setTimeout(() => {
+                window.open(app.URL, '_blank');
+            }, 1000); // 2000 milliseconds (2 seconds) delay
+        });
+
 
         cardCol.appendChild(card);
         cardContainer.appendChild(cardCol);
