@@ -455,7 +455,23 @@ function createEnvironmentView(environment) {
     
         data.forEach(app => {
             if (app.Environment === environment) {
-                const element = currentView === 'card' ? createCardView(app) : createListView(app);
+                let element;
+
+                switch (currentView) {
+                    case 'card':
+                        element = createCardView(app);
+                        break;
+                    case 'list':
+                        element = createListView(app);
+                        break;
+                    case 'icon':
+                        element = createIconView(app);
+                        break;
+                    default:
+                        
+                        break;
+                }
+
                 container.appendChild(element);
             }
         });
@@ -463,28 +479,47 @@ function createEnvironmentView(environment) {
 }
 
 
+
 function toggleView(view) {
     const listView = document.getElementById('listView');
     const iconView = document.getElementById('iconView');
+    const cardView = document.getElementById('cardView');
     const listViewBtn = document.getElementById('listViewBtn');
     const iconViewBtn = document.getElementById('iconViewBtn');
+    const cardViewBtn = document.getElementById('cardViewBtn');
 
-    if (view === 'list') {
-        listView.style.display = 'block';
-        iconView.style.display = 'none';
-        listViewBtn.disabled = true;
-        iconViewBtn.disabled = false;
-    } else if (view === 'icon') {
-        listView.style.display = 'none';
-        iconView.style.display = 'block';
-        listViewBtn.disabled = false;
-        iconViewBtn.disabled = true;
-    } else if (view === 'card') {
-        listView.style.display = 'none';
-        cardView.style.display = 'block';
-        listViewBtn.disabled = false;
-        cardViewBtn.disabled = true;
+    switch (view) {
+        case 'list':
+            listView.style.display = 'block';
+            iconView.style.display = 'none';
+            cardView.style.display = 'none';
+            listViewBtn.disabled = true;
+            iconViewBtn.disabled = false;
+            cardViewBtn.disabled = false;
+            break;
+
+        case 'icon':
+            listView.style.display = 'none';
+            iconView.style.display = 'block';
+            cardView.style.display = 'none';
+            listViewBtn.disabled = false;
+            iconViewBtn.disabled = true;
+            cardViewBtn.disabled = false;
+            break;
+
+        case 'card':
+            listView.style.display = 'none';
+            iconView.style.display = 'none';
+            cardView.style.display = 'block';
+            listViewBtn.disabled = false;
+            iconViewBtn.disabled = false;
+            cardViewBtn.disabled = true;
+            break;
+
+        default:
+            console.error('Invalid view:', view);
     }
+
     currentView = view;
     clearSearchBar();
 }
@@ -601,9 +636,9 @@ function createCardView(environment) {
         const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : '';
 
         card.innerHTML = `
-        <img src="./img/HnHlogo.png" class="card-img-top" alt="${app.ShortName}">
+        <img src="${app.ImagePath}" class="card-img-top" alt="${app.ShortName}">
         <div class="card-body">
-          <h5 class="card-title"> [${app.Environment}] ${app.ShortName}</h5>
+          <h5 class="card-title">  ${app.ShortName}</h5>
           <p class="card-text">${app.Description}</p>
           <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
           <div><span class="badge badge-light">${tags}</span></div>
@@ -681,6 +716,7 @@ function loadAndSplitData() {
         splitDataByEnvironment(data);
         createIconView('Production'); // Show the default tab
         createListView('Production');
+        createCardView('Production');
     });
 }
 
