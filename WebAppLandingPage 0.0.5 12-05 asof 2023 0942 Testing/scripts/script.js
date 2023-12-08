@@ -488,37 +488,13 @@ function toggleView(view) {
     const iconViewBtn = document.getElementById('iconViewBtn');
     const cardViewBtn = document.getElementById('cardViewBtn');
 
-    switch (view) {
-        case 'list':
-            listView.style.display = 'block';
-            iconView.style.display = 'none';
-            cardView.style.display = 'none';
-            listViewBtn.disabled = true;
-            iconViewBtn.disabled = false;
-            cardViewBtn.disabled = false;
-            break;
+    listView.style.display = view === 'list' ? 'block' : 'none';
+    iconView.style.display = view === 'icon' ? 'block' : 'none';
+    cardView.style.display = view === 'card' ? 'block' : 'none';
 
-        case 'icon':
-            listView.style.display = 'none';
-            iconView.style.display = 'block';
-            cardView.style.display = 'none';
-            listViewBtn.disabled = false;
-            iconViewBtn.disabled = true;
-            cardViewBtn.disabled = false;
-            break;
-
-        case 'card':
-            listView.style.display = 'none';
-            iconView.style.display = 'none';
-            cardView.style.display = 'block';
-            listViewBtn.disabled = false;
-            iconViewBtn.disabled = false;
-            cardViewBtn.disabled = true;
-            break;
-
-        default:
-            console.error('Invalid view:', view);
-    }
+    listViewBtn.disabled = view === 'list';
+    iconViewBtn.disabled = view === 'icon';
+    cardViewBtn.disabled = view === 'card';
 
     currentView = view;
     clearSearchBar();
@@ -650,11 +626,6 @@ function createCardView(environment) {
     });
 }
 
-function switchEnvironmentView(environment) {
-    createEnvironmentView(environment);
-    createListView(environment);
-    createIconView(environment);
-}
 
 function splitDataByEnvironment(data) {
     const productionData = data.filter(app => app.Environment === 'Production');
@@ -729,6 +700,13 @@ document.getElementById('testing-tab').addEventListener('click', () => switchEnv
 
 // Load and split data when the script is loaded
 loadAndSplitData();
+
+function switchEnvironmentView(environment) {
+    createEnvironmentView(environment);
+    createListView(environment);
+    createIconView(environment);
+    createCardView(environment)
+}
 
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
