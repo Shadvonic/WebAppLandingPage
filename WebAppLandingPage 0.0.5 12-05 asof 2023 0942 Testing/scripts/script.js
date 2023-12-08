@@ -1,5 +1,21 @@
 const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark"] // 0-5
 const environment = ["Production", "Pre-Production", "Training", "Testing", "Development"] // 0-4
+
+const environments = {
+    DEV_ENV: {
+        name: 'DEV',
+        color: '#CA00AF'
+    },
+    STG_ENV: {
+        name: 'TRN',
+        color: '#2D8A43'
+    },
+    PRD_ENV: {
+        name: 'PRD',
+        color: '#3E97CB'
+    }
+};
+
 const data = [
 
     {
