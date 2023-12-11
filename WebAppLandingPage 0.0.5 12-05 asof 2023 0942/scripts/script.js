@@ -780,6 +780,12 @@ function searchItems() {
     iconContainer.style.display = found ? 'block' : 'none';
     notFoundMessage.style.display = found || document.querySelector('.list-group .list-group-item[style="display: block;"]') ? 'none' : 'block';
 
+   // Toggle the visibility of the "Item not found" message based on whether items were found
+   cardContainer.style.display = found ? '' : 'none';
+   notFoundMessageCard.style.display = found ? 'none' : 'block';
+
+
+
     // Clear the search bar if the input is empty
     if (!filter.trim()) {
         notFoundMessage.style.display = 'none';
