@@ -75,16 +75,25 @@
             <button id="iconViewBtn" type="button" class="btn btn-link" style="color: white;" onclick="toggleView('icon')">Icon View </button>
             <button id="cardViewBtn" type="button" class="btn btn-link" style="color: white;" onclick="toggleView('card')">Cards View </button>
           </ul>
+          <!-----
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput" oninput="searchItems()">
             <button class="btn btn-outline-secondary" style="color: white; border-color: white;" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
+    <div id="searchContainer" class="p-3">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput" oninput="searchItems()">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+    </div>
   </header>
 
-
+  
+  
+  
   <div class="container mt-5">
     <ul class="nav nav-tabs" id="environmentTabs" role="tablist">
         <li class="nav-item" role="presentation">

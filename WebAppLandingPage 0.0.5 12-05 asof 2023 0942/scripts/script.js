@@ -764,7 +764,7 @@ function searchItems() {
     let found = false;
 
     listItems.forEach(item => {
-        const textValue = item.textContent || item.innerText;
+        const textValue = item.textContent || item.innerTcodinext;
         const longName = item.getAttribute('data-longname').toUpperCase();
         const tags = item.getAttribute('data-tags').toUpperCase();
 
