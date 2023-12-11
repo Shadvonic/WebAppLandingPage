@@ -778,6 +778,7 @@ function searchItems() {
 
     // Display or hide the "not found" message based on whether items were found and if any items are displayed
     iconContainer.style.display = found ? 'block' : 'none';
+    cardContainer.style.display = found ? 'block' : 'none';
     notFoundMessage.style.display = found || document.querySelector('.list-group .list-group-item[style="display: block;"]') ? 'none' : 'block';
 
     // Clear the search bar if the input is empty
