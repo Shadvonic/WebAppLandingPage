@@ -112,3 +112,10 @@ div.card.h-100{
     width: 300px; /* Set the width to 100px */
     margin-right: 10px;
   }
+
+  .divider {
+    width: 1px;
+    height: 2rem; /* Adjust the height as needed */
+    background-color: #dee2e6; /* Light vertical bar color */
+    margin: 0 0.5rem; /* Adjust the margin to space out the tabs */
+}
