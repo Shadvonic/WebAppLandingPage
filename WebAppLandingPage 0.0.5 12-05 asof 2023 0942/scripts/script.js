@@ -425,10 +425,6 @@ const data = [
         Tags: ["Prevention", "Training", "Naloxone", "Narcan", "Survey", "Visitor"]
     } 
 
-
-
-    
-
 ]
 
 
@@ -450,26 +446,37 @@ color: '#3E97CB'
 }
 };
 
-const currURL = window.location.href;
-let AssignedHeaderColor = '';
+function assignHeaderColor() {
+    const currURL = window.location.href;
+    let assignedHeaderColor = '';
 
-// Example URL logic to determine the environment
-if (currURL.includes('Test')) {
-    // Assign color based on DEV_ENV for Test
-    AssignedHeaderColor = environments.DEV_ENV.color;
-} else if (currURL.includes('Staging')) {
-    // Assign color based on STG_ENV for Staging
-    AssignedHeaderColor = environments.STG_ENV.color;
-} else {
-    // Iterate through your data array to find the matching short name
-    data.forEach(app => {
-        if (currURL.includes(app.ShortName)) {
-            // Assign color based on PRD_ENV for the specific short name
-            AssignedHeaderColor = environments.PRD_ENV.color;
-        }
+    if (currURL.includes('Test')) {
+        // Assign color based on DEV_ENV for Test
+        assignedHeaderColor = environments.DEV_ENV.color;
+    } else if (currURL.includes('Staging')) {
+        // Assign color based on STG_ENV for Staging
+        assignedHeaderColor = environments.STG_ENV.color;
+    } else {
+        // Iterate through your data array to find the matching short name
+        data.forEach(app => {
+            if (currURL.includes(app.ShortName)) {
+                // Assign color based on PRD_ENV for the specific short name
+                assignedHeaderColor = environments.PRD_ENV.color;
+            }
+        });
+        // Add other conditions for different environments if needed
+    }
+
+    // Set the color based on the assigned environment color
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.navbar-expand-lg.bg-body-tertiary').style.backgroundColor = assignedHeaderColor;
     });
-    // Add other conditions for different environments if needed
 }
+
+// Call the function to assign header color
+assignHeaderColor();
+
+
 let currentView = 'icon'; // Initially set to 'card'
 
 // Function to dynamically load CSS file
@@ -821,7 +828,7 @@ function searchItems() {
 
    // Toggle the visibility of the "Item not found" message based on whether items were found
    cardContainer.style.display = found ? '' : 'none';
-   notFoundMessageCard.style.display = found ? 'none' : 'block';
+   notFoundMessage.style.display = found ? 'none' : 'block';
 
 
 
@@ -860,7 +867,3 @@ document.querySelector('form[role="search"]').addEventListener('submit', functio
     toggleView(currentView); // Maintain the current view
 });
 
-// Set the color based on the assigned environment color
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.navbar-expand-lg.bg-body-tertiary').style.backgroundColor = AssignedHeaderColor;
-});
