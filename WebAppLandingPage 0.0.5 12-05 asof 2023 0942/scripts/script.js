@@ -431,6 +431,44 @@ const data = [
 ]
 
 
+const environments = {
+
+DEV_ENV: {
+name: 'DEV',
+color: '#CA00AF'
+},
+
+STG_ENV: {
+name: 'TRN',
+color: '#2D8A43'
+},
+
+PRD_ENV: {
+name: 'PRD',
+color: '#3E97CB'
+}
+};
+
+const currURL = window.location.href;
+let AssignedHeaderColor = '';
+
+// Example URL logic to determine the environment
+if (currURL.includes('Test')) {
+    // Assign color based on DEV_ENV for Test
+    AssignedHeaderColor = environments.DEV_ENV.color;
+} else if (currURL.includes('Staging')) {
+    // Assign color based on STG_ENV for Staging
+    AssignedHeaderColor = environments.STG_ENV.color;
+} else {
+    // Iterate through your data array to find the matching short name
+    data.forEach(app => {
+        if (currURL.includes(app.ShortName)) {
+            // Assign color based on PRD_ENV for the specific short name
+            AssignedHeaderColor = environments.PRD_ENV.color;
+        }
+    });
+    // Add other conditions for different environments if needed
+}
 let currentView = 'icon'; // Initially set to 'card'
 
 // Function to dynamically load CSS file
@@ -821,3 +859,7 @@ document.querySelector('form[role="search"]').addEventListener('submit', functio
     toggleView(currentView); // Maintain the current view
 });
 
+// Set the color based on the assigned environment color
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.navbar-expand-lg.bg-body-tertiary').style.backgroundColor = AssignedHeaderColor;
+});
