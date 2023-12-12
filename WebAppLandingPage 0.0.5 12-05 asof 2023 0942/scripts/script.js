@@ -1,3 +1,4 @@
+
 const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark"] // 0-5
 const environment = ["Production", "Pre-Production", "Training", "Testing", "Development"] // 0-4
 const data = [
