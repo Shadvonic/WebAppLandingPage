@@ -119,3 +119,9 @@ div.card.h-100{
     color: #000; /* Change to your desired active tab text color */
     font-weight: bold;
   }
+
+  .iconLogos {
+    width: 30px; 
+    height: 30px;
+    background-color: white;
+  }
