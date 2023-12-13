@@ -908,3 +908,10 @@ document.querySelector('form[role="search"]').addEventListener('submit', functio
     toggleView(currentView); // Maintain the current view
 });
 
+  // Enable Bootstrap tooltips
+  document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
