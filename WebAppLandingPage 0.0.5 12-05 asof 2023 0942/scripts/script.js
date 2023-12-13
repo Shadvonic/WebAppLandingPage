@@ -557,8 +557,6 @@ function toggleView(view) {
     iconViewBtn.disabled = view === 'icon';
     cardViewBtn.disabled = view === 'card';
 
-     // Save user preference
-     saveUserPreferences(currentTheme, view);
     currentView = view;
     clearSearchBar();
 }
@@ -846,7 +844,6 @@ function clearSearchBar() {
     searchInput.value = '';
     searchItems(); // Optionally call searchItems to update the view based on the cleared search bar
 }
-
 
 const themeRadios = document.querySelectorAll('input[name="theme"]');
 
