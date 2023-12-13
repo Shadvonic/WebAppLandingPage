@@ -847,46 +847,10 @@ function clearSearchBar() {
     searchItems(); // Optionally call searchItems to update the view based on the cleared search bar
 }
 
-// Function to save user preferences to localStorage
-function saveUserPreferences(theme, view) {
-    localStorage.setItem('userTheme', theme);
-    localStorage.setItem('userView', view);
-}
-
-// Function to load user preferences from localStorage
-function loadUserPreferences() {
-    const savedTheme = localStorage.getItem('userTheme');
-    const savedView = localStorage.getItem('userView');
-
-    return { theme: savedTheme, view: savedView };
-}
-
-// Function to apply user preferences (theme and view)
-function applyUserPreferences() {
-    const { theme, view } = loadUserPreferences();
-
-    // Apply theme
-    if (theme) {
-        const themeRadio = document.getElementById(theme);
-        if (themeRadio) {
-            themeRadio.checked = true;
-            loadThemeCSS(theme);
-        }
-    }
-
-    // Apply view
-    if (view) {
-        toggleView(view);
-    }
-}
-
-// Load and apply user preferences when the script is loaded
-applyUserPreferences();
-
 
 const themeRadios = document.querySelectorAll('input[name="theme"]');
 
-// Update the event listeners for theme and view changes
+// Add event listeners to radio buttons to apply theme classes
 themeRadios.forEach(radio => {
     radio.addEventListener('change', () => {
         if (radio.checked) {
@@ -895,9 +859,6 @@ themeRadios.forEach(radio => {
 
             // Load the appropriate CSS file based on the checked radio button
             loadThemeCSS(radio.id.toLowerCase());
-
-            // Save user preference
-            saveUserPreferences(radio.id.toLowerCase(), currentView);
         }
     });
 });
