@@ -71,6 +71,7 @@
                 </li>
               </ul>
             </li>
+             <!-----
             <button id="listViewBtn" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="top" title="List View" style="color: white;" onclick="toggleView('list')">
               <img src="./img/icon_list_view.png" class="iconLogos">
           </button>
@@ -84,7 +85,7 @@
               <img src="./img/icon_card_view.png" class="iconLogos">
           </button>
           </ul>
-          <!-----
+         
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput" oninput="searchItems()">
             <button class="btn btn-outline-secondary" style="color: white; border-color: white;" type="submit">Search</button>
@@ -92,39 +93,59 @@
         </div>
       </div>
     </nav>
-    <div id="searchContainer" class="p-3">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Enter search term(s) to filter active list" aria-label="Search" id="searchInput" oninput="searchItems()">
-        <button class="btn btn-primary" type="submit">Search</button>
-      </form>
-   
-      <ul class="nav nav-tabs" id="environmentTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="production-tab" data-bs-toggle="tab" data-bs-target="production" type="button" role="tab" aria-controls="production" aria-selected="true">Production</button>
-          </li>
-          <li class="nav-item" role="presentation">
-              <button class="nav-link" id="training-tab" data-bs-toggle="tab" data-bs-target="staging" type="button" role="tab" aria-controls="training" aria-selected="false">Training</button>
-          </li>
-          <li class="nav-item" role="presentation">
-              <button class="nav-link" id="testing-tab" data-bs-toggle="tab" data-bs-target="testing" type="button" role="tab" aria-controls="testing" aria-selected="false">Testing</button>
-          </li>
-          <!-- Add more tabs as needed -->
-      </ul>
-      <div class="tab-content mt-3">
-          <div class="tab-pane fade show active" id="production" role="tabpanel" aria-labelledby="production-tab">
-              <!-- Content for Production environment -->
-              <!-- Use JavaScript  dynamically populate content based on the Production environment -->
-          </div>
-          <div class="tab-pane fade" id="training" role="tabpanel" aria-labelledby="training-tab">
-              <!-- Content for Staging environment -->
-              <!--  JavaScript  dynamically populate content based on the Staging environment -->
-          </div>
-          <div class="tab-pane fade" id="testing" role="tabpanel" aria-labelledby="testing-tab">
-              <!-- Content for Testing environment -->
-              <!--  JavaScript  dynamically populate content based on the Testing environment -->
-          </div>
-            <!-- Add more tabs as needed -->
-  </div>
+  
+      <div class="d-flex justify-content-start align-items-start">
+
+          <!-- Search bar -->
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Enter search term(s) to filter active list" aria-label="Search" id="searchInput" oninput="searchItems()">
+            <button id="search-btn" class="btn btn-primary" type="submit">Search</button>
+          </form>
+
+            <ul class="nav nav-tabs" id="environmentTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="production-tab" data-bs-toggle="tab" data-bs-target="production" type="button" role="tab" aria-controls="production" aria-selected="true">Production</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="training-tab" data-bs-toggle="tab" data-bs-target="staging" type="button" role="tab" aria-controls="training" aria-selected="false">Training</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="testing-tab" data-bs-toggle="tab" data-bs-target="testing" type="button" role="tab" aria-controls="testing" aria-selected="false">Testing</button>
+              </li>
+              <!-- Add more tabs as needed -->
+          </ul>
+
+          <div class="tab-content mt-3">
+              <div class="tab-pane fade show active" id="production" role="tabpanel" aria-labelledby="production-tab">
+                  <!-- Content for Production environment -->
+                  <!-- Use JavaScript  dynamically populate content based on the Production environment -->
+              </div>
+              <div class="tab-pane fade" id="training" role="tabpanel" aria-labelledby="training-tab">
+                  <!-- Content for Staging environment -->
+                  <!--  JavaScript  dynamically populate content based on the Staging environment -->
+              </div>
+              <div class="tab-pane fade" id="testing" role="tabpanel" aria-labelledby="testing-tab">
+                  <!-- Content for Testing environment -->
+                  <!--  JavaScript  dynamically populate content based on the Testing environment -->
+              </div>
+                <!-- Add more tabs as needed -->
+            </div>
+        
+
+            <!-- buttons -->
+            <button id="listViewBtn" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="top" title="List View" style="color: white;" onclick="toggleView('list')">
+              <img src="./img/icon_list_view.png" class="iconLogos">
+            </button>
+
+            <button id="iconViewBtn" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Icon View" style="color: white;" onclick="toggleView('icon')">
+              <img src="./img/icon_grid_view.png" class="iconLogos">
+            </button>
+
+            <button id="cardViewBtn" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Card View" style="color: white;" onclick="toggleView('card')">
+              <img src="./img/icon_card_view.png" class="iconLogos">
+            </button>
+      </div>
+
 
   </header>
   
