@@ -11,17 +11,9 @@ body {
 
 }
  
-#listViewBtn,
-#cardViewBtn {
-  margin-right: 5px;
-}
 
 .btn-group {
     margin-right: 85px;
-}
-
-li {
-    padding: 5px;
 }
 
 

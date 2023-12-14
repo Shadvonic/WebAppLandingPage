@@ -18,26 +18,6 @@ header {
     padding-bottom: 5px;
 }
 
-#listViewBtn,
-#cardViewBtn {
-  margin-right: 5px;
-}
-
-#cardViewBtn, #listViewBtn 
-{
-   margin-left: 5px;
-   margin-right: 5px;
-}
-
-li {
-    padding: 5px;
-}
-
-
-.icon-image 
-{
-    padding-right: 10px;
-}
 
 .hidden {
     display: none;
@@ -125,8 +105,6 @@ div.card.h-100{
   .iconLogos {
     width: 45px; 
     height: 45px;
-  
-    
   }
 
   #environmentTabs.nav.nav-tabs {
@@ -134,12 +112,12 @@ div.card.h-100{
   }
 
 
-/* 1. Remove Rounded Edges on List View Items */
+/* Remove Rounded Edges on List View Items */
 .list-group-item {
     border-radius: 0; /* Remove rounded edges */
 }
 
-/* 2. Adjust Icon Size and Text Size in List View */
+/* Adjust Icon Size and Text Size in List View */
 .list-group-item img {
     width: 75px; /* 50% of 150px */
     height: 75px;

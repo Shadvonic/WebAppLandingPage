@@ -549,6 +549,40 @@ function createEnvironmentView(environment) {
     }
 }
 
+
+// Function to save user preferences (theme and view) in localStorage
+function saveUserPreferences() {
+    localStorage.setItem('selectedTheme', document.querySelector('input[name="theme"]:checked').id);
+    localStorage.setItem('selectedView', currentView);
+}
+
+// Function to load user preferences from localStorage
+function loadUserPreferences() {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    const savedView = localStorage.getItem('selectedView');
+
+    // Set the saved theme after the page has loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        if (savedTheme) {
+            const themeRadio = document.getElementById(savedTheme);
+            if (themeRadio) {
+                themeRadio.checked = true;
+                // Apply the theme immediately
+                document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
+                loadThemeCSS(savedTheme);
+                // Update the active theme display in the dropdown
+                updateActiveThemeDisplayDropdown(savedTheme);
+            }
+        }
+
+        // Set the saved view
+        if (savedView) {
+            toggleView(savedView);
+        }
+    });
+}
+
+
 // Update the function to toggle views (list, icon, card)
 function toggleView(view) {
     const listView = document.getElementById('listView');
@@ -591,43 +625,15 @@ function toggleView(view) {
             break;
     }
 
+    
     // Save the current view
     currentView = view;
 
+    // Save the current view in sessionStorage
+    sessionStorage.setItem('currentView', view);
+
     // Clear the search bar
     clearSearchBar();
-}
-
-// Function to save user preferences (theme and view) in localStorage
-function saveUserPreferences() {
-    localStorage.setItem('selectedTheme', document.querySelector('input[name="theme"]:checked').id);
-    localStorage.setItem('selectedView', currentView);
-}
-
-// Function to load user preferences from localStorage
-function loadUserPreferences() {
-    const savedTheme = localStorage.getItem('selectedTheme');
-    const savedView = localStorage.getItem('selectedView');
-
-    // Set the saved theme after the page has loaded
-    document.addEventListener('DOMContentLoaded', function () {
-        if (savedTheme) {
-            const themeRadio = document.getElementById(savedTheme);
-            if (themeRadio) {
-                themeRadio.checked = true;
-                // Apply the theme immediately
-                document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
-                loadThemeCSS(savedTheme);
-                // Update the active theme display in the dropdown
-                updateActiveThemeDisplayDropdown(savedTheme);
-            }
-        }
-
-        // Set the saved view
-        if (savedView) {
-            toggleView(savedView);
-        }
-    });
 }
 
 
