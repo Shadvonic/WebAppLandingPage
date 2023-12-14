@@ -445,35 +445,34 @@ color: '#3E97CB'
 }
 };
 
+
 function assignHeaderColor() {
-    const currURL = window.location.href;
+    const currPathname = window.location.pathname.toLowerCase();
     let assignedHeaderColor = '';
-
-    if (currURL.includes('Test')) {
-        // Assign color based on DEV_ENV for Test
-        assignedHeaderColor = environments.DEV_ENV.color;
-    } else if (currURL.includes('Staging')) {
-        // Assign color based on STG_ENV for Staging
-        assignedHeaderColor = environments.STG_ENV.color;
+  
+    if (currPathname.includes('/test_')) {
+      assignedHeaderColor = environments.DEV_ENV.color;
+    } else if (currPathname.includes('/staging')) {
+      assignedHeaderColor = environments.STG_ENV.color;
     } else {
-        // Iterate through data array to find the matching short name
-        data.forEach(app => {
-            if (currURL.includes(app.ShortName)) {
-                // Assign color based on PRD_ENV for the specific short name
-                assignedHeaderColor = environments.PRD_ENV.color;
-            }
-        });
-        // Add other conditions for different environments if needed
+      data.forEach(app => {
+        if (currPathname.includes('/' + app.ShortName.toLowerCase())) {
+          assignedHeaderColor = environments.PRD_ENV.color;
+        }
+      });
     }
+  
+    // Adjusted selector to target the specific element in the navbar for background color
+    const navbar = document.querySelector('.container-fluid');
+    if (navbar) {
+      navbar.style.backgroundColor = assignedHeaderColor;
+    }
+  }
 
-    // Set the color based on the assigned environment color
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector('.navbar-expand-lg.bg-body-tertiary').style.backgroundColor = assignedHeaderColor;
-    });
-}
 
-// Call the function to assign header color
+// Call the function
 assignHeaderColor();
+
 
 
 let currentView = 'icon'; // Initially set to 'card'
