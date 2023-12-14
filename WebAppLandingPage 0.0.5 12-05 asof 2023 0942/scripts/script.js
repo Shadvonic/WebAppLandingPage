@@ -561,6 +561,35 @@ function toggleView(view) {
     clearSearchBar();
 }
 
+// Function to save user preferences (theme and view) in localStorage
+function saveUserPreferences() {
+    localStorage.setItem('selectedTheme', document.querySelector('input[name="theme"]:checked').id);
+    localStorage.setItem('selectedView', currentView);
+}
+
+// Function to load user preferences from localStorage
+function loadUserPreferences() {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    const savedView = localStorage.getItem('selectedView');
+
+    // Set the saved theme after the page has loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        if (savedTheme) {
+            const themeRadio = document.getElementById(savedTheme);
+            if (themeRadio) {
+                themeRadio.checked = true;
+                // Apply the theme immediately
+                document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
+                loadThemeCSS(savedTheme);
+            }
+        }
+
+        // Set the saved view
+        if (savedView) {
+            toggleView(savedView);
+        }
+    });
+}
 
 function createListView(environment) {
     const listView = document.getElementById('listView');
@@ -837,13 +866,13 @@ function searchItems() {
     }
 }
 
-
 // Function to clear the search bar when the user switches views
 function clearSearchBar() {
     const searchInput = document.getElementById('searchInput');
     searchInput.value = '';
     searchItems(); // Optionally call searchItems to update the view based on the cleared search bar
 }
+
 
 const themeRadios = document.querySelectorAll('input[name="theme"]');
 
@@ -856,15 +885,24 @@ themeRadios.forEach(radio => {
 
             // Load the appropriate CSS file based on the checked radio button
             loadThemeCSS(radio.id.toLowerCase());
+
+             // Save user preferences
+             saveUserPreferences();
         }
     });
-});
+}); 
 
 // Preventing view switch on search
 document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
     toggleView(currentView); // Maintain the current view
+
+    // Save user preferences
+    saveUserPreferences();
 });
+
+// Call this function to load user preferences when the script is loaded
+loadUserPreferences();
 
   // Enable Bootstrap tooltips
   document.addEventListener('DOMContentLoaded', function () {
