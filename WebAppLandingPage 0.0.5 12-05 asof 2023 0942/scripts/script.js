@@ -456,7 +456,7 @@ function assignHeaderColor() {
       assignedHeaderColor = environments.STG_ENV.color;
     } else {
       data.forEach(app => {
-        if (currPathname.includes('/' + app.ShortName.toLowerCase())) {
+        if (currPathname.includes('/chle')) {
           assignedHeaderColor = environments.PRD_ENV.color;
         }
       });
