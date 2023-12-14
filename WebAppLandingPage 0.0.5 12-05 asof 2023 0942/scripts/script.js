@@ -1,4 +1,4 @@
-
+// Define arrays for resource types and environments
 const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark"] // 0-5
 const environment = ["Production", "Pre-Production", "Training", "Testing", "Development"] // 0-4
 const data = [
@@ -427,7 +427,7 @@ const data = [
 
 ] 
 
-
+// Define environment details
 const environments = {
 DEV_ENV: {
 name: 'DEV',
@@ -445,35 +445,36 @@ color: '#3E97CB'
 }
 };
 
-
+// Function to assign header color based on the current URL
 function assignHeaderColor() {
+    // Get the lowercase current pathname
     const currPathname = window.location.pathname.toLowerCase();
     let assignedHeaderColor = '';
-  
+
+    // Assign colors based on specific conditions
     if (currPathname.includes('/test_')) {
-      assignedHeaderColor = environments.DEV_ENV.color;
+        assignedHeaderColor = environments.DEV_ENV.color;
     } else if (currPathname.includes('/staging')) {
-      assignedHeaderColor = environments.STG_ENV.color;
+        assignedHeaderColor = environments.STG_ENV.color;
     } else {
-      data.forEach(app => {
-        if (currPathname.includes('/chle')) {
-          assignedHeaderColor = environments.PRD_ENV.color;
-        }
-      });
+        // Default to Production environment for other cases
+        data.forEach(app => {
+            if (currPathname.includes('/chle')) {
+                assignedHeaderColor = environments.PRD_ENV.color;
+            }
+        });
     }
-   
-  
+
     // Adjusted selector to target the specific element in the navbar for background color
     const navbar = document.querySelector('.container-fluid');
     if (navbar) {
-      navbar.style.backgroundColor = assignedHeaderColor;
+        navbar.style.backgroundColor = assignedHeaderColor;
     }
-  }
+}
 
 
-// Call the function
+// Call the function to assign header color
 assignHeaderColor();
-
 
 
 let currentView = 'icon'; // Initially set to 'card'
@@ -491,57 +492,64 @@ function loadThemeCSS(theme) {
 }
 
 
+// Function to open an app overlay with a message
 function openAppOverlay(shortName) {
+    // Create an overlay element
     const overlay = document.createElement('div');
     overlay.classList.add('overlay');
 
+    // Create a message element with the app's short name
     const message = document.createElement('div');
     message.textContent = `Opening ${shortName} in a new browser tab`;
     message.style.color = 'white';
 
+    // Append the message to the overlay
     overlay.appendChild(message);
 
+    // Append the overlay to the body
     document.body.appendChild(overlay);
 
+    // Set a timeout to remove the overlay after 2 seconds (2000 milliseconds)
     setTimeout(() => {
         document.body.removeChild(overlay);
     }, 2000);
 }
 
+
+// Function to create the view for a specific environment (list, icon, card)
 function createEnvironmentView(environment) {
     const container = document.getElementById(`${environment.toLowerCase()}Content`);
-    
+
     // Check if the container is not null before proceeding
     if (container) {
         container.innerHTML = '';
-    
+
+        // Loop through the data and create the view based on the current view mode
         data.forEach(app => {
-            if (app.Environment === environment) {
-                let element;
+            let element;
 
-                switch (currentView) {
-                    case 'card':
-                        element = createCardView(app);
-                        break;
-                    case 'list':
-                        element = createListView(app);
-                        break;
-                    case 'icon':
-                        element = createIconView(app);
-                        break;
-                    default:
-                        
-                        break;
-                }
-
-                container.appendChild(element);
+            switch (currentView) {
+                case 'card':
+                    element = createCardView(app);
+                    break;
+                case 'list':
+                    element = createListView(app);
+                    break;
+                case 'icon':
+                    element = createIconView(app);
+                    break;
+                default:
+                    // Handle other cases if needed
+                    break;
             }
+
+            // Append the created element to the container
+            container.appendChild(element);
         });
     }
 }
 
-
-// Update the function to toggle views
+// Update the function to toggle views (list, icon, card)
 function toggleView(view) {
     const listView = document.getElementById('listView');
     const iconView = document.getElementById('iconView');
@@ -558,7 +566,7 @@ function toggleView(view) {
     // Hide tooltips when switching views
     hideTooltips();
 
-    // Apply a different style to the selected button
+    // Apply a different style to the selected button based on the view
     switch (view) {
         case 'list':
             listView.style.display = 'block';
@@ -579,6 +587,7 @@ function toggleView(view) {
             iconView.style.display = 'none';
             break;
         default:
+            // Handle other cases if needed
             break;
     }
 
@@ -588,7 +597,6 @@ function toggleView(view) {
     // Clear the search bar
     clearSearchBar();
 }
-
 
 // Function to save user preferences (theme and view) in localStorage
 function saveUserPreferences() {
@@ -622,6 +630,8 @@ function loadUserPreferences() {
     });
 }
 
+
+// Function to create the list view for a specific environment
 function createListView(environment) {
     const listView = document.getElementById('listView');
     listView.innerHTML = '';
@@ -629,6 +639,7 @@ function createListView(environment) {
     // Filter data based on the selected environment
     const filteredData = data.filter(app => app.Environment === environment);
 
+    // Loop through the filtered data and create list items
     filteredData.forEach(app => {
         const listItem = document.createElement('a');
         listItem.href = app.URL;
@@ -652,7 +663,7 @@ function createListView(environment) {
         // Add short name text to the listItem
         listItem.appendChild(document.createTextNode(app.LongName + " - " + app.ShortName));
 
-        //Add a click event listener to each listItem
+        // Add a click event listener to each listItem
         listItem.addEventListener('click', () => {
             event.preventDefault(); // Prevent the default behavior of opening the link
             openAppOverlay(app.ShortName);
@@ -662,47 +673,47 @@ function createListView(environment) {
             }, 1000); // 2000 milliseconds (2 seconds) delay
         });
 
+        // Append the listItem to the listView
         listView.appendChild(listItem);
     });
 }
 
-function createIconView(environment) {
 
+// Function to create the icon view for a specific environment
+function createIconView(environment) {
     const iconContainer = document.getElementById('iconContainer');
     iconContainer.innerHTML = '';
 
     // Filter data based on the selected environment
     const filteredData = data.filter(app => app.Environment === environment);
 
-     // Sort filttered data aplhabetically By ShortName
-     filteredData.sort((a,b) => a.LongName.localeCompare(b.LongName));
+    // Sort filtered data alphabetically by ShortName
+    filteredData.sort((a, b) => a.LongName.localeCompare(b.LongName));
 
     const row = document.createElement("div");
     row.classList.add("row", "justify-space-evenly");
 
+    // Loop through the filtered data and create icon containers
     filteredData.forEach(app => {
-
         const col = document.createElement("div");
         col.classList.add("col-md-3"); // Use col-md-3 to create 4 columns on medium-sized screens
 
         const imageContainer = document.createElement("div");
         imageContainer.classList.add("text-center");
 
-
-
         // Convert the array of tags to a comma-separated string
         const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : '';
 
+        // Create popover content
         const popoverContent = `<strong>${app.LongName}</strong><br><br>${app.Description}<br><br><span><b><em>${tags}</b></em></span>`;
 
-        //<img src="./img/HnHlogo.png"
-
+        // Set inner HTML for the imageContainer
         imageContainer.innerHTML = `
-        <a href="${app.URL}" target="_blank" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-content="${popoverContent}">
-            <img src="${app.ImagePath}" style="width: 150px; height: 150px; "class="img-fluid" alt="${app.ShortName}">
-        </a>
-        <p class="text-center">${app.ShortName}</p>
-    `;
+            <a href="${app.URL}" target="_blank" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-content="${popoverContent}">
+                <img src="${app.ImagePath}" style="width: 150px; height: 150px;" class="img-fluid" alt="${app.ShortName}">
+            </a>
+            <p class="text-center">${app.ShortName}</p>
+        `;
 
         // Add a click event listener to each imageContainer
         imageContainer.addEventListener('click', () => {
@@ -714,24 +725,25 @@ function createIconView(environment) {
             }, 1000); // 2000 milliseconds (2 seconds) delay
         });
 
+        // Append the imageContainer to the column
         col.appendChild(imageContainer);
         row.appendChild(col);
-
     });
 
+    // Append the row to the iconContainer
     iconContainer.appendChild(row);
-    
-       // Enable popovers after adding elements to the DOM
-       const popovers = new bootstrap.Popover(document.body, {
+
+    // Enable popovers after adding elements to the DOM
+    const popovers = new bootstrap.Popover(document.body, {
         container: 'body',
         html: true,
         trigger: 'hover',
         selector: '[data-bs-toggle="popover"]'
     });
-
-    
 }
 
+
+// Function to create the card view for a specific environment
 function createCardView(environment) {
     const cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
@@ -739,9 +751,10 @@ function createCardView(environment) {
     // Filter data based on the selected environment
     const filteredData = data.filter(app => app.Environment === environment);
 
-       // Sort filttered data aplhabetically By ShortName
-       filteredData.sort((a,b) => a.LongName.localeCompare(b.LongName));
+    // Sort filtered data alphabetically by ShortName
+    filteredData.sort((a, b) => a.LongName.localeCompare(b.LongName));
 
+    // Loop through the filtered data and create card elements
     filteredData.forEach(app => {
         const cardCol = document.createElement("div");
         cardCol.classList.add("col");
@@ -752,15 +765,16 @@ function createCardView(environment) {
         // Convert the array of tags to a comma-separated string
         const tags = Array.isArray(app.Tags) ? app.Tags.join(', ') : '';
 
+        // Set inner HTML for the card
         card.innerHTML = `
-        <img src="${app.ImagePath}" class="card-img-top" alt="${app.ShortName}">
-        <div class="card-body">
-          <h5 class="card-title">  ${app.ShortName}</h5>
-          <p class="card-text">${app.Description}</p>
-          <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
-          <div><span class="badge badge-light">${tags}</span></div>
-        </div>
-      `;
+            <img src="${app.ImagePath}" class="card-img-top" alt="${app.ShortName}">
+            <div class="card-body">
+                <h5 class="card-title">  ${app.ShortName}</h5>
+                <p class="card-text">${app.Description}</p>
+                <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
+                <div><span class="badge badge-light">${tags}</span></div>
+            </div>
+        `;
 
         // Add a click event listener to each card
         card.addEventListener('click', () => {
@@ -772,12 +786,12 @@ function createCardView(environment) {
             }, 1000); // 2000 milliseconds (2 seconds) delay
         });
 
-
+        // Append the card to the cardCol
         cardCol.appendChild(card);
+        // Append the cardCol to the cardContainer
         cardContainer.appendChild(cardCol);
     });
 }
-
 
 function splitDataByEnvironment(data) {
     const productionData = data.filter(app => app.Environment === 'Production');
