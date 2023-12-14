@@ -479,7 +479,7 @@ function assignHeaderColor() {
 assignHeaderColor();
 
 
-let currentView = 'card'; // Initially set 
+let currentView = 'icon'; // Initially set 
 
 // Function to dynamically load CSS file
 function loadThemeCSS(theme) {
@@ -647,7 +647,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (lastSelectedView) {
         toggleView(lastSelectedView);
     } else {
-        toggleView('card');
+        toggleView('icon');
     }
 });
 
