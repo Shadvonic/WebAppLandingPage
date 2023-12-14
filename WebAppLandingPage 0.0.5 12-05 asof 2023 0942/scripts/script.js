@@ -561,29 +561,26 @@ function saveUserPreferences() {
 // Function to load user preferences from localStorage
 function loadUserPreferences() {
     const savedTheme = localStorage.getItem('selectedTheme');
-    const savedView = localStorage.getItem('selectedView');
+    const savedView = localStorage.getItem('currentView'); // Change sessionStorage to localStorage
 
-    // Set the saved theme after the page has loaded
     document.addEventListener('DOMContentLoaded', function () {
         if (savedTheme) {
             const themeRadio = document.getElementById(savedTheme);
             if (themeRadio) {
                 themeRadio.checked = true;
-                // Apply the theme immediately
                 document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
                 loadThemeCSS(savedTheme);
-                // Update the active theme display in the dropdown
                 updateActiveThemeDisplayDropdown(savedTheme);
             }
         }
 
-        // Set the saved view
         if (savedView) {
             toggleView(savedView);
+        } else {
+            toggleView('card'); // Set a default view if none is found
         }
     });
 }
-
 
 
 // Update the function to toggle views (list, icon, card)
@@ -631,28 +628,28 @@ function toggleView(view) {
             break;
     }
 
-    // Save the current view in sessionStorage
-    sessionStorage.setItem('currentView', view);
-
+    // Save the current view in localStorage
+    localStorage.setItem('currentView', view);
+       
     // Save the current view
     currentView = view;
 
+ 
 
     // Clear the search bar
     clearSearchBar();
 }
 
-// Call the toggleView function with the last selected view from sessionStorage
+
+// Call the toggleView function with the last selected view from localStorage
 document.addEventListener('DOMContentLoaded', function () {
-    const lastSelectedView = sessionStorage.getItem('currentView');
+    const lastSelectedView = localStorage.getItem('currentView'); 
     if (lastSelectedView) {
         toggleView(lastSelectedView);
     } else {
-        // If no view is stored in sessionStorage, default to a specific view (e.g., 'card')
         toggleView('card');
     }
 });
-
 
 
 // Function to create the list view for a specific environment
