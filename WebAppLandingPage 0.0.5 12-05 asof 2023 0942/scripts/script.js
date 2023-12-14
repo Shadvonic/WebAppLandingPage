@@ -425,7 +425,7 @@ const data = [
         Tags: ["Prevention", "Training", "Naloxone", "Narcan", "Survey", "Visitor"]
     } 
 
-]
+] 
 
 
 const environments = {
@@ -461,6 +461,7 @@ function assignHeaderColor() {
         }
       });
     }
+   
   
     // Adjusted selector to target the specific element in the navbar for background color
     const navbar = document.querySelector('.container-fluid');
