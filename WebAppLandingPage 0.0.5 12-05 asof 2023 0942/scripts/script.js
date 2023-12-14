@@ -1,6 +1,8 @@
 // Define arrays for resource types and environments
 const resourceType = ["App", "Doc", "Report", "Video", "Course", "Bookmark"] // 0-5
 const environment = ["Production", "Pre-Production", "Training", "Testing", "Development"] // 0-4
+
+// Mock Data
 const data = [
 
     {
@@ -582,6 +584,16 @@ function loadUserPreferences() {
     });
 }
 
+// Call the toggleView function with the last selected view from sessionStorage
+document.addEventListener('DOMContentLoaded', function () {
+    const lastSelectedView = sessionStorage.getItem('currentView');
+    if (lastSelectedView) {
+        toggleView(lastSelectedView);
+    } else {
+        // If no view is stored in sessionStorage, default to a specific view (e.g., 'card')
+        toggleView('card');
+    }
+});
 
 // Update the function to toggle views (list, icon, card)
 function toggleView(view) {
@@ -638,13 +650,6 @@ function toggleView(view) {
     clearSearchBar();
 }
 
-// Call the toggleView function with the last selected view from sessionStorage
-document.addEventListener('DOMContentLoaded', function () {
-    const lastSelectedView = sessionStorage.getItem('currentView');
-    if (lastSelectedView) {
-        toggleView(lastSelectedView);
-    }
-});
 
 
 // Function to create the list view for a specific environment
