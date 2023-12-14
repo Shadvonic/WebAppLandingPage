@@ -456,7 +456,7 @@ function assignHeaderColor() {
         // Assign color based on STG_ENV for Staging
         assignedHeaderColor = environments.STG_ENV.color;
     } else {
-        // Iterate through your data array to find the matching short name
+        // Iterate through data array to find the matching short name
         data.forEach(app => {
             if (currURL.includes(app.ShortName)) {
                 // Assign color based on PRD_ENV for the specific short name
