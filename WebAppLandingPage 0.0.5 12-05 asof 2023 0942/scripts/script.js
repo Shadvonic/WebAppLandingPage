@@ -584,16 +584,7 @@ function loadUserPreferences() {
     });
 }
 
-// Call the toggleView function with the last selected view from sessionStorage
-document.addEventListener('DOMContentLoaded', function () {
-    const lastSelectedView = sessionStorage.getItem('currentView');
-    if (lastSelectedView) {
-        toggleView(lastSelectedView);
-    } else {
-        // If no view is stored in sessionStorage, default to a specific view (e.g., 'card')
-        toggleView('card');
-    }
-});
+
 
 // Update the function to toggle views (list, icon, card)
 function toggleView(view) {
@@ -640,15 +631,27 @@ function toggleView(view) {
             break;
     }
 
+    // Save the current view in sessionStorage
+    sessionStorage.setItem('currentView', view);
+
     // Save the current view
     currentView = view;
 
-    // Save the current view in sessionStorage
-    sessionStorage.setItem('currentView', view);
 
     // Clear the search bar
     clearSearchBar();
 }
+
+// Call the toggleView function with the last selected view from sessionStorage
+document.addEventListener('DOMContentLoaded', function () {
+    const lastSelectedView = sessionStorage.getItem('currentView');
+    if (lastSelectedView) {
+        toggleView(lastSelectedView);
+    } else {
+        // If no view is stored in sessionStorage, default to a specific view (e.g., 'card')
+        toggleView('card');
+    }
+});
 
 
 
