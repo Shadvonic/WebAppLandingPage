@@ -541,6 +541,7 @@ function createEnvironmentView(environment) {
 }
 
 
+// Update the function to toggle views
 function toggleView(view) {
     const listView = document.getElementById('listView');
     const iconView = document.getElementById('iconView');
@@ -549,17 +550,45 @@ function toggleView(view) {
     const iconViewBtn = document.getElementById('iconViewBtn');
     const cardViewBtn = document.getElementById('cardViewBtn');
 
-    listView.style.display = view === 'list' ? 'block' : 'none';
-    iconView.style.display = view === 'icon' ? 'block' : 'none';
-    cardView.style.display = view === 'card' ? 'block' : 'none';
+    // Reset styles for all buttons
+    listViewBtn.style.borderBottom = 'none';
+    iconViewBtn.style.borderBottom = 'none';
+    cardViewBtn.style.borderBottom = 'none';
 
-    listViewBtn.disabled = view === 'list';
-    iconViewBtn.disabled = view === 'icon';
-    cardViewBtn.disabled = view === 'card';
+    // Hide tooltips when switching views
+    hideTooltips();
 
+    // Apply a different style to the selected button
+    switch (view) {
+        case 'list':
+            listView.style.display = 'block';
+            listViewBtn.style.borderBottom = '2px solid #000'; // Set the border color as needed
+            iconView.style.display = 'none';
+            cardView.style.display = 'none';
+            break;
+        case 'icon':
+            iconView.style.display = 'block';
+            iconViewBtn.style.borderBottom = '2px solid #000'; // Set the border color as needed
+            listView.style.display = 'none';
+            cardView.style.display = 'none';
+            break;
+        case 'card':
+            cardView.style.display = 'block';
+            cardViewBtn.style.borderBottom = '2px solid #000'; // Set the border color as needed
+            listView.style.display = 'none';
+            iconView.style.display = 'none';
+            break;
+        default:
+            break;
+    }
+
+    // Save the current view
     currentView = view;
+
+    // Clear the search bar
     clearSearchBar();
 }
+
 
 // Function to save user preferences (theme and view) in localStorage
 function saveUserPreferences() {
@@ -581,6 +610,8 @@ function loadUserPreferences() {
                 // Apply the theme immediately
                 document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
                 loadThemeCSS(savedTheme);
+                // Update the active theme display in the dropdown
+                updateActiveThemeDisplayDropdown(savedTheme);
             }
         }
 
@@ -886,11 +917,45 @@ themeRadios.forEach(radio => {
             // Load the appropriate CSS file based on the checked radio button
             loadThemeCSS(radio.id.toLowerCase());
 
-             // Save user preferences
-             saveUserPreferences();
+            // Update the active theme display in the dropdown
+            updateActiveThemeDisplayDropdown(radio.id);
+
+            // Save user preferences
+            saveUserPreferences();
         }
     });
-}); 
+});
+
+// Add this function to update the active theme display within the dropdown
+function updateActiveThemeDisplayDropdown(theme) {
+    const activeThemeElement = document.getElementById('activeTheme');
+    if (activeThemeElement) {
+        activeThemeElement.textContent = `Theme: ${getThemeName(theme)} `;
+    }
+}
+
+// Add this function to get the human-readable theme name
+function getThemeName(theme) {
+    switch (theme) {
+        case 'Light':
+            return 'Light';
+        case 'Dark':
+            return 'Dark';
+        case 'Valentine':
+            return 'Valentine';
+        case 'July4':
+            return 'July 4th';
+        case 'Halloween':
+            return 'Halloween';
+        case 'Thanksgiving':
+            return 'Thanksgiving';
+        case 'Christmas':
+            return 'Christmas';
+        // Add other cases as needed
+        default:
+            return 'Unknown';
+    }
+}
 
 // Preventing view switch on search
 document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
@@ -911,3 +976,14 @@ loadUserPreferences();
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 });
+
+// Function to hide Bootstrap tooltips
+function hideTooltips() {
+    const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltips.forEach(tooltip => {
+        const bsTooltip = bootstrap.Tooltip.getInstance(tooltip);
+        if (bsTooltip) {
+            bsTooltip.hide();
+        }
+    });
+}

@@ -38,7 +38,7 @@ li {
 
  .content, .list-group-item.list-group-item-action {
     background-color: black;
-    color: white;
+    color:  #fffafa;
 }
 
 
@@ -51,7 +51,7 @@ footer {
 
 a.btn.btn-primary{
     background-color: black;
-    color: white;
+    color:  #fffafa;
     border-color: white;
 }
 
@@ -69,7 +69,7 @@ span.badge.badge-light{
     margin-top: 5px;
     text-wrap: wrap;
     text-align: left;
-    color: white;
+    color: #fffafa;
 }
 
 
@@ -78,15 +78,15 @@ span.badge.badge-light{
 }
 
 .card-text, h5.card-title {
-    color: white;
+    color: #fffafa;
 }
 
 
 
 a.btn.btn-primary{
     background-color: black;
-    color: white;
-    border-color: white;
+    color:  #fffafa;
+    border-color:  #fffafa;
 }
 
 div.card.h-100{
