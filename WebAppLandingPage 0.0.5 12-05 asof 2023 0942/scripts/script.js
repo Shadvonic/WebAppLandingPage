@@ -477,7 +477,7 @@ function assignHeaderColor() {
 assignHeaderColor();
 
 
-let currentView = 'icon'; // Initially set to 'card'
+let currentView = 'card'; // Initially set 
 
 // Function to dynamically load CSS file
 function loadThemeCSS(theme) {
@@ -676,7 +676,7 @@ function createListView(environment) {
             // Set a delay before opening the actual link
             setTimeout(() => {
                 window.open(app.URL, '_blank');
-            }, 1000); // 2000 milliseconds (2 seconds) delay
+            }, 2000); // 2000 milliseconds (2 seconds) delay
         });
 
         // Append the listItem to the listView
@@ -728,7 +728,7 @@ function createIconView(environment) {
             // Set a delay before opening the actual link
             setTimeout(() => {
                 window.open(app.URL, '_blank');
-            }, 1000); // 2000 milliseconds (2 seconds) delay
+            }, 2000); // 2000 milliseconds (2 seconds) delay
         });
 
         // Append the imageContainer to the column
@@ -790,7 +790,7 @@ function createCardView(environment) {
             // Set a delay before opening the actual link
             setTimeout(() => {
                 window.open(app.URL, '_blank');
-            }, 1000); // 2000 milliseconds (2 seconds) delay
+            }, 2000); // 2000 milliseconds (2 seconds) delay
         });
 
         // Append the card to the cardCol
