@@ -743,6 +743,7 @@ function createIconView(environment) {
 }
 
 
+
 // Function to create the card view for a specific environment
 function createCardView(environment) {
     const cardContainer = document.getElementById('cardContainer');
@@ -793,6 +794,7 @@ function createCardView(environment) {
     });
 }
 
+// Function to split data by environment and create tabs
 function splitDataByEnvironment(data) {
     const productionData = data.filter(app => app.Environment === 'Production');
     const trainingData = data.filter(app => app.Environment === 'Training');
@@ -803,7 +805,7 @@ function splitDataByEnvironment(data) {
     createEnvironmentTab('Testing', testingData);
 }
 
-
+// Function to create an environment tab
 function createEnvironmentTab(environment, data) {
     const iconContainer = document.getElementById('iconContainer');
 
@@ -841,12 +843,14 @@ function createEnvironmentTab(environment, data) {
     iconContainer.appendChild(tabContent);
 }
 
+// Function to fetch data (assuming it's loaded asynchronously)
 function fetchData() {
     return new Promise(resolve => {
         resolve(data);  
     });
 }
 
+// Function to load and split data
 function loadAndSplitData() {
     // Assume data is loaded asynchronously
     fetchData().then(data => {
@@ -867,6 +871,7 @@ document.getElementById('testing-tab').addEventListener('click', () => switchEnv
 // Load and split data when the script is loaded
 loadAndSplitData();
 
+// Function to switch environment view
 function switchEnvironmentView(environment) {
     createEnvironmentView(environment);
     createListView(environment);
@@ -874,6 +879,7 @@ function switchEnvironmentView(environment) {
     createCardView(environment)
 }
 
+// Function to search items based on user input
 function searchItems() {
     const searchInput = document.getElementById('searchInput');
     const filter = searchInput.value.toUpperCase();
