@@ -604,19 +604,22 @@ function toggleView(view) {
     switch (view) {
         case 'list':
             listView.style.display = 'block';
-            listViewBtn.style.borderBottom = '2px solid #000'; // Set the border color as needed
+            listViewBtn.style.borderBottom = '2px solid RGB(174, 184, 194)'; // Set the border color as needed
+            listViewBtn.style.borderRadius = '0'; // Set border radius to 0 for square corners
             iconView.style.display = 'none';
             cardView.style.display = 'none';
             break;
         case 'icon':
             iconView.style.display = 'block';
-            iconViewBtn.style.borderBottom = '2px solid #000'; // Set the border color as needed
+            iconViewBtn.style.borderBottom = '2px solid RGB(174, 184, 194)'; // Set the border color as needed
+            iconViewBtn.style.borderRadius = '0'; // Set border radius to 0 for square corners
             listView.style.display = 'none';
             cardView.style.display = 'none';
             break;
         case 'card':
             cardView.style.display = 'block';
-            cardViewBtn.style.borderBottom = '2px solid #000'; // Set the border color as needed
+            cardViewBtn.style.borderBottom = '2px solid RGB(174, 184, 194)'; // Set the border color as needed
+            cardViewBtn.style.borderRadius = '0'; // Set border radius to 0 for square corners
             listView.style.display = 'none';
             iconView.style.display = 'none';
             break;
@@ -625,7 +628,6 @@ function toggleView(view) {
             break;
     }
 
-    
     // Save the current view
     currentView = view;
 
@@ -635,6 +637,14 @@ function toggleView(view) {
     // Clear the search bar
     clearSearchBar();
 }
+
+// Call the toggleView function with the last selected view from sessionStorage
+document.addEventListener('DOMContentLoaded', function () {
+    const lastSelectedView = sessionStorage.getItem('currentView');
+    if (lastSelectedView) {
+        toggleView(lastSelectedView);
+    }
+});
 
 
 // Function to create the list view for a specific environment
