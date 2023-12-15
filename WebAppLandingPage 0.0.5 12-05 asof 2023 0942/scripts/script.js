@@ -882,26 +882,8 @@ function loadAndSplitData() {
     });
 }
 
-
-// Update the event listeners for tab switching
-document.getElementById('production-tab').addEventListener('click', () => switchEnvironmentView('Production'));
-document.getElementById('training-tab').addEventListener('click', () => switchEnvironmentView('Training'));
-document.getElementById('testing-tab').addEventListener('click', () => switchEnvironmentView('Testing'));
-
-
-// Load and split data when the script is loaded
-loadAndSplitData();
-
-// Function to switch environment view
-function switchEnvironmentView(environment) {
-    createEnvironmentView(environment);
-    createListView(environment);
-    createIconView(environment);
-    createCardView(environment)
-}
-
 // Function to search items based on user input
-function searchItems() {
+function searchItems(environment) {
     const searchInput = document.getElementById('searchInput');
     const filter = searchInput.value.toUpperCase();
     const listItems = document.querySelectorAll('.list-group .list-group-item');
@@ -937,6 +919,37 @@ function searchItems() {
         notFoundMessage.style.display = 'none';
     }
 }
+
+// Update the event listener for the search bar
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', () => searchItems(currentView));
+
+// Update the event listeners for tab switching
+document.getElementById('production-tab').addEventListener('click', () => {
+    switchEnvironmentView('Production');
+    searchItems('Production');
+});
+document.getElementById('training-tab').addEventListener('click', () => {
+    switchEnvironmentView('Training');
+    searchItems('Training');
+});
+document.getElementById('testing-tab').addEventListener('click', () => {
+    switchEnvironmentView('Testing');
+    searchItems('Testing');
+});
+
+// Load and split data when the script is loaded
+loadAndSplitData();
+
+// Function to switch environment view
+function switchEnvironmentView(environment) {
+    createEnvironmentView(environment);
+    createListView(environment);
+    createIconView(environment);
+    createCardView(environment)
+}
+
+
 
 // Function to clear the search bar when the user switches views
 function clearSearchBar() {

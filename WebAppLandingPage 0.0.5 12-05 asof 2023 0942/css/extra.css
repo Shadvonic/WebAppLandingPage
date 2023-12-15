@@ -1,0 +1,20 @@
+/* Adjust body bg color, text color, tabs, error message */
+
+body {
+    background-color: #022c4e;
+    color: #d4d4d4;
+} 
+
+.btn-link,.nav-link,.navbar-brand {
+    color: #d4d4d4;
+}
+
+/* Adjust styles to make active tab stand out */
+
+.nav-link.active {
+    background-color: #007bff;
+    /* Change to your desired active tab background color */
+    color: #000;
+    /* Change to your desired active tab text color */
+    font-weight: bold;
+}
