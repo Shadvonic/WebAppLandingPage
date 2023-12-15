@@ -69,7 +69,8 @@ span.badge.badge-light{
     background-color: #3e3636;
 }
 
-.card-text, h5.card-title {
+
+.card-text, h5.card-title, .card-subtitle{
     color: #fffafa;
 }
 
@@ -83,7 +84,10 @@ a.btn.btn-primary{
 
 div.card.h-100{
     border-color: black;
+   
 }
+
+
 
 .overlay {
     position: fixed;

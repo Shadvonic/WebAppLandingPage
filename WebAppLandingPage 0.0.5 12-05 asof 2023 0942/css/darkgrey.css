@@ -72,8 +72,7 @@ a.btn.btn-primary:hover {
     background-color: #444444;
 }
 
-.card-text,
-h5.card-title {
+.card-text, h5.card-title, .card-subtitle{
     color: #d4d4d4;
 }
 

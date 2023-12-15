@@ -73,7 +73,7 @@ span.badge.badge-light{
     background-color: #881ee4;
 }
 
-.card-text, h5.card-title {
+.card-text, h5.card-title, .card-subtitle {
     color: #85e21f;
 }
 

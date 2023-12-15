@@ -9,7 +9,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "  Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "https://via.placeholder.com/150" ,
+        ImagePath: "./img/150PH.png" ,
         URL: "https://crpvms2chsws01.corp.nychhc.org/ACL/",
         Environment: environment[0],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -19,7 +19,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "  Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "https://via.placeholder.com/150" ,
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_ACL/Login.aspx?ReturnUrl=%2fStaging_ACL",
         Environment: environment[2],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -29,7 +29,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Assistance Center Log",
         ShortName: "ACL",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ACL/Login.aspx?ReturnUrl=%2fTest_ACL%2f",
         Environment: environment[3],
         Description: "Documenting and tracking encounters where CHS assists persons in custody and their families by connecting them to medical and mental health services in and around their communities.",
@@ -40,7 +40,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Web-based Empowerment and Learning System",
         ShortName: "WELS",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/WELS_INDEX/",
         Environment: environment[0],
         Description: "CHS centralized learning environment for facilitating training initiatives be they web based and-or in-person.",
@@ -50,7 +50,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Web-based Empowerment and Learning System Course List",
         ShortName: " WELS Course List",
-        ImagePath:"https://via.placeholder.com/150",
+        ImagePath:"./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/index.html",
         Environment: environment[3],
         Description: "CHS centralized learning environment for facilitating training initiatives be they web based and-or in-person.",
@@ -60,7 +60,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Web-based Empowerment and Learning System Course Listing",
         ShortName: "WELS Course Listing",
-        ImagePath:"https://via.placeholder.com/150",
+        ImagePath:"./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_WELS_INDEX/",
         Environment: environment[3],
         Description: "CHS centralized learning environment for facilitating training initiatives be they web based and-or in-person.",
@@ -70,7 +70,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Clinical Court Advocacy for Persons In Custody",
         ShortName: "CCAPIC",
-        ImagePath:"https://via.placeholder.com/150",
+        ImagePath:"./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/CCAPIC/",
         Environment: environment[0],
         Description: "Central notes for CCA team to assist with tracking cases for advocacy for persons in custody.",
@@ -80,7 +80,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Clinical Court Advocacy for Persons In Custody",
         ShortName: "CCAPIC",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_CCAPIC/",
         Environment: environment[3],
         Description: "Central notes for CCA team to assist with tracking cases for advocacy for persons in custody.",
@@ -90,7 +90,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " COVID-19 Electronic Survey Application",
         ShortName: "CESA",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/EPASS_CESA/",
         Environment: environment[0],
         Description: "An EPASS module historically used for capturing COVID-19 screenings survey data from arrested individuals. It is now only used to view historical records as the screening survey has been integrated into EPASS Level 1 form.",
@@ -100,7 +100,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " COVID-19 Electronic Survey Application",
         ShortName: "CESA",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_EPASS-CESA/",
         Environment: environment[3],
         Description: "An EPASS module historically used for capturing COVID-19 screenings survey data from arrested individuals. It is now only used to view historical records as the screening survey has been integrated into EPASS Level 1 form.",
@@ -108,9 +108,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Close Call and Near Miss Reporting  [CORP]",
+        LongName: " Close Call and Near Miss Reporting ",
         ShortName: "Close Call",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/CloseCall/",
         Environment: environment[0],
         Description: "",
@@ -118,9 +118,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Close Call and Near Miss Reporting Admin [CORP]",
+        LongName: " Close Call and Near Miss Reporting Admin ",
         ShortName: "Close Call Admin",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/CloseCallAdmin/Login.aspx?ReturnUrl=%2fCloseCallAdmin%2fdefault.aspx",
         Environment: environment[0],
         Description: "",
@@ -128,9 +128,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Discharge Services Dashboard  [CORP]",
+        LongName: " Discharge Services Dashboard  ",
         ShortName: "DSD",
-        ImagePath:"https://via.placeholder.com/150",
+        ImagePath:"./img/150PH.png",
         URL: "",
         Environment: environment[0],
         Description: "",
@@ -138,9 +138,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Discharge Services Dashboard [CORP]",
+        LongName: " Discharge Services Dashboard ",
         ShortName: "DSD",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_DSD/",
         Environment: environment[3],
         Description: "",
@@ -150,7 +150,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "  Employee COVID-19 Tracking",
         ShortName: "ECT",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/ECT/",
         Environment: environment[0],
         Description:"Provides a mechanism for tracking cases, tests, and vaccines and their associated appointments",
@@ -160,7 +160,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Employee COVID-19 Tracking",
         ShortName: "ECT",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_ECT/",
         Environment: environment[3],
         Description: "Provides a mechanism for tracking cases, tests, and vaccines and their associated appointments",
@@ -170,7 +170,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: "[Test-CORP] eCW Templates",
         ShortName: "CORP eCW Templates",
-        ImagePath:"https://via.placeholder.com/150",
+        ImagePath:"./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_eCWTemplater/Login.aspx",
         Environment: environment[3],
         Description: "",
@@ -180,7 +180,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Enhanced Pre-Arraignment Screening Service",
         ShortName: "EPASS",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/EPASS/",
         Environment: environment[0],
         Description: "Application for Pre-Arraignment screening for medical, mental health, and social work diversion in NYPD arrest facilities.",
@@ -188,9 +188,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Enhanced Pre-Arraignment Screening Service [CORP]",
+        LongName: " Enhanced Pre-Arraignment Screening Service ",
         ShortName: "EPASS",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_EPASS/",
         Environment: environment[3],
         Description: "Application for Pre-Arraignment screening for medical, mental health, and social work diversion in NYPD arrest facilities.",
@@ -200,7 +200,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Locker",
         ShortName: "Locker",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/Locker/",
         Environment: environment[0],
         Description: "Locker system is used to keep track of assigning Lockers to patients.",
@@ -210,7 +210,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " CHS-LOCKER",
         ShortName: "CHS-LOCKER",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_LOCKER/Account/Login?ReturnUrl=%2fTest_LOCKER%2fLOCKER",
         Environment: environment[3],
         Description: "Locker system is used to keep track of assigning Lockers to patients.",
@@ -218,9 +218,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Medical Evaluation & Treatment for Non-Inmate Incidents [CORP]",
+        LongName: " Medical Evaluation & Treatment for Non-Inmate Incidents ",
         ShortName: "METNII",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/METNII",
         Environment: environment[0],
         Description: "Facilities an environment for CHS medical professional staff to record or document activities, encounters, and incidents that require medical intervention for persons other than persons in custody at all CHS facilities.",
@@ -228,9 +228,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Medical Evaluation & Treatment for Non-Inmate Incidents [CORP]",
+        LongName: " Medical Evaluation & Treatment for Non-Inmate Incidents ",
         ShortName: "METNII",
-        ImagePath:"https://via.placeholder.com/150",
+        ImagePath:"./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_METNII/",
         Environment: environment[3],
         Description: "Facilities an environment for CHS medical professional staff to record or document activities, encounters, and incidents that require medical intervention for persons other than persons in custody at all CHS facilities.",
@@ -240,7 +240,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Medical Evaluation & Treatment for Non-Inmate Incidents [CHS.DOHMH.NYCNET]",
         ShortName: "METNII",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://chsricbws01.chs.dohmh.nycnet/METNII/",
         Environment: environment[0],
         Description: "Facilities an environment for CHS medical professional staff to record or document activities, encounters, and incidents that require medical intervention for persons other than persons in custody at all CHS facilities.",
@@ -250,7 +250,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Medical Record Requests (MRR)",
         ShortName: "MRR",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/MRR/",
         Environment: environment[0],
         Description: "MRR is used by medical records team, to keep track of patient’s medical records requests made by clients, details of submitting those requests and receiving them back from a request source.",
@@ -260,7 +260,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Medical Record Requests (MRR)",
         ShortName: "MRR",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_MRR/Login.aspx",
         Environment: environment[3],
         Description: "MRR is used by medical records team, to keep track of patient’s medical records requests made by clients, details of submitting those requests and receiving them back from a request source.",
@@ -268,9 +268,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Occupational Health Service Application [CORP]",
+        LongName: " Occupational Health Service Application ",
         ShortName: "OHSA",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/OHSA/Account/Login?ReturnUrl=%2fOHSA",
         Environment: environment[0],
         Description: "Application where OHS records and tracks employee Operational Health documents in regard to OHS business practices.",
@@ -278,9 +278,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Occupational Health Service Application [CORP]",
+        LongName: " Occupational Health Service Application ",
         ShortName: "OHSA",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_OHSA/Account/Login?ReturnUrl=%2FTest_OHSA%2F",
         Environment: environment[3],
         Description: "Application where OHS records and tracks employee Operational Health documents in regard to OHS business practices.",
@@ -288,9 +288,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Occupational Health Service Application [CORP]",
+        LongName: " Occupational Health Service Application ",
         ShortName: "OHSA",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_OHSA/",
         Environment: environment[2],
         Description: "Application where OHS records and tracks employee Operational Health documents in regard to OHS business practices.",
@@ -300,7 +300,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Paperless Employee Document Tracking System",
         ShortName: "PEDTS",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_PEDTS/",
         Environment: environment[3],
         Description: "This application acts as a broker between Administrative entries to collect electronic documents from Employees across various business processes.",
@@ -310,7 +310,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Report Request Life Cycle Management",
         ShortName: " RRLM",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_RRLM/Login.aspx",
         Environment: environment[3],
         Description: "",
@@ -320,7 +320,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Report Request Life Cycle Management (RRLM)",
         ShortName: " RRLM",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/RRLM/Login.aspx",
         Environment: environment[0],
         Description: "",
@@ -328,9 +328,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Staff Call-Out Log [CORP]",
+        LongName: " Staff Call-Out Log ",
         ShortName: "SCOL",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/SCOL/Login.aspx?ReturnUrl=%2fSCOL%2fdefault.aspx",
         Environment: environment[0],
         Description: "Tracking system that logs Employee callouts for professionals that are generally under specific scheduling restrictions.",
@@ -338,9 +338,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Staff Call-Out Log [CORP]",
+        LongName: " Staff Call-Out Log ",
         ShortName: "SCOL",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_SIE",
         Environment: environment[3],
         Description: "Tracking system that logs Employee callouts for professionals that are generally under specific scheduling restrictions.",
@@ -348,9 +348,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Sharp Index Enterprise [CORP]",
+        LongName: " Sharp Index Enterprise ",
         ShortName: "SIE",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/SIE/",
         Environment: environment[0],
         Description: "Tracking system for Sharps used in facilities.  Also, tracks what patients a specific sharp was used to administer.",
@@ -358,9 +358,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Sharp Index Enterprise [CORP]",
+        LongName: " Sharp Index Enterprise ",
         ShortName: "SIE",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_SIE",
         Environment: environment[3],
         Description: "Tracking system for Sharps used in facilities.  Also, tracks what patients a specific sharp was used to administer.",
@@ -368,9 +368,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Sharp Index Enterprise [CORP]",
+        LongName: " Sharp Index Enterprise ",
         ShortName: " SIE",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_SIE",
         Environment: environment[2],
         Description: "Tracking system for Sharps used in facilities.  Also, tracks what patients a specific sharp was used to administer.",
@@ -380,7 +380,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Transfer Notification Form Tracking",
         ShortName: "TNFT",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/TNFT/",
         Environment: environment[0],
         Description: "Assists with organizing, tracking, and addressing patient transfers for Operations.",
@@ -390,7 +390,7 @@ const data = [
         ResourceType: resourceType[0],
         LongName: " Transfer Notification Form Tracking",
         ShortName: "TNFT",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_TNFT",
         Environment: environment[3],
         Description: "Assists with organizing, tracking, and addressing patient transfers for Operations.",
@@ -398,9 +398,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Visitor Application for Naloxone [CORP]",
+        LongName: " Visitor Application for Naloxone ",
         ShortName: "VAN",
-        ImagePath: "https://via.placeholder.com/150",
+        ImagePath: "./img/150PH.png",
         URL: "https://crpvms2chsws01.corp.nychhc.org/VAN/",
         Environment: environment[0],
         Description: "CHS Electronic Survey for document and tracking demographics of individuals trained to administer Naloxone.",
@@ -408,7 +408,7 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Visitor Application for Naloxone [CORP]",
+        LongName: " Visitor Application for Naloxone ",
         ShortName: "VAN",
         ImagePath: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAe0lEQVQ4jWPUKXnAQApgIkn1MNHAAqFEVHgjuH/sZuDUev+dU4NbgIfl46UP75X4bNj/cwgyti169wbNhjd3vompcNtKMu188V9NiIXhF4O0OAsDw79Fm9/vefFPBJuT/h5/xyTz8/c3NkYOBgZhNsYfOJzEOBpxtNAAAFT/JFsnrSgIAAAAAElFTkSuQmCC" ,
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Test_VAN/",
@@ -418,9 +418,9 @@ const data = [
     },
     {
         ResourceType: resourceType[0],
-        LongName: " Visitor Application for Naloxone [CORP]",
+        LongName: " Visitor Application for Naloxone ",
         ShortName: "VAN",
-        ImagePath:"https://via.placeholder.com/150",
+        ImagePath:"./img/150PH.png",
         URL: "https://crpvms2chspdws1.corp.nychhc.org/Staging_VAN/",
         Environment: environment[2],
         Description: "CHS Electronic Survey for document and tracking demographics of individuals trained to administer Naloxone.",
@@ -445,6 +445,14 @@ PRD_ENV: {
 name: 'PRD',
 color: '#3E97CB'
 }
+};
+
+// Local array for accent colors
+const accentColors = {
+    'Production': '#3E97CB',
+    'Training': '#2D8A43',
+    'Testing': '#CA00AF', // Add the appropriate color for Testing
+    // Add colors for other environments as needed
 };
 
 // Function to assign header color based on the current URL
@@ -662,9 +670,7 @@ function createListView(environment) {
 
     // Loop through the filtered data and create list items
     filteredData.forEach(app => {
-        const listItem = document.createElement('a');
-        listItem.href = app.URL;
-        listItem.target = "_blank";
+        const listItem = document.createElement('div');
         listItem.classList.add("list-group-item", "list-group-item-action");
 
         // Create an image element for the icon
@@ -684,8 +690,15 @@ function createListView(environment) {
         // Add short name text to the listItem
         listItem.appendChild(document.createTextNode(app.LongName + " - " + app.ShortName));
 
-        // Add a click event listener to each listItem
-        listItem.addEventListener('click', () => {
+        // Add a "Launch" button to the listItem
+        const launchButton = document.createElement('a');
+        launchButton.href = app.URL;
+        launchButton.target = "_blank";
+        launchButton.classList.add("btn", "btn-primary", "launch-btn");
+        launchButton.textContent = "Launch";
+
+        // Add a click event listener to the launch button
+        launchButton.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent the default behavior of opening the link
             openAppOverlay(app.ShortName);
             // Set a delay before opening the actual link
@@ -694,11 +707,13 @@ function createListView(environment) {
             }, 2000); // 2000 milliseconds (2 seconds) delay
         });
 
+        // Append the launch button to the listItem
+        listItem.appendChild(launchButton);
+
         // Append the listItem to the listView
         listView.appendChild(listItem);
     });
 }
-
 
 // Function to create the icon view for a specific environment
 function createIconView(environment) {
@@ -716,6 +731,8 @@ function createIconView(environment) {
 
     // Loop through the filtered data and create icon containers
     filteredData.forEach(app => {
+       
+
         const col = document.createElement("div");
         col.classList.add("col-md-3"); // Use col-md-3 to create 4 columns on medium-sized screens
 
@@ -778,7 +795,11 @@ function createCardView(environment) {
 
     // Loop through the filtered data and create card elements
     filteredData.forEach(app => {
-        const cardCol = document.createElement("div");
+
+         // Get the accent color for the environment from the local array
+         const accentColor = accentColors[app.Environment] || '#000';
+
+        const cardCol = document.createElement("div")
         cardCol.classList.add("col");
 
         const card = document.createElement("div");
@@ -790,10 +811,13 @@ function createCardView(environment) {
         // Set inner HTML for the card
         card.innerHTML = `
             <img src="${app.ImagePath}" class="card-img-top" alt="${app.ShortName}">
+           <div class="card-header" style="background-color: ${accentColor};"></div>
             <div class="card-body">
-                <h5 class="card-title">  ${app.ShortName}</h5>
+                <h5 class="card-title">  ${app.LongName}</h5>
+                <h6 class="card-subtitle">(${app.ShortName})</h6>
+                <br>
                 <p class="card-text">${app.Description}</p>
-                <a href="${app.URL}" target="_blank" class="btn btn-primary">[${app.Environment}] ${app.ShortName}</a>
+                <a href="${app.URL}" target="_blank" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="${app.Environment} - ${app.ShortName}">Launch</a>
                 <div><span class="badge badge-light">${tags}</span></div>
             </div>
         `;
@@ -883,7 +907,7 @@ function loadAndSplitData() {
 }
 
 // Function to search items based on user input
-function searchItems(environment) {
+function searchItems() {
     const searchInput = document.getElementById('searchInput');
     const filter = searchInput.value.toUpperCase();
     const listItems = document.querySelectorAll('.list-group .list-group-item');

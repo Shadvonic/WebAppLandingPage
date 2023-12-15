@@ -9,7 +9,7 @@ body {
 
 .content {
     flex: 1;
-    padding: 20px;
+    padding: 10px;
 
 }
 
@@ -26,8 +26,10 @@ header {
 span.badge.badge-light{
     margin-top: 5px;
     text-wrap: wrap;
+    line-height: 2;
     text-align: left;
     color: black;
+    display: none;
   
 }
 
@@ -52,21 +54,28 @@ a.btn.btn-primary{
 
 .card-body {
     background-color: white;
+    height: 235px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-text, h5.card-title {
+.card-text, h5.card-title, .card-subtitle {
     color: black;
+    font-size: 14px;
 }
 
 a.btn.btn-primary{
     background-color: #0d6efd;
     color: white;
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
    
 }
 
-
 div.card.h-100{
-
     border-color: lightgray;
 }
 
@@ -125,4 +134,18 @@ div.card.h-100{
 
 .list-group-item {
     font-size: 16pt; /* Set text size to 16pt */
+}
+
+
+.card-header {
+    padding: 3px; /* Set the desired thickness for the accent bar */
+
+}
+
+
+.launch-btn {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    
 }
