@@ -1,4 +1,4 @@
-/* Drake Grey Theme Styles */
+/* Dark Grey Theme Styles */
 
 body {
     display: flex;
@@ -70,7 +70,6 @@ a.btn.btn-primary:hover {
 /* Card Styles */
 .card-body {
     background-color: #444444;
-    
 }
 
 .card-text,

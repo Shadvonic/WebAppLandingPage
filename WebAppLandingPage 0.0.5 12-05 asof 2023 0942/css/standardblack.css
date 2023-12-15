@@ -1,4 +1,4 @@
-/* Drake Grey Theme Styles */
+/* Standard Black Theme Styles */
 
 body {
     display: flex;
@@ -70,8 +70,6 @@ a.btn.btn-primary:hover {
 /* Card Styles */
 .card-body {
     background-color: #333333;
-  
-    
 }
 
 .card-text,
@@ -81,6 +79,5 @@ h5.card-title {
 
 /* Additional Button Styles */
 div.card.h-100 {
- 
     border-color: #333333;
 }
