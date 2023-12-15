@@ -568,7 +568,7 @@ function loadUserPreferences() {
             const themeRadio = document.getElementById(savedTheme);
             if (themeRadio) {
                 themeRadio.checked = true;
-                document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
+                document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas', 'theme-darkblue','theme-darkgrey', 'theme-standardblack');
                 loadThemeCSS(savedTheme);
                 updateActiveThemeDisplayDropdown(savedTheme);
             }
@@ -953,7 +953,7 @@ themeRadios.forEach(radio => {
     radio.addEventListener('change', () => {
         if (radio.checked) {
             // Remove existing theme classes
-            document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas');
+            document.body.classList.remove('theme-light', 'theme-dark', 'theme-valentine', 'theme-july4', 'theme-halloween', 'theme-thanksgiving', 'theme-christmas', 'theme-darkblue','theme-darkgrey', 'theme-standardblack');
 
             // Load the appropriate CSS file based on the checked radio button
             loadThemeCSS(radio.id.toLowerCase());
@@ -992,6 +992,12 @@ function getThemeName(theme) {
             return 'Thanksgiving';
         case 'Christmas':
             return 'Christmas';
+        case 'Darkblue':
+            return 'Dark Blue';
+        case 'Darkgrey':
+            return 'Dark Grey';
+        case 'Standardblack':
+            return 'Standard Black';
         // Add other cases as needed
         default:
             return 'Unknown';

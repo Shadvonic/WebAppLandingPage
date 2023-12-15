@@ -1,0 +1,90 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    z-index: 1000;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+
+}
+
+
+.icon-image 
+{
+    padding-right: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: #000000;
+    color: #c4c4b2;
+    padding: 8px;
+}
+
+
+/* VS Code-like Theme Styles */
+
+/* Badge Styles */
+span.badge.badge-light {
+    margin-top: 5px;
+    text-wrap: wrap;
+    text-align: left;
+    color: #fff;
+}
+
+/* Primary Button Styles */
+a.btn.btn-primary {
+    background-color: #0056b3; 
+    border-color: #4e94ce;
+    color: #ffffff;
+}
+
+a.btn.btn-primary:hover {
+    background-color: #4172a5;
+    border-color: #4172a5;
+    color: #ffffff;
+}
+
+/* General Content Styles */
+.content,
+.list-group-item.list-group-item-action {
+    background-color: #022c4e;
+    color: #d4d4d4;
+}
+
+/* Card Styles */
+.card-body {
+    background-color: #034078;
+    
+}
+
+.card-text,
+h5.card-title {
+    color: #d4d4d4;
+}
+
+/* Additional Button Styles */
+div.card.h-100 {
+    border-color: #034078;;
+}
